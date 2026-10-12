@@ -1,4 +1,5 @@
 import { getCatalog } from "@/lib/catalog/data";
+import { JsonLd, organizationLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/home/Hero";
 import { WorldTiles } from "@/components/home/WorldTiles";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
@@ -10,6 +11,7 @@ export default async function HomePage() {
   const catalog = await getCatalog();
   return (
     <>
+      <JsonLd data={organizationLd()} />
       <Hero />
       <WorldTiles />
       <FeaturedProducts products={catalog.featured(8)} />

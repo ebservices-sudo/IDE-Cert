@@ -11,6 +11,8 @@ import type { Download as DownloadT, Product } from "@/lib/catalog/types";
 import { formatPrice, unitSuffix } from "@/lib/format";
 import { ProductHero, ProductHeroFromUrl, type HeroProduct } from "@/components/product/ProductHero";
 import { ProductCard } from "@/components/product/ProductCard";
+import { toCard } from "@/lib/catalog/cards";
+import { JsonLd, breadcrumbLd, productLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
 
 export function generateStaticParams() {
@@ -71,6 +73,15 @@ async function ProductContent({ params }: Pick<PageProps<"/shop/[world]/[sub]/[s
 
   return (
     <>
+      <JsonLd data={productLd(product)} />
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Shop", path: "/shop" },
+          { name: w.name, path: worldHref(w.slug) },
+          { name: subcategory.name, path: subcategoryHref(w.slug, subcategory.slug) },
+          { name: product.name, path: productHref(product) },
+        ])}
+      />
       <div className="border-b border-line bg-mist">
         <Container>
           <nav aria-label="Breadcrumb" className="py-3">
@@ -113,7 +124,7 @@ async function ProductContent({ params }: Pick<PageProps<"/shop/[world]/[sub]/[s
             <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-4">
               {related.map((p) => (
                 <li key={p.id}>
-                  <ProductCard product={p} />
+                  <ProductCard card={toCard(p)} />
                 </li>
               ))}
             </ul>
@@ -178,7 +189,7 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
               <p>
                 EDELRID has not yet published the product page, technical data and user manual for this item online. We list it
                 with the name, item numbers and prices from the EDELRID 2026 price list only.{" "}
-                <Link href={`/contact?product=${product.slug}`} className="font-semibold underline">
+                <Link href={`/contact?about=${encodeURIComponent(`EDELRID ${product.name} (item ${product.variants[0].sku}${product.variants.length > 1 ? " and variants" : ""})`)}`} className="font-semibold underline">
                   Ask us for the product sheet
                 </Link>{" "}
                 before ordering.
@@ -256,7 +267,7 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
             ) : (
               <p className="mt-5 text-sm text-muted">
                 EDELRID does not publish technical data for this item online yet.{" "}
-                <Link href={`/contact?product=${product.slug}`} className="font-semibold text-brand-strong hover:underline">
+                <Link href={`/contact?about=${encodeURIComponent(`EDELRID ${product.name} (item ${product.variants[0].sku}${product.variants.length > 1 ? " and variants" : ""})`)}`} className="font-semibold text-brand-strong hover:underline">
                   Ask us
                 </Link>{" "}
                 for the product sheet.

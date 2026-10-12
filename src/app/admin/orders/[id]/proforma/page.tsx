@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import { notFound } from "next/navigation";
 import { bankDetailsComplete } from "@/config/business";
 import { getOrder } from "@/lib/orders/queries";
@@ -7,11 +8,11 @@ import { PrintButton } from "@/components/admin/PrintButton";
 
 export const metadata: Metadata = { title: "Proforma" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 /** Printable proforma (print → save as PDF). Same content as the emailed proforma. */
 export default async function ProformaPrint({ params }: PageProps<"/admin/orders/[id]/proforma">) {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const order = await getOrder((await params).id);
   if (!order) notFound();
   return (

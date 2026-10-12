@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
@@ -13,10 +14,10 @@ import { AdminHeader, Card, buttonCls, eur, table } from "@/components/admin/ui"
 
 export const metadata: Metadata = { title: "Product" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 export default async function AdminProduct({ params }: PageProps<"/admin/products/[slug]">) {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const product = getBaseProduct((await params).slug);
   if (!product) notFound();
   const overrides = await overrideMap();

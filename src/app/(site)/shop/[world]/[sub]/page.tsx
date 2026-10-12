@@ -6,7 +6,8 @@ import { categoryCounts, getCatalog } from "@/lib/catalog/data";
 import { buildListing, parseListingState } from "@/lib/catalog/listing";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { PageHeaderSkeleton } from "@/components/layout/PageHeaderSkeleton";
-import { ListingSkeleton, ListingView } from "@/components/shop/ListingView";
+import { ListingClient, ListingSkeleton, ListingStatic } from "@/components/shop/ListingView";
+import { toListingResult } from "@/lib/catalog/cards";
 
 export function generateStaticParams() {
   return worlds.flatMap((w) => w.subcategories.map((s) => ({ world: w.slug, sub: s.slug })));
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: PageProps<"/shop/[world]/[sub
   };
 }
 
-export default function SubcategoryPage({ params, searchParams }: PageProps<"/shop/[world]/[sub]">) {
+export default function SubcategoryPage({ params }: PageProps<"/shop/[world]/[sub]">) {
   return (
     <Suspense
       fallback={
@@ -34,12 +35,12 @@ export default function SubcategoryPage({ params, searchParams }: PageProps<"/sh
         </>
       }
     >
-      <SubcategoryContent params={params} searchParams={searchParams} />
+      <SubcategoryContent params={params} />
     </Suspense>
   );
 }
 
-async function SubcategoryContent({ params, searchParams }: PageProps<"/shop/[world]/[sub]">) {
+async function SubcategoryContent({ params }: Pick<PageProps<"/shop/[world]/[sub]">, "params">) {
   const { world: worldSlug, sub } = await params;
   const world = getWorld(worldSlug);
   const subcategory = getSubcategory(worldSlug, sub);
@@ -63,23 +64,19 @@ async function SubcategoryContent({ params, searchParams }: PageProps<"/shop/[wo
           <span className="font-semibold text-white tabular-nums">{count}</span> products · Prices incl. 18% VAT
         </p>
       </PageHeader>
-      <Suspense fallback={<ListingSkeleton />}>
-        <Results world={world.slug} sub={subcategory.slug} searchParams={searchParams} />
-      </Suspense>
+      <Listing world={world.slug} sub={subcategory.slug} />
     </>
   );
 }
 
-async function Results({
-  world,
-  sub,
-  searchParams,
-}: {
-  world: WorldSlug;
-  sub: string;
-  searchParams: PageProps<"/shop/[world]/[sub]">["searchParams"];
-}) {
-  const state = parseListingState(await searchParams, "popular");
-  const listing = buildListing((await getCatalog()).productsIn(world, sub), state);
-  return <ListingView listing={listing} basePath={subcategoryHref(world, sub)} />;
+/** Static, unfiltered listing in the HTML; filters run in the browser (see ListingView). */
+async function Listing({ world, sub }: { world: WorldSlug; sub: string }) {
+  const listing = buildListing((await getCatalog()).productsIn(world, sub), parseListingState({}, "popular"));
+  const initial = toListingResult(listing);
+  const common = { basePath: subcategoryHref(world, sub), defaultSort: "popular" as const };
+  return (
+    <Suspense fallback={<ListingStatic initial={initial} {...common} />}>
+      <ListingClient initial={initial} scope={`${world}/${sub}`} {...common} />
+    </Suspense>
+  );
 }

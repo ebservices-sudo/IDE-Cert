@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import Link from "next/link";
 import { LogOut } from "lucide-react";
 import { requireUser } from "@/lib/auth/session";
@@ -20,12 +19,11 @@ const NOTICES: Record<string, string> = {
   "denied:admin": "Your account does not have access to the admin area.",
 };
 
-export default function AccountPage({ searchParams }: PageProps<"/account">) {
+
+export default async function AccountPage({ searchParams }: PageProps<"/account">) {
   return (
     <Container className="py-10 lg:py-14">
-      <Suspense fallback={<div className="h-64 animate-pulse rounded-xl bg-mist" />}>
-        <AccountContent searchParams={searchParams} />
-      </Suspense>
+      <AccountContent searchParams={searchParams} />
     </Container>
   );
 }

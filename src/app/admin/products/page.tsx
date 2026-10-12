@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import clsx from "clsx";
 import { getSubcategory } from "@/config/catalog";
@@ -10,8 +11,6 @@ import { AdminHeader, buttonCls, inputCls, table } from "@/components/admin/ui";
 
 export const metadata: Metadata = { title: "Products" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 const FILTERS: Record<string, { label: string; test: (p: Product, overridden: boolean) => boolean }> = {
   all: { label: "All", test: () => true },
@@ -23,6 +22,8 @@ const FILTERS: Record<string, { label: string; test: (p: Product, overridden: bo
 };
 
 export default async function AdminProducts({ searchParams }: PageProps<"/admin/products">) {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const sp = await searchParams;
   const filter = typeof sp.filter === "string" && sp.filter in FILTERS ? sp.filter : "all";
   const q = typeof sp.q === "string" ? sp.q.slice(0, 80) : "";

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import clsx from "clsx";
 import { countryName } from "@/config/shipping";
@@ -8,10 +9,10 @@ import { AdminHeader, dateTime, table } from "@/components/admin/ui";
 
 export const metadata: Metadata = { title: "Quotes" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 export default async function AdminQuotes({ searchParams }: PageProps<"/admin/quotes">) {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const sp = await searchParams;
   const status = typeof sp.status === "string" && sp.status in quoteStatusLabel ? sp.status : undefined;
   const quotes = await listQuotes({ status, limit: 200 });

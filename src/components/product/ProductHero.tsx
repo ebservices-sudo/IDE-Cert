@@ -283,22 +283,22 @@ function PurchasePanel({
         )}
       </p>
 
-      <dl className="mt-4 divide-y divide-line rounded-lg border border-line text-sm">
-        <div className="flex items-start gap-3 p-4">
+      <ul className="mt-4 divide-y divide-line rounded-lg border border-line text-sm">
+        <li className="flex items-start gap-3 p-4">
           <Truck aria-hidden className="mt-0.5 size-4 shrink-0 text-muted" />
           <div>
-            <dt className="font-semibold">Ordered on demand from EDELRID</dt>
-            <dd className="mt-0.5 text-muted">
+            <p className="font-semibold">Ordered on demand from EDELRID</p>
+            <p className="mt-0.5 text-muted">
               {shop.leadTime ? `Usual delivery time: ${shop.leadTime}.` : "We confirm the delivery date by email after you order."} Delivery
               across Kosovo and the Balkans.
-            </dd>
+            </p>
           </div>
-        </div>
-        <div className="flex items-start gap-3 p-4">
+        </li>
+        <li className="flex items-start gap-3 p-4">
           <FileText aria-hidden className="mt-0.5 size-4 shrink-0 text-muted" />
           <div>
-            <dt className="font-semibold">Item number {variant.sku}</dt>
-            <dd className="mt-0.5 text-muted">
+            <p className="font-semibold">Item number {variant.sku}</p>
+            <p className="mt-0.5 text-muted">
               Company invoice with your NUI available at checkout.
               {product.quoteNotes.length > 0 && (
                 <>
@@ -309,10 +309,10 @@ function PurchasePanel({
                   </Link>
                 </>
               )}
-            </dd>
+            </p>
           </div>
-        </div>
-      </dl>
+        </li>
+      </ul>
       {product.manualUrl && (
         <p className="mt-4 text-xs leading-relaxed text-muted">
           Personal protective equipment. Read the{" "}

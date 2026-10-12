@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Mail } from "lucide-react";
@@ -12,10 +13,10 @@ import { QuoteEditor } from "@/components/admin/OrderForms";
 
 export const metadata: Metadata = { title: "Quote request" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 export default async function AdminQuote({ params }: PageProps<"/admin/quotes/[id]">) {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const quote = await getQuote((await params).id);
   if (!quote) notFound();
   const { getVariant } = await getCatalog();

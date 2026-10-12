@@ -185,7 +185,7 @@ type Params = Record<string, string | string[] | undefined>;
 export function parseListingState(params: Params, defaultSort: SortKey): ListingState {
   const filters: Record<string, string[]> = {};
   for (const [k, v] of Object.entries(params)) {
-    if (k === "q" || k === "sort" || k === "page" || v == null) continue;
+    if (k === "q" || k === "sort" || k === "page" || k === "scope" || v == null) continue;
     const values = (Array.isArray(v) ? v : [v]).filter(Boolean).slice(0, 30);
     if (values.length) filters[k] = values;
   }

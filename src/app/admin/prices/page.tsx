@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import { resetPrices } from "@/actions/admin";
 import { listImports, overrideMap } from "@/lib/prices/imports";
@@ -7,12 +8,12 @@ import { PriceUpload } from "@/components/admin/PriceUpload";
 
 export const metadata: Metadata = { title: "Price lists" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 const STATUS: Record<string, string> = { draft: "Draft", published: "Live", superseded: "Replaced", discarded: "Discarded" };
 
 export default async function AdminPrices({ searchParams }: PageProps<"/admin/prices">) {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const [imports, overrides, sp] = await Promise.all([listImports(), overrideMap(), searchParams]);
   return (
     <>

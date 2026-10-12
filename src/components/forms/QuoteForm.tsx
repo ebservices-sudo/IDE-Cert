@@ -6,7 +6,7 @@ import { submitQuote, type QuoteState } from "@/actions/quote";
 import { checkoutCountries, shippingZones } from "@/config/shipping";
 import { site } from "@/config/site";
 import { SelectField, TextArea, TextField } from "./Field";
-import { Turnstile } from "./Turnstile";
+import { useTurnstile } from "./Turnstile";
 
 export type QuoteFormItem = { key: string; sku: string; name: string; quantity: string; details: string };
 
@@ -20,6 +20,7 @@ export function QuoteForm({ initialItems }: { initialItems: QuoteFormItem[] }) {
   const [state, action, pending] = useActionState<QuoteState, FormData>(submitQuote, { status: "idle" });
   const [items, setItems] = useState<QuoteFormItem[]>(initialItems.length ? initialItems : [blank()]);
   const [attempt, setAttempt] = useState(0);
+  const turnstile = useTurnstile(attempt);
   const errors = state.status === "error" ? (state.errors ?? {}) : {};
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -144,11 +145,11 @@ export function QuoteForm({ initialItems }: { initialItems: QuoteFormItem[] }) {
       </fieldset>
 
       <TextArea name="message" label="Message" optional rows={4} placeholder="Anything else we should know?" />
-      <Turnstile resetKey={attempt} />
+      {turnstile.widget}
       <div className="flex flex-wrap items-center gap-4">
         <button
           type="submit"
-          disabled={pending}
+          disabled={pending || !turnstile.ready}
           className="inline-flex h-12 items-center rounded-md bg-brand-strong px-8 text-sm font-semibold text-white hover:bg-[#b5252a] disabled:opacity-60"
         >
           {pending ? "Sending…" : "Send quote request"}

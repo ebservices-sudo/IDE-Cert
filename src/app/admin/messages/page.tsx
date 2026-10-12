@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import { setMessageStatus } from "@/actions/admin";
 import { listMessages } from "@/lib/orders/queries";
 import { StatusBadge, messageStatusLabel } from "@/lib/orders/status";
@@ -6,10 +7,10 @@ import { AdminHeader, dateTime } from "@/components/admin/ui";
 
 export const metadata: Metadata = { title: "Messages" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 export default async function AdminMessages() {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const messages = await listMessages(200);
   return (
     <>

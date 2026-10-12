@@ -5,11 +5,12 @@ import { CheckCircle2 } from "lucide-react";
 import { sendContactMessage, type ContactState } from "@/actions/contact";
 import { CONTACT_TOPICS, type ContactTopic } from "@/config/contact";
 import { SelectField, TextArea, TextField } from "./Field";
-import { Turnstile } from "./Turnstile";
+import { useTurnstile } from "./Turnstile";
 
 export function ContactForm({ topic, message }: { topic?: ContactTopic; message?: string }) {
   const [state, action, pending] = useActionState<ContactState, FormData>(sendContactMessage, { status: "idle" });
   const [attempt, setAttempt] = useState(0);
+  const turnstile = useTurnstile(attempt);
   const formRef = useRef<HTMLFormElement>(null);
   const errors = state.status === "error" ? (state.errors ?? {}) : {};
 
@@ -61,10 +62,10 @@ export function ContactForm({ topic, message }: { topic?: ContactTopic; message?
         <TextField name="company" label="Company" autoComplete="organization" optional />
       </div>
       <TextArea name="message" label="Message" rows={6} defaultValue={message} error={errors.message} />
-      <Turnstile resetKey={attempt} />
+      {turnstile.widget}
       <button
         type="submit"
-        disabled={pending}
+        disabled={pending || !turnstile.ready}
         className="inline-flex h-12 items-center rounded-md bg-brand-strong px-8 text-sm font-semibold text-white hover:bg-[#b5252a] disabled:opacity-60"
       >
         {pending ? "Sending…" : "Send message"}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Mail, Phone, Printer } from "lucide-react";
@@ -12,10 +13,10 @@ import { OrderEditor, ProformaButton } from "@/components/admin/OrderForms";
 
 export const metadata: Metadata = { title: "Order" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 export default async function AdminOrder({ params }: PageProps<"/admin/orders/[id]">) {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const order = await getOrder((await params).id);
   if (!order) notFound();
   const proformaBlocked = !bankDetailsComplete

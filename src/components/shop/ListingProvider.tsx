@@ -1,23 +1,23 @@
 "use client";
 
-import { createContext, use, useOptimistic, useTransition } from "react";
-import { useRouter } from "next/navigation";
-import { type ListingState, type SortKey, toSearch } from "@/lib/catalog/listing";
+import { createContext, use } from "react";
+import type { ListingState, SortKey } from "@/lib/catalog/listing";
 
-// Holds the listing's URL state (filters, sort, query). Changes update the
-// checkboxes immediately (optimistic) and then replace the URL, which
-// re-renders the server-side results.
+// Listing state shared by the filter panel, toolbar and results. The live
+// version (ListingClient) is driven by the URL; the static version (server
+// HTML before hydration) has no-op handlers.
 
-type Ctx = {
+export type ListingCtx = {
   state: ListingState;
   defaultSort: SortKey;
   isPending: boolean;
   toggle: (key: string, value: string) => void;
   clear: (key?: string) => void;
   setSort: (sort: SortKey) => void;
+  showMore: () => void;
 };
 
-const ListingContext = createContext<Ctx | null>(null);
+const ListingContext = createContext<ListingCtx | null>(null);
 
 export function useListing() {
   const ctx = use(ListingContext);
@@ -25,51 +25,7 @@ export function useListing() {
   return ctx;
 }
 
-export function ListingProvider({
-  state,
-  defaultSort,
-  basePath,
-  children,
-}: {
-  state: ListingState;
-  defaultSort: SortKey;
-  basePath: string;
-  children: React.ReactNode;
-}) {
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
-  const [optimistic, setOptimistic] = useOptimistic(state);
-
-  const go = (change: ListingState) => {
-    const next = { ...change, page: 1 };
-    startTransition(() => {
-      setOptimistic(next);
-      router.replace(`${basePath}${toSearch(next, defaultSort)}`, { scroll: false });
-    });
-  };
-
-  const value: Ctx = {
-    state: optimistic,
-    defaultSort,
-    isPending,
-    toggle(key, v) {
-      const current = optimistic.filters[key] ?? [];
-      const values = current.includes(v) ? current.filter((x) => x !== v) : [...current, v];
-      const filters = { ...optimistic.filters, [key]: values };
-      if (!values.length) delete filters[key];
-      go({ ...optimistic, filters });
-    },
-    clear(key) {
-      if (!key) return go({ ...optimistic, filters: {} });
-      const filters = { ...optimistic.filters };
-      delete filters[key];
-      go({ ...optimistic, filters });
-    },
-    setSort(sort) {
-      go({ ...optimistic, sort });
-    },
-  };
-
+export function ListingProvider({ value, children }: { value: ListingCtx; children: React.ReactNode }) {
   return <ListingContext value={value}>{children}</ListingContext>;
 }
 

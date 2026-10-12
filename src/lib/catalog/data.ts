@@ -1,5 +1,5 @@
 import "server-only";
-import { cacheLife, cacheTag } from "next/cache";
+import { unstable_cache } from "next/cache";
 import catalog from "../../../data/catalog/products.json";
 import { type WorldSlug, worlds } from "@/config/catalog";
 import { getEnv } from "@/lib/server/env";
@@ -15,10 +15,9 @@ export const baseProducts = catalog.products as unknown as Product[];
 export const catalogGeneratedAt = catalog.generatedAt;
 
 /** Published RRP overrides in cents, keyed by item number. Revalidated with the "prices" tag. */
-export async function getPriceOverrides(): Promise<Record<string, number>> {
-  "use cache";
-  cacheTag("prices");
-  cacheLife("max");
+export const getPriceOverrides = unstable_cache(readPriceOverrides, ["price-overrides"], { tags: ["prices"], revalidate: false });
+
+async function readPriceOverrides(): Promise<Record<string, number>> {
   const env = await getEnv();
   if (!env.DB) return {};
   try {

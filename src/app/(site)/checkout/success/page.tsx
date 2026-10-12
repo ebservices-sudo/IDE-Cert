@@ -4,6 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 import { shippingZones } from "@/config/shipping";
 import { site } from "@/config/site";
 import { ButtonLink } from "@/components/ui/Button";
+import { OrderNumber } from "@/components/cart/OrderNumber";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
@@ -11,14 +12,14 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-export default function CheckoutSuccessPage({ searchParams }: PageProps<"/checkout/success">) {
+export default function CheckoutSuccessPage() {
   return (
     <Container className="py-16 lg:py-24">
       <div className="mx-auto max-w-2xl text-center">
         <CheckCircle2 aria-hidden className="mx-auto size-12 text-brand-strong" />
         <h1 className="mt-6 font-display text-3xl sm:text-4xl">Thank you for your order</h1>
         <Suspense fallback={<p className="mt-4 text-lg text-muted">Your order has been received.</p>}>
-          <OrderNumber searchParams={searchParams} />
+          <OrderNumber />
         </Suspense>
         <ol className="mx-auto mt-10 max-w-lg space-y-4 text-left">
           {[
@@ -45,18 +46,3 @@ export default function CheckoutSuccessPage({ searchParams }: PageProps<"/checko
   );
 }
 
-async function OrderNumber({ searchParams }: Pick<PageProps<"/checkout/success">, "searchParams">) {
-  const { order } = await searchParams;
-  const number = typeof order === "string" && /^IDE-\d{4}-\d{5}$/.test(order) ? order : null;
-  return (
-    <p className="mt-4 text-lg text-muted">
-      {number ? (
-        <>
-          Your order number is <strong className="text-ink">{number}</strong>.
-        </>
-      ) : (
-        "Your order has been received."
-      )}
-    </p>
-  );
-}

@@ -1,6 +1,6 @@
 "use server";
 
-import { refresh, updateTag } from "next/cache";
+import { refresh, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { bankDetailsComplete } from "@/config/business";
 import { requireAdmin } from "@/lib/auth/session";
@@ -84,7 +84,7 @@ export async function publishPriceImport(fd: FormData) {
   await requireAdmin();
   await publishImport(String(fd.get("id")));
   // Product pages, listings and the cart read prices through the "prices" cache tag.
-  updateTag("prices");
+  revalidateTag("prices", { expire: 0 });
   redirect(`/admin/prices/${String(fd.get("id"))}?published=1`);
 }
 
@@ -97,6 +97,6 @@ export async function discardPriceImport(fd: FormData) {
 export async function resetPrices() {
   await requireAdmin();
   await clearOverrides();
-  updateTag("prices");
+  revalidateTag("prices", { expire: 0 });
   redirect("/admin/prices?reset=1");
 }

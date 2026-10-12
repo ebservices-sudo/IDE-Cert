@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import { notFound } from "next/navigation";
 import { discardPriceImport, publishPriceImport } from "@/actions/admin";
 import { getImport } from "@/lib/prices/imports";
@@ -6,10 +7,10 @@ import { AdminHeader, Card, Stat, buttonCls, dateTime, eur, table } from "@/comp
 
 export const metadata: Metadata = { title: "Price list comparison" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 export default async function AdminPriceImport({ params, searchParams }: PageProps<"/admin/prices/[id]">) {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const [data, sp] = await Promise.all([getImport((await params).id), searchParams]);
   if (!data) notFound();
   const { record, summary, diff } = data;

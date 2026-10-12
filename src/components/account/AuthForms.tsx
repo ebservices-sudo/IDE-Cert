@@ -4,9 +4,9 @@ import { startTransition, useActionState, useState } from "react";
 import Link from "next/link";
 import { login, register, requestPasswordReset, resetPassword, type AuthState } from "@/actions/account";
 import { TextField } from "@/components/forms/Field";
-import { Turnstile } from "@/components/forms/Turnstile";
+import { useTurnstile } from "@/components/forms/Turnstile";
 
-function useAuthAction(fn: (prev: AuthState, fd: FormData) => Promise<AuthState>) {
+function useAuthAction(fn: (prev: AuthState, fd: FormData) => Promise<AuthState>, { spamCheck = true } = {}) {
   const [state, action, pending] = useActionState<AuthState, FormData>(fn, { status: "idle" });
   const [attempt, setAttempt] = useState(0);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -16,7 +16,10 @@ function useAuthAction(fn: (prev: AuthState, fd: FormData) => Promise<AuthState>
     startTransition(() => action(fd));
   };
   const errors = state.status === "error" ? (state.errors ?? {}) : {};
-  return { state, pending, onSubmit, errors, attempt };
+  const turnstile = useTurnstile(attempt);
+  /** Submit is blocked while the request runs or the spam check has no token yet. */
+  const blocked = pending || (spamCheck && !turnstile.ready);
+  return { state, pending, blocked, onSubmit, errors, turnstile };
 }
 
 function Message({ state }: { state: AuthState }) {
@@ -39,7 +42,7 @@ const submit =
   "inline-flex h-12 w-full items-center justify-center rounded-md bg-brand-strong text-sm font-semibold text-white hover:bg-[#b5252a] disabled:opacity-60";
 
 export function LoginForm({ next }: { next: string }) {
-  const { state, pending, onSubmit, attempt } = useAuthAction(login);
+  const { state, pending, blocked, onSubmit, turnstile } = useAuthAction(login);
   return (
     <form method="post" onSubmit={onSubmit} noValidate className="space-y-5">
       <Message state={state} />
@@ -51,8 +54,8 @@ export function LoginForm({ next }: { next: string }) {
           Forgot your password?
         </Link>
       </div>
-      <Turnstile resetKey={attempt} />
-      <button type="submit" disabled={pending} className={submit}>
+      {turnstile.widget}
+      <button type="submit" disabled={blocked} className={submit}>
         {pending ? "Signing in…" : "Sign in"}
       </button>
     </form>
@@ -60,7 +63,7 @@ export function LoginForm({ next }: { next: string }) {
 }
 
 export function RegisterForm() {
-  const { state, pending, onSubmit, errors, attempt } = useAuthAction(register);
+  const { state, pending, blocked, onSubmit, errors, turnstile } = useAuthAction(register);
   return (
     <form method="post" onSubmit={onSubmit} noValidate className="space-y-5">
       <Message state={state} />
@@ -75,8 +78,8 @@ export function RegisterForm() {
         hint="At least 10 characters."
         error={errors.password}
       />
-      <Turnstile resetKey={attempt} />
-      <button type="submit" disabled={pending} className={submit}>
+      {turnstile.widget}
+      <button type="submit" disabled={blocked} className={submit}>
         {pending ? "Creating account…" : "Create account"}
       </button>
       <p className="text-xs leading-relaxed text-muted">
@@ -91,14 +94,14 @@ export function RegisterForm() {
 }
 
 export function ForgotForm() {
-  const { state, pending, onSubmit, errors, attempt } = useAuthAction(requestPasswordReset);
+  const { state, pending, blocked, onSubmit, errors, turnstile } = useAuthAction(requestPasswordReset);
   if (state.status === "ok") return <Message state={state} />;
   return (
     <form method="post" onSubmit={onSubmit} noValidate className="space-y-5">
       <Message state={state} />
       <TextField name="email" label="Email" type="email" autoComplete="email" error={errors.email} />
-      <Turnstile resetKey={attempt} />
-      <button type="submit" disabled={pending} className={submit}>
+      {turnstile.widget}
+      <button type="submit" disabled={blocked} className={submit}>
         {pending ? "Sending…" : "Send reset link"}
       </button>
     </form>
@@ -106,13 +109,13 @@ export function ForgotForm() {
 }
 
 export function ResetForm({ token }: { token: string }) {
-  const { state, pending, onSubmit, errors } = useAuthAction(resetPassword);
+  const { state, pending, blocked, onSubmit, errors } = useAuthAction(resetPassword, { spamCheck: false });
   return (
     <form method="post" onSubmit={onSubmit} noValidate className="space-y-5">
       <Message state={state} />
       <input type="hidden" name="token" value={token} />
       <TextField name="password" label="New password" type="password" autoComplete="new-password" hint="At least 10 characters." error={errors.password} />
-      <button type="submit" disabled={pending} className={submit}>
+      <button type="submit" disabled={blocked} className={submit}>
         {pending ? "Saving…" : "Save new password"}
       </button>
     </form>

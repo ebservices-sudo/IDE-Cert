@@ -14,7 +14,7 @@ import { usePricedCart } from "@/lib/cart/usePricedCart";
 import { enabledPaymentMethods } from "@/lib/payments";
 import { formatPrice } from "@/lib/format";
 import { SelectField, TextArea, TextField } from "@/components/forms/Field";
-import { Turnstile } from "@/components/forms/Turnstile";
+import { useTurnstile } from "@/components/forms/Turnstile";
 
 const eur = (cents: number) => formatPrice(cents / 100);
 
@@ -25,6 +25,7 @@ export function CheckoutForm() {
   const [customerType, setCustomerType] = useState<"private" | "company">("private");
   const [country, setCountry] = useState("XK");
   const [attempt, setAttempt] = useState(0);
+  const turnstile = useTurnstile(attempt);
   const zone = zoneFor(country);
   const errors = state.status === "error" ? (state.errors ?? {}) : {};
   const formRef = useRef<HTMLFormElement>(null);
@@ -183,7 +184,7 @@ export function CheckoutForm() {
             </label>
             {errors.terms && <p className="mt-1.5 text-sm font-medium text-brand-strong">{errors.terms}</p>}
           </div>
-          <Turnstile resetKey={attempt} />
+          {turnstile.widget}
         </fieldset>
       </div>
 
@@ -231,7 +232,7 @@ export function CheckoutForm() {
         )}
         <button
           type="submit"
-          disabled={pending || !priced || stale}
+          disabled={pending || !priced || stale || !turnstile.ready}
           className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-brand-strong text-sm font-semibold text-white transition-colors hover:bg-[#b5252a] disabled:opacity-60"
         >
           <Lock aria-hidden className="size-4" />

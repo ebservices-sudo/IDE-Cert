@@ -3,9 +3,9 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/config/site";
-import { getBaseProduct } from "@/lib/catalog/data";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { ContactFormFromUrl } from "@/components/forms/ContactFormFromUrl";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${site.address.street}, ${site.address.locality}, ${site.address.city}, Kosovo`)}`;
 
-export default function ContactPage({ searchParams }: PageProps<"/contact">) {
+export default function ContactPage() {
   return (
     <>
       <PageHeader
@@ -77,7 +77,7 @@ export default function ContactPage({ searchParams }: PageProps<"/contact">) {
           <h2 className="font-display text-2xl">Send us a message</h2>
           <div className="mt-6">
             <Suspense fallback={<ContactForm />}>
-              <PrefilledContactForm searchParams={searchParams} />
+              <ContactFormFromUrl />
             </Suspense>
           </div>
         </div>
@@ -86,15 +86,3 @@ export default function ContactPage({ searchParams }: PageProps<"/contact">) {
   );
 }
 
-/** /contact?product=slug (from "Ask us for the product sheet") prefills the topic and message. */
-async function PrefilledContactForm({ searchParams }: Pick<PageProps<"/contact">, "searchParams">) {
-  const { product } = await searchParams;
-  const p = typeof product === "string" ? getBaseProduct(product) : undefined;
-  if (!p) return <ContactForm />;
-  return (
-    <ContactForm
-      topic="Product sheet or user manual"
-      message={`Please send me the product sheet and user manual for EDELRID ${p.name} (item ${p.variants[0].sku}${p.variants.length > 1 ? " and variants" : ""}).`}
-    />
-  );
-}

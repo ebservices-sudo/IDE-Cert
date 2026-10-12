@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { cacheLife } from "next/cache";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { subcategoryHref, worldHref, worlds } from "@/config/catalog";
 import { legalNav, mainNav, site } from "@/config/site";
@@ -7,9 +6,8 @@ import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
 
 // Reading the date during prerender must be cached under Cache Components.
-async function CurrentYear() {
-  "use cache";
-  cacheLife("days");
+function CurrentYear() {
+  // Static pages are rebuilt on every deploy, which keeps the year current.
   return <>{new Date().getFullYear()}</>;
 }
 

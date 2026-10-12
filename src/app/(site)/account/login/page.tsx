@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
-import { safeNext } from "@/lib/server/origin";
 import { AuthShell } from "@/components/account/AuthShell";
 import { LoginForm } from "@/components/account/AuthForms";
+import { LoginFormFromUrl } from "@/components/account/UrlForms";
 
 export const metadata: Metadata = { title: "Sign in", robots: { index: false } };
 
-export default function LoginPage({ searchParams }: PageProps<"/account/login">) {
+export default function LoginPage() {
   return (
     <AuthShell
       title="Sign in"
@@ -22,13 +22,9 @@ export default function LoginPage({ searchParams }: PageProps<"/account/login">)
       }
     >
       <Suspense fallback={<LoginForm next="/account" />}>
-        <LoginWithNext searchParams={searchParams} />
+        <LoginFormFromUrl />
       </Suspense>
     </AuthShell>
   );
 }
 
-async function LoginWithNext({ searchParams }: Pick<PageProps<"/account/login">, "searchParams">) {
-  const { next } = await searchParams;
-  return <LoginForm next={safeNext(next)} />;
-}

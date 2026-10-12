@@ -24,7 +24,9 @@ export const metadata: Metadata = {
     type: "website",
     siteName: site.name,
     locale: "en",
+    images: [{ url: "/brand/ide-cert-logo.png", alt: site.legalName }],
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

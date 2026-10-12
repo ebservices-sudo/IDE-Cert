@@ -6,6 +6,7 @@ import { categoryCounts, getCatalog } from "@/lib/catalog/data";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { PageHeaderSkeleton } from "@/components/layout/PageHeaderSkeleton";
 import { ProductCard } from "@/components/product/ProductCard";
+import { toCard } from "@/lib/catalog/cards";
 import { SubcategoryGrid } from "@/components/shop/SubcategoryGrid";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -69,7 +70,7 @@ async function WorldContent({ params }: Pick<PageProps<"/shop/[world]">, "params
             <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-4">
               {newProducts.map((p) => (
                 <li key={p.id}>
-                  <ProductCard product={p} />
+                  <ProductCard card={toCard(p)} />
                 </li>
               ))}
             </ul>

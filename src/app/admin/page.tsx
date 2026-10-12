@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
 import { bankDetailsComplete } from "@/config/business";
@@ -10,10 +11,10 @@ import { AdminHeader, Card, Stat, dateTime, eur, table } from "@/components/admi
 
 export const metadata: Metadata = { title: "Dashboard" };
 
-/** Private, request-time page (see admin/layout.tsx). */
-export const instant = false;
 
 export default async function AdminDashboard() {
+  // Layouts do not protect pages (segments render independently): check here.
+  await requireAdmin();
   const [counts, orders, quotes] = await Promise.all([dashboardCounts(), listOrders({ limit: 8 }), listQuotes({ limit: 6 })]);
   const setup = [
     !bankDetailsComplete && "Bank details for proforma invoices (src/config/business.ts)",

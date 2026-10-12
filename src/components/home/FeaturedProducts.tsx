@@ -1,5 +1,6 @@
 import type { Product } from "@/lib/catalog/types";
 import { ProductCard } from "@/components/product/ProductCard";
+import { toCard } from "@/lib/catalog/cards";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -17,7 +18,7 @@ export function FeaturedProducts({ products }: { products: Product[] }) {
         <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-4">
           {products.map((p) => (
             <li key={p.id}>
-              <ProductCard product={p} />
+              <ProductCard card={toCard(p)} />
             </li>
           ))}
         </ul>
