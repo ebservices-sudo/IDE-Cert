@@ -1,0 +1,55 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Cloudflare Workers deployment via OpenNext (`npm run deploy`, or Workers Builds on push).
+  "name": "ide-cert",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      // Self-reference used by the OpenNext cache. Must match "name".
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "ide-cert"
+    }
+  ],
+  "d1_databases": [
+    {
+      // Orders, quotes, messages, accounts and price-list imports.
+      // TODO(deploy): `npx wrangler d1 create ide-cert-db` and paste the id here.
+      "binding": "DB",
+      "database_name": "ide-cert-db",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    },
+    {
+      // Next.js cache tags (OpenNext). Same database; the table is created on deploy.
+      "binding": "NEXT_TAG_CACHE_D1",
+      "database_name": "ide-cert-db",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "r2_buckets": [
+    {
+      // Next.js incremental cache. TODO(deploy): `npx wrangler r2 bucket create ide-cert-opennext-cache`
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "ide-cert-opennext-cache"
+    }
+  ],
+  "images": {
+    // next/image optimisation through Cloudflare Images.
+    "binding": "IMAGES"
+  },
+  "vars": {
+    // Public, non-secret settings. Secrets (RESEND_API_KEY, TURNSTILE_SECRET_KEY, …)
+    // go in .dev.vars locally and `npx wrangler secret put NAME` in production.
+    "SHOP_NOTIFY_EMAIL": "idecert.shpk@gmail.com",
+    "MAIL_FROM": "IDE Cert <shop@ide-cert.com>"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

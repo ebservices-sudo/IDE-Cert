@@ -1,0 +1,47 @@
+{
+  "name": "ide-cert-shop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "icons": "node scripts/generate-icons.mjs",
+    "typecheck": "tsc --noEmit",
+    "pricelist:extract": "node scripts/pricelists/extract-pdf.mjs",
+    "edelrid:fetch": "node scripts/edelrid/fetch-pages.mjs && node scripts/edelrid/parse-pages.mjs",
+    "catalog": "node scripts/build-catalog.mjs",
+    "catalog:images": "node scripts/catalog/fetch-images.mjs",
+    "db:migrate:local": "wrangler d1 migrations apply ide-cert-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply ide-cert-db --remote",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "admin:create": "node scripts/create-admin.mjs"
+  },
+  "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.10",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.55.0",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cheerio": "^1.2.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "pdfjs-dist": "^4.10.38",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "wrangler": "^4.149.0"
+  }
+}
