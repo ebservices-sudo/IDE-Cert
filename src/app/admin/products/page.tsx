@@ -10,6 +10,9 @@ import { AdminHeader, buttonCls, inputCls, table } from "@/components/admin/ui";
 
 export const metadata: Metadata = { title: "Products" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 const FILTERS: Record<string, { label: string; test: (p: Product, overridden: boolean) => boolean }> = {
   all: { label: "All", test: () => true },
   "no-data": { label: "No EDELRID data", test: (p) => !p.source },

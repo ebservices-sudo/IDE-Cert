@@ -41,7 +41,7 @@ const submit =
 export function LoginForm({ next }: { next: string }) {
   const { state, pending, onSubmit, attempt } = useAuthAction(login);
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-5">
+    <form method="post" onSubmit={onSubmit} noValidate className="space-y-5">
       <Message state={state} />
       <input type="hidden" name="next" value={next} />
       <TextField name="email" label="Email" type="email" autoComplete="email" />
@@ -62,7 +62,7 @@ export function LoginForm({ next }: { next: string }) {
 export function RegisterForm() {
   const { state, pending, onSubmit, errors, attempt } = useAuthAction(register);
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-5">
+    <form method="post" onSubmit={onSubmit} noValidate className="space-y-5">
       <Message state={state} />
       <TextField name="name" label="Full name" autoComplete="name" error={errors.name} />
       <TextField name="email" label="Email" type="email" autoComplete="email" error={errors.email} />
@@ -94,7 +94,7 @@ export function ForgotForm() {
   const { state, pending, onSubmit, errors, attempt } = useAuthAction(requestPasswordReset);
   if (state.status === "ok") return <Message state={state} />;
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-5">
+    <form method="post" onSubmit={onSubmit} noValidate className="space-y-5">
       <Message state={state} />
       <TextField name="email" label="Email" type="email" autoComplete="email" error={errors.email} />
       <Turnstile resetKey={attempt} />
@@ -108,7 +108,7 @@ export function ForgotForm() {
 export function ResetForm({ token }: { token: string }) {
   const { state, pending, onSubmit, errors } = useAuthAction(resetPassword);
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-5">
+    <form method="post" onSubmit={onSubmit} noValidate className="space-y-5">
       <Message state={state} />
       <input type="hidden" name="token" value={token} />
       <TextField name="password" label="New password" type="password" autoComplete="new-password" hint="At least 10 characters." error={errors.password} />

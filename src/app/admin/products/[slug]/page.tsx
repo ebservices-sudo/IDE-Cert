@@ -13,6 +13,9 @@ import { AdminHeader, Card, buttonCls, eur, table } from "@/components/admin/ui"
 
 export const metadata: Metadata = { title: "Product" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 export default async function AdminProduct({ params }: PageProps<"/admin/products/[slug]">) {
   const product = getBaseProduct((await params).slug);
   if (!product) notFound();

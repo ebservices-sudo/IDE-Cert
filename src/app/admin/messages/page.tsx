@@ -6,6 +6,9 @@ import { AdminHeader, dateTime } from "@/components/admin/ui";
 
 export const metadata: Metadata = { title: "Messages" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 export default async function AdminMessages() {
   const messages = await listMessages(200);
   return (

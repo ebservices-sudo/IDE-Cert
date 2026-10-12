@@ -6,6 +6,10 @@ import { logout } from "@/actions/account";
 import { requireAdmin } from "@/lib/auth/session";
 import { AdminNav } from "@/components/admin/AdminNav";
 
+// The admin is private and entirely request-time (session + database), so
+// instant-navigation validation does not apply; loading.tsx shows a skeleton.
+export const instant = false;
+
 export const metadata: Metadata = {
   title: { default: "Admin", template: "%s · Admin | IDE Cert" },
   robots: { index: false, follow: false },

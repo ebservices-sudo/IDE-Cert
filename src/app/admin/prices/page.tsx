@@ -7,6 +7,9 @@ import { PriceUpload } from "@/components/admin/PriceUpload";
 
 export const metadata: Metadata = { title: "Price lists" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 const STATUS: Record<string, string> = { draft: "Draft", published: "Live", superseded: "Replaced", discarded: "Discarded" };
 
 export default async function AdminPrices({ searchParams }: PageProps<"/admin/prices">) {

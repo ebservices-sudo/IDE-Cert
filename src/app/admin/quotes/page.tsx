@@ -8,6 +8,9 @@ import { AdminHeader, dateTime, table } from "@/components/admin/ui";
 
 export const metadata: Metadata = { title: "Quotes" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 export default async function AdminQuotes({ searchParams }: PageProps<"/admin/quotes">) {
   const sp = await searchParams;
   const status = typeof sp.status === "string" && sp.status in quoteStatusLabel ? sp.status : undefined;

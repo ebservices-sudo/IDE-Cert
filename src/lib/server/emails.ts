@@ -218,3 +218,20 @@ We order your items from EDELRID once the payment has arrived.
 ${site.legalName}`;
   return { to: o.email, subject, html, text, replyTo: site.email };
 }
+
+export function contactNotificationEmail(
+  m: { topic: string; name: string; email: string; phone: string; company: string; message: string },
+  to: string,
+  adminUrl: string,
+): Email {
+  const subject = `${m.topic} · ${m.company || m.name}`;
+  const who = [`${m.name} <${m.email}>`, m.phone, m.company].filter(Boolean);
+  const html = layout(
+    subject,
+    `<p style="margin:0 0 12px;font-size:18px;font-weight:bold">${esc(m.topic)}</p>
+<p style="margin:0 0 16px">${who.map(esc).join("<br>")}</p>
+<p style="margin:0;white-space:pre-line">${esc(m.message)}</p>
+<p style="margin:24px 0 0"><a href="${esc(adminUrl)}" style="color:#ce2c31;font-weight:bold">All messages</a></p>`,
+  );
+  return { to, subject, html, text: `${m.topic}\n${who.join("\n")}\n\n${m.message}\n\n${adminUrl}`, replyTo: m.email };
+}

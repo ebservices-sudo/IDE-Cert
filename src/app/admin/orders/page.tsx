@@ -9,6 +9,9 @@ import { AdminHeader, buttonCls, dateTime, eur, inputCls, table } from "@/compon
 
 export const metadata: Metadata = { title: "Orders" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 export default async function AdminOrders({ searchParams }: PageProps<"/admin/orders">) {
   const sp = await searchParams;
   const status = typeof sp.status === "string" && (ORDER_STATUSES as readonly string[]).includes(sp.status) ? sp.status : undefined;

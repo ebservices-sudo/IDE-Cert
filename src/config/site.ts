@@ -45,3 +45,13 @@ export const legalNav = [
   { label: "Terms", href: "/terms" },
   { label: "Privacy", href: "/privacy" },
 ] as const;
+
+export const legal = {
+  /**
+   * TODO(client): the terms, privacy and shipping/returns texts are drafts
+   * written from the shop's agreed set-up. Have them reviewed (ideally by a
+   * Kosovo lawyer), then set this to true to remove the draft notice.
+   */
+  reviewed: false,
+  lastUpdated: "12 October 2026",
+} as const;

@@ -10,6 +10,9 @@ import { AdminHeader, Card, Stat, dateTime, eur, table } from "@/components/admi
 
 export const metadata: Metadata = { title: "Dashboard" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 export default async function AdminDashboard() {
   const [counts, orders, quotes] = await Promise.all([dashboardCounts(), listOrders({ limit: 8 }), listQuotes({ limit: 6 })]);
   const setup = [

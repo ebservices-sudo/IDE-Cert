@@ -7,6 +7,9 @@ import { PrintButton } from "@/components/admin/PrintButton";
 
 export const metadata: Metadata = { title: "Proforma" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 /** Printable proforma (print → save as PDF). Same content as the emailed proforma. */
 export default async function ProformaPrint({ params }: PageProps<"/admin/orders/[id]/proforma">) {
   const order = await getOrder((await params).id);

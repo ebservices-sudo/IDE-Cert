@@ -71,7 +71,7 @@ export function CheckoutForm() {
   }));
 
   return (
-    <form ref={formRef} onSubmit={onSubmit} noValidate className="grid gap-10 lg:grid-cols-[1fr_24rem] lg:items-start">
+    <form ref={formRef} method="post" onSubmit={onSubmit} noValidate className="grid gap-10 lg:grid-cols-[1fr_24rem] lg:items-start">
       <div className="space-y-10">
         {state.status === "error" && (
           <div role="alert" tabIndex={-1} className="rounded-lg border border-brand-strong/40 bg-brand-soft p-4 text-sm font-medium text-brand-strong">

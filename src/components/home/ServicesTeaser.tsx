@@ -3,34 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-// TODO(content): replace these one-liners with IDE Cert's own service descriptions (requested from client).
-const services = [
-  {
-    letter: "I",
-    name: "Inspection",
-    anchor: "inspection",
-    text: "Independent inspection of equipment and installations, documented in a written report.",
-  },
-  {
-    letter: "D",
-    name: "Design",
-    anchor: "design",
-    text: "Design of safety systems and installations, developed together with your team.",
-  },
-  {
-    letter: "E",
-    name: "Engineering",
-    anchor: "engineering",
-    text: "Engineering analysis, calculations and technical documentation.",
-  },
-  {
-    letter: "C",
-    name: "Certification",
-    anchor: "certification",
-    text: "Certification and conformity assessment support for products and installations.",
-  },
-];
+import { services } from "@/config/services";
 
 export function ServicesTeaser() {
   return (
@@ -54,7 +27,7 @@ export function ServicesTeaser() {
                   {s.letter}
                 </span>
                 <h3 className="mt-6 font-display text-lg">{s.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{s.text}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{s.summary}</p>
                 <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold group-hover:text-brand-strong">
                   Learn more
                   <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />

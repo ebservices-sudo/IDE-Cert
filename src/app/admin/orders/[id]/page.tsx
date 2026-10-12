@@ -12,6 +12,9 @@ import { OrderEditor, ProformaButton } from "@/components/admin/OrderForms";
 
 export const metadata: Metadata = { title: "Order" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 export default async function AdminOrder({ params }: PageProps<"/admin/orders/[id]">) {
   const order = await getOrder((await params).id);
   if (!order) notFound();

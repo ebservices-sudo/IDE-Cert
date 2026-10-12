@@ -12,6 +12,9 @@ import { QuoteEditor } from "@/components/admin/OrderForms";
 
 export const metadata: Metadata = { title: "Quote request" };
 
+/** Private, request-time page (see admin/layout.tsx). */
+export const instant = false;
+
 export default async function AdminQuote({ params }: PageProps<"/admin/quotes/[id]">) {
   const quote = await getQuote((await params).id);
   if (!quote) notFound();
