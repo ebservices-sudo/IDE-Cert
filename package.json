@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/project-photos.mjs && next dev",
+    "build": "node scripts/project-photos.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "icons": "node scripts/generate-icons.mjs",
@@ -13,6 +13,7 @@
     "edelrid:fetch": "node scripts/edelrid/fetch-pages.mjs && node scripts/edelrid/parse-pages.mjs",
     "catalog": "node scripts/build-catalog.mjs",
     "catalog:images": "node scripts/catalog/fetch-images.mjs",
+    "photos": "node scripts/project-photos.mjs",
     "db:migrate:local": "wrangler d1 migrations apply ide-cert-db --local",
     "db:migrate:remote": "wrangler d1 migrations apply ide-cert-db --remote",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",

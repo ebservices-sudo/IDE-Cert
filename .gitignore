@@ -49,3 +49,6 @@ next-env.d.ts
 .dev.vars
 .dev.vars.*
 !.dev.vars.example
+
+# Web copies of the project photos, made by scripts/project-photos.mjs on each build
+/public/projects/_web/

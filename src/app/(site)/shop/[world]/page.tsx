@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps<"/shop/[world]">): 
   const world = getWorld((await params).world);
   if (!world) return {};
   return {
-    title: `EDELRID ${world.name} equipment`,
+    title: `${world.name} equipment`,
     description: world.description,
     alternates: { canonical: worldHref(world.slug) },
   };
@@ -28,7 +28,7 @@ export default async function WorldPage({ params }: PageProps<"/shop/[world]">) 
     items: items,
     initialWorld: world.slug,
     kicker: <T sq={`Dyqani · ${world.taglineSq}`} en={`Shop · ${world.tagline}`} />,
-    title: <T sq={`EDELRID ${world.nameSq}`} en={`EDELRID ${world.name}`} />,
+    title: <T sq={world.nameSq} en={world.name} />,
     lede: <T sq={world.descriptionSq} en={world.description} />,
   };
   return (

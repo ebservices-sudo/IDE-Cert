@@ -437,7 +437,7 @@ export function EveryHeight() {
               {(i === 0 || i === 5) && (
                 <div className={`eh-row${i === 0 ? " eh-static-only" : ""}`}>
                   <ButtonLink href="/shop">
-                    <T sq="Dyqani EDELRID" en="Shop equipment" />
+                    <T sq="Dyqani" en="Shop" />
                     <ArrowRight aria-hidden className="size-4" />
                   </ButtonLink>
                   <ButtonLink href="/services#request" variant="outline-light">

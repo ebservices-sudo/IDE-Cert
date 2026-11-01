@@ -15,7 +15,7 @@ export default async function ShopPage() {
   const items = await getExplorerItems();
   const props = {
     items: items,
-    kicker: <T sq="Dyqani · Partner zyrtar i EDELRID" en="Shop · Official EDELRID partner" />,
+    kicker: <T sq="Dyqani" en="Shop" />,
     title: <T sq="Pajisje EDELRID për çdo lartësi." en="EDELRID gear for every height." />,
     lede: (
       <T

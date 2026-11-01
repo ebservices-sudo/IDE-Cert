@@ -1,6 +1,6 @@
 // IDE Cert's projects, as supplied by IDE Cert (1 November 2026). Albanian is the original;
-// English is a faithful translation. Photos live in public/projects/{slug}/ and are listed
-// in `photos` (add files there and list them here, best first).
+// English is a faithful translation. Photos: upload them to public/projects/<place>/ and
+// they are picked up on the next build (see scripts/project-photos.mjs).
 
 import type { L10n } from "@/lib/i18n/T";
 
@@ -25,9 +25,6 @@ export type Project = {
   facts: { label: L10n; value: L10n }[];
   year: number;
   standards: string[];
-  photos: { src: string; alt: L10n }[];
-  /** A river or valley name drawn at the bottom of the profile. */
-  valley?: string;
   link?: { label: string; href: string };
 };
 
@@ -74,8 +71,6 @@ export const projects: Project[] = [
     ],
     year: 2026,
     standards: ["EN 15567-1", "EN 15567-2"],
-    photos: [],
-    valley: "Vjosa",
   },
   {
     slug: "decan-zipline",
@@ -114,7 +109,6 @@ export const projects: Project[] = [
     ],
     year: 2024,
     standards: ["EN 15567-1", "EN 15567-2"],
-    photos: [],
   },
   {
     slug: "dardha-zipline",
@@ -154,7 +148,6 @@ export const projects: Project[] = [
     ],
     year: 2026,
     standards: ["EN 15567-1", "EN 15567-2"],
-    photos: [],
   },
   {
     slug: "theth-zipline",
@@ -191,7 +184,6 @@ export const projects: Project[] = [
     ],
     year: 2023,
     standards: ["EN 15567-1"],
-    photos: [],
   },
 ];
 

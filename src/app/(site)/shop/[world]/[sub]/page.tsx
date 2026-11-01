@@ -35,7 +35,7 @@ export default async function SubcategoryPage({ params }: PageProps<"/shop/[worl
     items: items,
     initialWorld: world.slug,
     initialCat: key,
-    kicker: <T sq={`Dyqani · EDELRID ${world.nameSq}`} en={`Shop · EDELRID ${world.name}`} />,
+    kicker: <T sq={`Dyqani · ${world.nameSq}`} en={`Shop · ${world.name}`} />,
     title: <T sq={subcategory.nameSq} en={subcategory.name} />,
     lede: <T sq={categoryGuide[key]?.what.sq ?? subcategory.blurbSq} en={categoryGuide[key]?.what.en ?? subcategory.blurb} />,
   };
