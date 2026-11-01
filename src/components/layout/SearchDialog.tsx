@@ -102,7 +102,7 @@ export function SearchDialog({ className }: { className?: string }) {
                     ))}
                   </ul>
                   <Link
-                    href={`/search?q=${encodeURIComponent(q.trim())}`}
+                    href={`/shop?q=${encodeURIComponent(q.trim())}`}
                     onClick={close}
                     className="flex items-center justify-center gap-2 border-t border-line px-4 py-3.5 text-sm font-semibold text-brand-strong hover:bg-mist"
                   >

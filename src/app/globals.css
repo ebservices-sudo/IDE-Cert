@@ -84,3 +84,13 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Shop header rope: the red line fills in, an inspection marker rides along it. */
+@keyframes shop-rope {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes shop-ride {
+  from { left: 0%; }
+  to { left: 100%; }
+}

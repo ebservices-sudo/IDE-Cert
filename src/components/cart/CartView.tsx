@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { ClipboardList, Minus, Plus, Trash2 } from "lucide-react";
+import { cartActions } from "@/lib/cart/store";
+import { RequestForm } from "./RequestForm";
 import { shop } from "@/config/site";
 import { usePricedCart } from "@/lib/cart/usePricedCart";
 import type { PricedLine } from "@/lib/orders/pricing";
@@ -16,15 +18,15 @@ export function CartView() {
   if (!lines.length) {
     return (
       <div className="rounded-xl border border-dashed border-line px-6 py-16 text-center">
-        <ShoppingBag aria-hidden className="mx-auto size-8 text-muted" />
-        <p className="mt-4 font-semibold">Your cart is empty.</p>
-        <p className="mt-1 text-sm text-muted">Browse the EDELRID range and add items to your cart.</p>
+        <ClipboardList aria-hidden className="mx-auto size-8 text-muted" />
+        <p className="mt-4 font-semibold">Your request list is empty.</p>
+        <p className="mt-1 text-sm text-muted">Open a product in the shop and press “Add to request”.</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Link href="/shop/sport" className="inline-flex h-11 items-center rounded-md bg-ink px-5 text-sm font-semibold text-white hover:bg-ink-3">
-            Shop Sport
+          <Link href="/shop" className="inline-flex h-11 items-center rounded-md bg-brand-strong px-5 text-sm font-semibold text-white hover:bg-[#b5252a]">
+            Browse the shop
           </Link>
-          <Link href="/shop/professional" className="inline-flex h-11 items-center rounded-md bg-ink px-5 text-sm font-semibold text-white hover:bg-ink-3">
-            Shop Professional
+          <Link href="/quote" className="inline-flex h-11 items-center rounded-md border border-line px-5 text-sm font-semibold hover:border-ink/40">
+            Describe what you need
           </Link>
         </div>
       </div>
@@ -51,7 +53,7 @@ export function CartView() {
         {unavailable.length > 0 && (
           <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
             {unavailable.length === 1 ? "One item is" : `${unavailable.length} items are`} no longer available and will not be
-            ordered.{" "}
+            requested.{" "}
             <button type="button" onClick={() => unavailable.forEach((l) => remove(l.sku))} className="font-semibold underline">
               Remove
             </button>
@@ -72,38 +74,21 @@ export function CartView() {
         </p>
       </div>
 
-      <aside aria-label="Order summary" className="rounded-xl border border-line bg-mist p-6 lg:sticky lg:top-28">
-        <h2 className="font-display text-lg">Summary</h2>
-        <dl className="mt-5 space-y-2.5 text-sm">
+      <aside aria-label="Request summary" className="rounded-xl border border-line bg-mist p-6 lg:sticky lg:top-28">
+        <h2 className="font-display text-lg">Send your request</h2>
+        <dl className="mt-4 space-y-2 border-b border-line pb-4 text-sm">
           <div className="flex justify-between gap-4">
-            <dt>Items</dt>
-            <dd className="font-semibold tabular-nums">{eur(priced.itemsCents)}</dd>
-          </div>
-          <div className="flex justify-between gap-4">
-            <dt>Shipping</dt>
-            <dd className="text-right text-muted">Calculated at checkout</dd>
-          </div>
-          <div className="flex justify-between gap-4 border-t border-line pt-3 text-base">
-            <dt className="font-semibold">Total</dt>
-            <dd className="font-display tabular-nums">{eur(priced.itemsCents)}</dd>
+            <dt>{priced.lines.length} {priced.lines.length === 1 ? "item" : "items"}, estimated</dt>
+            <dd className="font-display text-base tabular-nums">{eur(priced.itemsCents)}</dd>
           </div>
           <div className="flex justify-between gap-4 text-xs text-muted">
-            <dt>Incl. {Math.round(shop.vatRate * 100)}% VAT</dt>
+            <dt>Incl. {Math.round(shop.vatRate * 100)}% VAT · shipping confirmed in our reply</dt>
             <dd className="tabular-nums">{eur(priced.vatCents)}</dd>
           </div>
         </dl>
-        <Link
-          href="/checkout"
-          aria-disabled={stale || !priced.lines.length}
-          className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-brand-strong text-sm font-semibold text-white hover:bg-[#b5252a] aria-disabled:pointer-events-none aria-disabled:opacity-60"
-        >
-          Checkout
-          <ArrowRight aria-hidden className="size-4" />
-        </Link>
-        <p className="mt-4 text-xs leading-relaxed text-muted">
-          Pay by bank transfer against a proforma invoice. Company invoices with NUI available. All items are ordered from EDELRID on
-          demand.
-        </p>
+        <div className={`mt-5 ${stale ? "pointer-events-none opacity-60" : ""}`}>
+          <RequestForm lines={priced.lines} onSent={cartActions.clear} />
+        </div>
       </aside>
     </div>
   );

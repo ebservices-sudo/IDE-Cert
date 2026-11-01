@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
+import { getExplorerItems } from "@/lib/catalog/explorer-data";
 import { Suspense } from "react";
-import Link from "next/link";
-import { subcategoryHref, worlds } from "@/config/catalog";
-import { PageHeader } from "@/components/layout/PageHeader";
-import { SearchBox } from "@/components/shop/SearchBox";
-import { ListingClient, ListingSkeleton } from "@/components/shop/ListingView";
+import { ShopExplorer, ShopExplorerFromUrl } from "@/components/shop/ShopExplorer";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -12,49 +9,18 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-/** Static page; the query is read and searched in the browser (see ListingView). */
-export default function SearchPage() {
+/** Static page; the explorer reads ?q= from the URL and searches in the browser. */
+export default async function SearchPage() {
+  const items = await getExplorerItems();
+  const props = {
+    items: items,
+    kicker: "Shop · Search",
+    title: "Search the shop",
+    lede: "Search by product name, category, size, length or EDELRID item number.",
+  };
   return (
-    <>
-      <PageHeader kicker="Shop" title="Search" breadcrumbs={[{ label: "Home", href: "/" }, { label: "Search" }]}>
-        <Suspense fallback={<SearchBox />}>
-          <SearchBox fromUrl />
-        </Suspense>
-      </PageHeader>
-      <Suspense fallback={<ListingSkeleton />}>
-        <ListingClient
-          initial={null}
-          basePath="/search"
-          defaultSort="relevance"
-          empty={
-            <>
-              <p className="font-semibold">No products found.</p>
-              <p className="mt-2 text-sm text-muted">
-                Try another spelling or an EDELRID item number, browse a category, or{" "}
-                <Link href="/contact" className="font-semibold text-brand-strong hover:underline">
-                  ask us
-                </Link>
-                .
-              </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-2">
-                {worlds.flatMap((w) =>
-                  w.subcategories
-                    .filter((s) => s.featured)
-                    .map((s) => (
-                      <Link
-                        key={`${w.slug}/${s.slug}`}
-                        href={subcategoryHref(w.slug, s.slug)}
-                        className="rounded-full border border-line px-3 py-1.5 text-xs font-semibold hover:border-ink/40"
-                      >
-                        {s.name}
-                      </Link>
-                    )),
-                )}
-              </div>
-            </>
-          }
-        />
-      </Suspense>
-    </>
+    <Suspense fallback={<ShopExplorer {...props} />}>
+      <ShopExplorerFromUrl {...props} />
+    </Suspense>
   );
 }

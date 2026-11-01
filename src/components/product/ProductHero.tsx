@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import clsx from "clsx";
-import { Check, FileText, Minus, Plus, ShoppingBag, Truck } from "lucide-react";
+import { Check, FileText, Minus, Plus, ClipboardList, Truck } from "lucide-react";
 import { shop } from "@/config/site";
 import { useCart } from "@/lib/cart/store";
 import { OPTION_LABELS, type OptionDim, optionValues } from "@/lib/catalog/options";
@@ -150,7 +150,7 @@ function PurchasePanel({
     }
   };
 
-  const addToCart = () => {
+  const addToRequest = () => {
     add(variant.sku, product.slug, qty, maxQty);
     setAdded(variant.sku);
   };
@@ -259,11 +259,11 @@ function PurchasePanel({
         </div>
         <button
           type="button"
-          onClick={addToCart}
+          onClick={addToRequest}
           className="inline-flex h-12 min-w-48 flex-1 items-center justify-center gap-2 rounded-md bg-brand-strong px-6 text-sm font-semibold text-white transition-colors hover:bg-[#b5252a]"
         >
-          <ShoppingBag aria-hidden className="size-4" />
-          Add to cart · <span className="tabular-nums">{formatPrice(variant.price * qty)}</span>
+          <ClipboardList aria-hidden className="size-4" />
+          Add to request · <span className="tabular-nums">{formatPrice(variant.price * qty)}</span>
         </button>
       </div>
       {perMetre && (
@@ -275,9 +275,9 @@ function PurchasePanel({
         {added === variant.sku && (
           <span className="inline-flex items-center gap-1.5 font-semibold text-ink">
             <Check aria-hidden className="size-4 text-brand-strong" />
-            Added to your cart.
+            Added to your request.
             <Link href="/cart" className="text-brand-strong hover:underline">
-              View cart
+              View request
             </Link>
           </span>
         )}
@@ -289,7 +289,7 @@ function PurchasePanel({
           <div>
             <p className="font-semibold">Ordered on demand from EDELRID</p>
             <p className="mt-0.5 text-muted">
-              {shop.leadTime ? `Usual delivery time: ${shop.leadTime}.` : "We confirm the delivery date by email after you order."} Delivery
+              {shop.leadTime ? `Usual delivery time: ${shop.leadTime}.` : "We confirm the delivery date by email after your request."} Delivery
               across Kosovo and the Balkans.
             </p>
           </div>
@@ -299,7 +299,7 @@ function PurchasePanel({
           <div>
             <p className="font-semibold">Item number {variant.sku}</p>
             <p className="mt-0.5 text-muted">
-              Company invoice with your NUI available at checkout.
+              No payment now: send your request and we confirm price and delivery. Company invoice with your NUI available.
               {product.quoteNotes.length > 0 && (
                 <>
                   {" "}

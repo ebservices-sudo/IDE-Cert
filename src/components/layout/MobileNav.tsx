@@ -55,7 +55,11 @@ export function MobileNav() {
         </div>
 
         <nav aria-label="Mobile" className="px-4 py-6 sm:px-6">
-          <p className="kicker text-muted-dark">Shop</p>
+          <Link href="/shop" onClick={close} className="flex items-center gap-2.5 py-2 font-display text-lg uppercase">
+            <span aria-hidden className="size-2 rounded-full bg-brand" />
+            All products
+          </Link>
+          <p className="kicker mt-4 text-muted-dark">Shop by range</p>
           <div className="mt-3 divide-y divide-ink-line border-y border-ink-line">
             {worlds.map((world) => (
               <details key={world.slug} className="group">
@@ -97,6 +101,11 @@ export function MobileNav() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/cart" onClick={close} className="block py-2.5 font-display text-lg uppercase">
+                Your request
+              </Link>
+            </li>
             <li>
               <Link href="/account" onClick={close} className="block py-2.5 font-display text-lg uppercase">
                 Account
