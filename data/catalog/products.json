@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-12",
+ "generatedAt": "2026-11-01",
  "sources": [
   "EDELRID Sport 2026 (temporary version 24.09.2025)",
   "EDELRID Safety 2026 (temporary version 27.08.2025)",
@@ -955,8 +955,8 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "dynamic-ropes",
-   "shortDescription": "One of the thinnest single ropes on the market",
-   "description": "One rope, three standards! The SWIFT 48 ECO DRY is a single, double, and twin rope in one—plus with a diameter of 8.9 mm one of the thinnest single ropes on the market. Eco Dry is our PFC and PFAS-free finish that offers permanently dirt and water-repellent properties. Made on a braiding machine with 48 bobbins, the SWIFT 48 ECO DRY has a particularly fine sheath structure that offers very pleasant handling while also being extremely abrasion resistant.",
+   "shortDescription": "One of the thinnest single ropes in our range",
+   "description": "One rope, three certifications: the SWIFT 48 ECO DRY can be used as a single, half, or twin rope. With a diameter of 8.9 mm, it is one of the thinnest single ropes in our range. Our Eco Dry treatment reduces dirt and water absorption. The sheath, produced on a 48-carrier braiding machine, has a fine, even structure. Combined with the Thermo Shield treatment, this contributes to comfortable handling. The sheath proportion of 41% is designed to withstand the external stresses encountered during climbing.",
    "features": [
     "Low weight, small diameter, and perfect handling",
     "Durably water repellent and dirt resistant thanks to the PFC- and PFAS-free Eco Dry finish",
@@ -1719,8 +1719,8 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "dynamic-ropes",
-   "shortDescription": "Single rope with low-emission, PFC- and PFAS-free coating",
-   "description": "We have worked with professional climber and big-wall legend Tommy Caldwell to develop this rope, which is ideal for big walls and demanding routes. Our Color Tec technology creates a clearly recognizable change in color between the two halves of the rope and therefore a permanent center mark. Thanks to being made on a braiding machine with 48 bobbins, the rope has a particularly fine sheath structure that offers very pleasant handling and is extremely abrasion resistant despite its thin diameter.",
+   "shortDescription": "Single rope",
+   "description": "Together with professional climber and big-wall legend Tommy Caldwell, we developed this rope for use on big walls and demanding routes. Our Color Tec technology creates a clearly visible colour change between the two halves of the rope, providing a permanent middle marking. Processing the rope on a 48-carrier braiding machine gives it a comparatively fine sheath structure and good handling. Despite the small diameter, the construction is designed to provide increased abrasion resistance compared with production on a 40-carrier braiding machine.",
    "features": [
     "Low weight, small diameter, and perfect handling",
     "Thicker sheath for additional protection",
@@ -2145,8 +2145,8 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "dynamic-ropes",
-   "shortDescription": "Single rope with low-emission, PFC-free coating",
-   "description": "This rope was developed in cooperation with the professional climber Tommy Caldwell. Its high sheath proportion makes it ideal for working routes or big wall climbing. Now also with a PFC- and PFAS-free Eco Dry finish in line with the UIAA standard for water-repellent ropes.",
+   "shortDescription": "Single rope",
+   "description": "This rope was developed in collaboration with elite climber Tommy Caldwell. Its high sheath proportion makes it suitable for projecting and big-wall climbing. Now also available with our Eco Dry treatment for reduced water absorption.",
    "features": [
     "Duo Tec for permanent middle marking",
     "Durably water repellent and dirt resistant thanks to the PFC- and PFAS-free Eco Dry finish",
@@ -2630,8 +2630,8 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "dynamic-ropes",
-   "shortDescription": "Thinnest and lightest half rope on the market | PFC free",
-   "description": "The thinnest and lightest half rope on the market. The first choice for demanding ice and mixed climbing, or whenever every gram counts. Now also with PFC- and PFAS-free Eco Dry finish as stipulated by the UIAA standard for water-repellent ropes.",
+   "shortDescription": "Our thinnest and lightest half rope",
+   "description": "Our thinnest and lightest half rope, suitable for demanding ice and mixed climbing routes or whenever every gram counts. Now also available with our Eco Dry treatment for reduced water absorption.",
    "features": [
     "Low weight, small diameter, and perfect handling",
     "Durably water repellent and dirt resistant thanks to the PFC- and PFAS-free Eco Dry finish",
@@ -4452,7 +4452,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545061917"
     },
     {
      "sku": "710790403000",
@@ -4529,7 +4530,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545060002"
     }
    ],
    "images": [
@@ -4866,7 +4868,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545060439"
     },
     {
      "sku": "712813501380",
@@ -4930,7 +4933,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545061405"
     },
     {
      "sku": "712813509400",
@@ -5230,7 +5234,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545060224"
     }
    ],
    "images": [
@@ -5613,7 +5618,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285761370"
     },
     {
      "sku": "712203506170",
@@ -5917,7 +5923,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574193123"
     },
     {
      "sku": "710573500240",
@@ -6007,7 +6014,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574193208"
     },
     {
      "sku": "710573501900",
@@ -6278,7 +6286,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -6416,7 +6424,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285766320"
     },
     {
      "sku": "832110502000",
@@ -6615,7 +6624,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -6805,7 +6814,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285766368"
     },
     {
      "sku": "832130502000",
@@ -7016,7 +7026,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -7236,7 +7246,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -7372,7 +7382,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574085466"
     },
     {
      "sku": "832040010470",
@@ -7397,7 +7408,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -7695,27 +7706,12 @@
      "src": "/products/24188.webp",
      "alt": "Performance Static 10.5 mm, night",
      "colour": "Night"
-    },
-    {
-     "src": "/products/24189.webp",
-     "alt": "Performance Static 10.5 mm, snow",
-     "colour": "Snow"
-    },
-    {
-     "src": "/products/24190.webp",
-     "alt": "Performance Static 10.5 mm, pink",
-     "colour": "Pink"
-    },
-    {
-     "src": "/products/24191.webp",
-     "alt": "Performance Static 10.5 mm, turquoise",
-     "colour": "Turquoise"
     }
    ],
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -8050,7 +8046,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -8119,32 +8115,11 @@
     "Multiple-wound core for high breaking strength",
     "Thermo Shield treatment for pleasant handling"
    ],
-   "specs": {
-    "Core proportion": "62 %",
-    "Diameter": "12 mm",
-    "Knotability": "1",
-    "Sheath proportion": "38 %",
-    "Shrinkage in water": "4 %",
-    "Weight per metre": "93 g/m",
-    "Minimum breaking strength": "38 kN",
-    "Static elongation": "3.0 %",
-    "Minimum breaking strength in figure-of-eight knot": "25 kN",
-    "Material": "Polyamide",
-    "Rope type": "Static A"
-   },
+   "specs": {},
    "properties": [],
-   "certifications": [
-    "EN 1891 Type A"
-   ],
-   "technologies": [
-    "Fair Wear",
-    "Thermo Shield",
-    "Tracer Thread Markings"
-   ],
-   "badges": [
-    "Made in Germany",
-    "bluesign®"
-   ],
+   "certifications": [],
+   "technologies": [],
+   "badges": [],
    "use": [
     "Work at height",
     "Climbing & mountaineering"
@@ -8186,7 +8161,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574085701"
     },
     {
      "sku": "832080010470",
@@ -8210,21 +8186,6 @@
    ],
    "downloads": [
     {
-     "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
-     "kind": "manual"
-    },
-    {
-     "label": "EU Declaration of Conformity Performance Static 12,0 mm",
-     "url": "https://avs.edelrid.com/images/attribut/83208-06_Performance_Static_12-0_mm_EU-Conf.pdf",
-     "kind": "doc"
-    },
-    {
-     "label": "EN 1891",
-     "url": "https://avs.edelrid.com/images/attribut/EN_1891.pdf",
-     "kind": "other"
-    },
-    {
      "label": "Inspection Instruction Rope",
      "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Seil.pdf",
      "kind": "doc"
@@ -8237,17 +8198,8 @@
     "prostatic-synctec-11-0-mm",
     "performance-static-10-5-mm"
    ],
-   "tags": [
-    "Made in Germany",
-    "bluesign®",
-    "Fair Wear",
-    "Thermo Shield",
-    "Tracer Thread Markings"
-   ],
-   "chips": [
-    "12 mm",
-    "EN 1891 Type A"
-   ],
+   "tags": [],
+   "chips": [],
    "rank": 313,
    "source": {
     "url": "https://edelrid.com/int-en/professional/ropes/performance-static-12-0mm",
@@ -8391,7 +8343,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -8592,7 +8544,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -8811,7 +8763,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -9033,7 +8985,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -9170,7 +9122,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574084933"
     },
     {
      "sku": "832250500470",
@@ -9208,7 +9161,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285383817"
     },
     {
      "sku": "832250501400",
@@ -9246,7 +9200,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574084971"
     },
     {
      "sku": "832250010170",
@@ -9305,7 +9260,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -9441,7 +9396,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -9610,7 +9565,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -9781,7 +9736,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -11723,14 +11678,22 @@
      "subcategory": "accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Hot cutting device for shortening and melting textile fabrics",
+   "description": "Hot cutting device for cutting and melting synthetic ropes, tapes, and other textile fabrics.",
+   "features": [
+    "Knife blade available as an accessory"
+   ],
+   "specs": {
+    "Material": "Polyamide, Polycarbonate, Polyvinylchloride, Steel, Copper"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Work at height",
     "Climbing & mountaineering"
@@ -11745,11 +11708,24 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573287182"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/23911.webp",
+     "alt": "Hot Cutter with Blade, night",
+     "colour": "Night"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "EU Declaration of Conformity Hot cuttig device",
+     "url": "https://avs.edelrid.com/images/attribut/72172-04e (Hot cuttig device) EU-Conf.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "spare-blade-for-hot-cutter",
@@ -11757,10 +11733,16 @@
     "protector-aramid",
     "apollo"
    ],
-   "tags": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 430,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/accesories-shop/heissschneider",
+    "name": "HOT CUTTING DEVICE"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -11779,14 +11761,20 @@
      "subcategory": "accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Spare blade for the hot cutting device",
+   "description": "Spare part for the Hot Cutting Device.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Material": "Steel, Copper"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Work at height",
     "Climbing & mountaineering"
@@ -11801,10 +11789,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573287199"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/28869.webp",
+     "alt": "Spare Blade for Hot Cutter, no color",
+     "colour": "No color"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -11813,10 +11808,16 @@
     "protector-aramid",
     "apollo"
    ],
-   "tags": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 431,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/accesories-shop/ersatzschneide",
+    "name": "HOT CUTTING DEVICE SPARE BLADE"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -15212,7 +15213,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574003972"
     }
    ],
    "images": [
@@ -16922,7 +16924,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574361355"
     }
    ],
    "images": [
@@ -19114,14 +19117,30 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "slings",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
-   "properties": [],
-   "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "shortDescription": "Self-belay sling for attachment to a belay station",
+   "description": "A self belay sling in accordance with EN 355. For attaching at a belay chain or other anchor points.",
+   "features": [
+    "The extremely small shock absorber will hold a factor 2 standard fall (EN 355) with impact force < 6 kN",
+    "Elasticated arm for close-to-hand carabiner handling",
+    "Attach to harness with a girth hitch",
+    "Please note: must not be used as a via ferrata set"
+   ],
+   "specs": {
+    "Minimum breaking strength": "15 kN",
+    "Material": "Polyamide"
+   },
+   "properties": [
+    "Energy Absorber"
+   ],
+   "certifications": [
+    "EN 355"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Climbing & mountaineering"
    ],
@@ -19136,11 +19155,44 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285311612"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/23573.webp",
+     "alt": "Absorber Sling, night",
+     "colour": "Night"
+    },
+    {
+     "src": "/products/23574.webp",
+     "alt": "Absorber Sling, night",
+     "colour": "Night"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Absorber Sling",
+     "url": "https://avs.edelrid.com/images/attribut/54570_GAL_ABSORBER_SLING_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Absorber Sling",
+     "url": "https://avs.edelrid.com/images/attribut/71540-04_Absorber_Sling_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 355",
+     "url": "https://avs.edelrid.com/images/attribut/EN_355.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Energy Absorber/-System",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Falldaempfer-System.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "switch",
@@ -19148,10 +19200,18 @@
     "switch-double",
     "dyneema-sling-8-mm-ii"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
+   "chips": [
+    "EN 355"
+   ],
    "rank": 580,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/lanyards-shop/absorber-sling",
+    "name": "ABSORBER SLING"
+   },
    "priceLists": [
     "sport"
    ]
@@ -21014,7 +21074,7 @@
    "mainCategory": "sport",
    "subcategory": "slings",
    "shortDescription": "Quickdraw sling with built-in wear indicator",
-   "description": "Quickdraw sling with built-in wear indicator. In the event of critical wear to the sling, the internal red polyester section becomes visible so that users know that replacement is required.\n\nPackage contents: 10 pcs.",
+   "description": "Quickdraw sling with built-in wear indicator. In the event of critical wear to the sling, the internal red polyester section becomes visible so that users know that replacement is required.\n\nPackage contents: 25 pcs.",
    "features": [
     "Internal wear indicator made of red polyester",
     "Sewn label with explanation of the visual inspection",
@@ -21049,7 +21109,8 @@
       "kind": "pack",
       "size": 25
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285123833"
     },
     {
      "sku": "715720180170",
@@ -21062,7 +21123,8 @@
       "kind": "pack",
       "size": 25
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285123840"
     },
     {
      "sku": "715730450170",
@@ -21075,13 +21137,12 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null,
-     "gtin": "4052285123864"
+     "stock": null
     }
    ],
    "images": [
     {
-     "src": "/products/23598.webp",
+     "src": "/products/23596.webp",
      "alt": "Jim Quickdraw PES 16 mm, night",
      "colour": "Night"
     }
@@ -21119,7 +21180,7 @@
    ],
    "rank": 628,
    "source": {
-    "url": "https://edelrid.com/int-en/sport/climbing-wall-construction-shop/jim-quickdraw-pes-16mm-71573",
+    "url": "https://edelrid.com/int-en/sport/climbing-wall-construction-shop/jim-quickdraw-pes-16mm-71572",
     "name": "JIM QUICKDRAW PES 16MM"
    },
    "priceLists": [
@@ -21815,7 +21876,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285008550"
     },
     {
      "sku": "814711350170",
@@ -25587,13 +25649,32 @@
      "subcategory": "adventure-parks"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Extremely robust screwgate carabiner made of hardened steel",
+   "description": "HMS carabiner with screw-lock gate made of hardened steel for applications involving frequent loading cycles. Suitable for use in top-rope climbing, mountaineering schools and other applications where the carabiner is subjected to regular use.",
+   "features": [
+    "Keylock closure mechanism for a good handling when clipping and unclipping",
+    "Brass sleeve ensures optimum gate strength"
+   ],
+   "specs": {
+    "Width": "74 mm",
+    "Length": "110 mm",
+    "Gate opening": "23 mm",
+    "Strength, major axis": "40 kN",
+    "Strength, minor axis": "15 kN",
+    "Strength, gate open": "15 kN",
+    "Material": "Steel",
+    "Closure": "Screw",
+    "Carabiner shape": "HMS"
+   },
    "properties": [],
-   "certifications": [],
-   "technologies": [],
+   "certifications": [
+    "EN 12275",
+    "EN 362",
+    "UIAA 121"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Work at height",
@@ -25609,11 +25690,49 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573880741"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24418.webp",
+     "alt": "Steel HMS Screw, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/36783.webp",
+     "alt": "Steel HMS Screw, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Steel HMS Screw",
+     "url": "https://avs.edelrid.com/images/attribut/88291-06_Steel_HMS_Screw_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 362",
+     "url": "https://avs.edelrid.com/images/attribut/EN_362.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "EN 12275",
+     "url": "https://avs.edelrid.com/images/attribut/EN_12275.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "oval-power-2500-screw-rfid",
@@ -25621,10 +25740,19 @@
     "hms-big-bo-triple",
     "hms-big-bo-screw"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "HMS",
+    "Screw",
+    "EN 12275"
+   ],
    "rank": 684,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/steel-hms-screw",
+    "name": "STEEL HMS SCREW"
+   },
    "priceLists": [
     "sport",
     "safety",
@@ -27541,13 +27669,32 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "carabiners-quickdraws",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "The lightest carabiner in the world | 6 pack",
+   "description": "The lightest carabiner in the world in a sixpack.",
+   "features": [
+    "Very lightweight construction",
+    "Lightweight wire gates reduce the whiplash effect in the event of a fall",
+    "Strong aluminium alloy, special hardening treatment",
+    "Compact shape and minimal pack size",
+    "The color scheme fits the established camming devices"
+   ],
+   "specs": {
+    "Width": "50 mm",
+    "Length": "78 mm",
+    "Gate opening": "17 mm",
+    "Strength, major axis": "20 kN",
+    "Strength, minor axis": "7 kN",
+    "Strength, gate open": "7 kN",
+    "Material": "Aluminium",
+    "Carabiner shape": "Offset D"
+   },
    "properties": [],
-   "certifications": [],
-   "technologies": [],
+   "certifications": [
+    "EN 12275"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering"
@@ -27563,11 +27710,39 @@
       "kind": "pack",
       "size": 6
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574243439"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/23679.webp",
+     "alt": "Nineteen G Sixpack, assorted colours",
+     "colour": "Assorted colours"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Nineteen G Sixpack",
+     "url": "https://avs.edelrid.com/images/attribut/71806-06_Nineteen_G_Sixpack_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 12275",
+     "url": "https://avs.edelrid.com/images/attribut/EN_12275.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "mission-straight",
@@ -27575,10 +27750,18 @@
     "nineteen-g",
     "axiom-slider"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "Offset D",
+    "EN 12275"
+   ],
    "rank": 717,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/carabiners-and-quickdraws/nineteen-g-sixpack",
+    "name": "NINETEEN G SIXPACK"
+   },
    "priceLists": [
     "sport"
    ]
@@ -30469,13 +30652,25 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "route-setting",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Durable steel carabiner for use in gyms",
+   "description": "Highly durable steel carabiner for use in gyms.\n\nPackage contents: 5 pcs.",
+   "features": [
+    "Steel body for minimal wear",
+    "Available with Keylock or wire gate closure"
+   ],
+   "specs": {
+    "Strength, major axis": "30 kN",
+    "Strength, minor axis": "10 kN",
+    "Strength, gate open": "10 kN",
+    "Material": "Steel"
+   },
    "properties": [],
-   "certifications": [],
-   "technologies": [],
+   "certifications": [
+    "EN 12275"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering"
@@ -30491,11 +30686,44 @@
       "kind": "pack",
       "size": 5
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285123949"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/23776.webp",
+     "alt": "Jim Steel Bent, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Carabiners",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Jim Steel",
+     "url": "https://avs.edelrid.com/images/attribut/54566_GAL_JIM-STEEL_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Jim Steel Bent",
+     "url": "https://avs.edelrid.com/images/attribut/72017-05_Jim_Steel_Bent_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 12275",
+     "url": "https://avs.edelrid.com/images/attribut/EN_12275.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "jim-steel-wire",
@@ -30503,10 +30731,17 @@
     "jim-steel-bent-set-ii",
     "spare-jim-hanger-screw"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "EN 12275"
+   ],
    "rank": 756,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/climbing-wall-construction-shop/jim-steel-bent",
+    "name": "JIM STEEL BENT"
+   },
    "priceLists": [
     "sport"
    ]
@@ -30518,10 +30753,17 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "route-setting",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Hanger plate as an alternative to anchor points on the climbing wall",
+   "description": "Clever hanger plate as an alternative to the current anchor points on the climbing wall.\n\nPackage contents: 5 pcs.",
+   "features": [
+    "Direct attachment of the quickdraw sling to the hanger eliminates the need for interim screw link connectors",
+    "No climbing wall and sling wear through contact with screw link connectors",
+    "Bolts make the quickdraw sling easy to attach and replace",
+    "The plastic cover prevents users from grasping the anchor point, thus reducing the risk of injury"
+   ],
+   "specs": {
+    "Minimum breaking strength": "20 kN"
+   },
    "properties": [],
    "certifications": [],
    "technologies": [],
@@ -30540,11 +30782,34 @@
       "kind": "pack",
       "size": 5
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285123956"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/23777.webp",
+     "alt": "Jim Hanger, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Jim Steel",
+     "url": "https://avs.edelrid.com/images/attribut/54566_GAL_JIM-STEEL_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "Declaration of Conformity Jim Hanger",
+     "url": "https://avs.edelrid.com/images/attribut/72018-03_Jim_Hanger_Conf.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "jim-steel-bent",
@@ -30555,7 +30820,10 @@
    "tags": [],
    "chips": [],
    "rank": 757,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/climbing-wall-construction-shop/jim-hanger",
+    "name": "JIM HANGER"
+   },
    "priceLists": [
     "sport"
    ]
@@ -30900,13 +31168,15 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "route-setting",
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Plastic cover | accessory for the Jim Hanger",
+   "description": "Plastic cover for the Jim Hanger. Protects the sling from premature wear.\n\nPackage contents: 10 pcs.",
    "features": [],
    "specs": {},
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering"
@@ -30922,11 +31192,29 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285700089"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24028.webp",
+     "alt": "Jim Hanger sling cover, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/24029.webp",
+     "alt": "Jim Hanger sling cover, oasis",
+     "colour": "Oasis"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT.pdf",
+     "kind": "manual"
+    }
+   ],
    "faqs": [],
    "related": [
     "screwlink-10-mm",
@@ -30934,10 +31222,15 @@
     "screwlink-8-mm-ii",
     "spare-jim-hanger-screw"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 762,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/climbing-wall-construction-shop/jim-hanger-sling-cover",
+    "name": "JIM HANGER SLING COVER"
+   },
    "priceLists": [
     "sport"
    ]
@@ -31049,14 +31342,30 @@
      "subcategory": "accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Light pulley with a backstop",
+   "description": "Our light pulley (60 g) with backstop. Designed for lifting loads, crevasse rescue operations, or as an emergency ascender.",
+   "features": [
+    "The backstop can be fixed in the open position in order to use the device as a simple pulley",
+    "Pulley diameter: 20 mm",
+    "Suitable for ropes with a diameter of 7.0 to 11.0 mm as well as for the EDELRID RAP LINE",
+    "Ball bearing pulleys for high efficiency (92 %)",
+    "Cam jaws with cleaning slots for reliable grip on icy or dirty ropes"
+   ],
+   "specs": {
+    "Minimum breaking strength": "15 kN",
+    "Material": "Aluminium, Steel, Polyamide"
+   },
    "properties": [],
-   "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "certifications": [
+    "EN 12278",
+    "EN 567"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Work at height",
     "Climbing & mountaineering"
@@ -31071,11 +31380,54 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545037202"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24035.webp",
+     "alt": "Spoc, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/24037.webp",
+     "alt": "Spoc, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/24038.webp",
+     "alt": "Spoc, oasis",
+     "colour": "Oasis"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Spoc",
+     "url": "https://avs.edelrid.com/images/attribut/54477_GAL_SPOC_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Spoc ...",
+     "url": "https://avs.edelrid.com/images/attribut/73743_85409-03_Spoc___EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 12278",
+     "url": "https://avs.edelrid.com/images/attribut/EN_12278.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "EN 567",
+     "url": "https://avs.edelrid.com/images/attribut/EN_567.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Belay Devices",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Sicherungsgeraet.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "flux",
@@ -31083,10 +31435,18 @@
     "puck",
     "pike-rescue"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
+   "chips": [
+    "EN 12278"
+   ],
    "rank": 764,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/pulleys-shop/spoc",
+    "name": "SPOC"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -32069,14 +32429,24 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "route-setting",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Ideal big wall hammer with outstanding strike properties",
+   "description": "The perfect big wall hammer.",
+   "features": [
+    "Shock-absorbing hickory shaft",
+    "Well-weighted head with point for levering pegs",
+    "Hammer holster (sold separately)"
+   ],
+   "specs": {
+    "Material": "Steel, Hickory"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Climbing & mountaineering"
    ],
@@ -32090,10 +32460,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573288967"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23711.webp",
+     "alt": "Hudson Hammer, no color",
+     "colour": "No color"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -32102,10 +32479,16 @@
     "jim-hanger-sling-cover",
     "screwlink-10-mm"
    ],
-   "tags": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 774,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/climbing-accessories-shop/hudson-hammer",
+    "name": "HUDSON HAMMER"
+   },
    "priceLists": [
     "sport"
    ]
@@ -32569,7 +32952,7 @@
    "downloads": [
     {
      "label": "ATTENTION: updated user manual Ohmega",
-     "url": "https://avs.edelrid.com/images/attribut/54732_GAL_Ohmega_ANSICHT_DINA4_Homepage.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54732_GAL_Part_I_und_Part_II_OHMEGA_ANSICHT.pdf",
      "kind": "manual"
     },
     {
@@ -32652,13 +33035,30 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "belay-devices",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
-   "properties": [],
-   "certifications": [],
-   "technologies": [],
+   "shortDescription": "Highly versatile belay device | suitable for use as a tuber and autotuber",
+   "description": "The most versatile ever belay device. The GIGA JUL is a standard and assisted braking tuber in one. The assisted braking function which supports the braking force can be activated or disabled by an intelligent mechanism. For situation-dependent belaying and abseiling, especially in alpine terrain.",
+   "features": [
+    "Small eyelet for releasing unit with a carabiner when bringing up your partner",
+    "Suitable for 7.1–10.0 mm ropes",
+    "Intelligent hybrid design: body made of ultra-light aluminum, areas susceptible to abrasion made of robust stainless steel",
+    "Guide mode: simple and rapid abseiling and bringing up seconds plus comfortable belaying from a belay station as a doubled rope",
+    "Assisted braking guide mode: brake boost for catching falls in leader mode",
+    "Rope can be paid out faster in assisted braking guide mode by holding the device in the ‘open’ position with the thumb"
+   ],
+   "specs": {
+    "Approved rope diameter": "7.1 - 10 mm",
+    "Material": "Steel, Polyamide"
+   },
+   "properties": [
+    "Geometric",
+    "Manual"
+   ],
+   "certifications": [
+    "EN 15151-2"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering"
@@ -32673,11 +33073,59 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545037189"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24034.webp",
+     "alt": "Giga Jul, slate",
+     "colour": "Slate"
+    },
+    {
+     "src": "/products/37822.webp",
+     "alt": "Giga Jul, slate",
+     "colour": "Slate"
+    },
+    {
+     "src": "/products/37849.webp",
+     "alt": "Giga Jul, slate",
+     "colour": "Slate"
+    },
+    {
+     "src": "/products/37895.webp",
+     "alt": "Giga Jul, slate",
+     "colour": "Slate"
+    },
+    {
+     "src": "/products/37873.webp",
+     "alt": "Giga Jul, slate",
+     "colour": "Slate"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Giga Jul",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_GAL_GIGAJUL_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "Declaration of Conformity Giga Jul",
+     "url": "https://avs.edelrid.com/images/attribut/73742-02_Giga_Jul_Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 15151-2",
+     "url": "https://avs.edelrid.com/images/attribut/EN_15151-2.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Belay Devices",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Sicherungsgeraet.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "spare-ohmega-sling",
@@ -32685,10 +33133,17 @@
     "ohmega",
     "jul-2"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "EN 15151-2"
+   ],
    "rank": 785,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/belay-devices/giga-jul",
+    "name": "GIGA JUL"
+   },
    "priceLists": [
     "sport"
    ]
@@ -32800,14 +33255,31 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "belay-devices",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
-   "properties": [],
-   "certifications": [],
+   "shortDescription": "Innovative belay device with outstanding braking performance",
+   "description": "Innovative belay device with high braking performance for single ropes. The optimized MEGA JUL geometry ensures easy and secure belaying even with thicker ropes.",
+   "features": [
+    "Body made of high-quality stainless steel",
+    "Optimized geometry ensures easy operation even for beginners",
+    "High braking performance assists the belayer with leader falls",
+    "Rope can be paid out faster to a leader by holding device in the ‘open’ position with the thumb",
+    "Perfect handling, even for ropes with a larger diameter",
+    "Suitable for 8.9–11.0 mm single ropes"
+   ],
+   "specs": {
+    "Approved rope diameter": "8.9 - 11 mm",
+    "Material": "Steel"
+   },
+   "properties": [
+    "Geometric",
+    "Manual"
+   ],
+   "certifications": [
+    "EN 15151-2"
+   ],
    "technologies": [],
-   "badges": [],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Climbing & mountaineering"
    ],
@@ -32821,11 +33293,64 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285118624"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/23695.webp",
+     "alt": "Jul 2, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/23696.webp",
+     "alt": "Jul 2, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/37729.webp",
+     "alt": "Jul 2, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/37730.webp",
+     "alt": "Jul 2, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/37731.webp",
+     "alt": "Jul 2, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/37782.webp",
+     "alt": "Jul 2, oasis",
+     "colour": "Oasis"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Jul 2",
+     "url": "https://avs.edelrid.com/images/attribut/54564_GAL_JUL2_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "Declaration of Conformity Jul²",
+     "url": "https://avs.edelrid.com/images/attribut/71832-04_Jul²_Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 15151-2",
+     "url": "https://avs.edelrid.com/images/attribut/EN_15151-2.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Belay Devices",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Sicherungsgeraet.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "mega-jul-ii",
@@ -32833,10 +33358,17 @@
     "giga-jul",
     "jul-2-belay-kit-bulletproof-triple"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Made in Germany"
+   ],
+   "chips": [
+    "EN 15151-2"
+   ],
    "rank": 787,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/belay-devices/jul-2",
+    "name": "JUL²"
+   },
    "priceLists": [
     "sport"
    ]
@@ -32967,14 +33499,34 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "belay-devices",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
-   "properties": [],
-   "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "shortDescription": "Belay set: Jul² with an appropriate carabiner | ideal for sport climbing",
+   "description": "Belay set containing JUL² belay device and HMS BULLETPROOF TRIPLE FG carabiner.",
+   "features": [
+    "Body made of high-quality stainless steel",
+    "Optimized geometry ensures easy operation even for beginners",
+    "Perfect handling, even for ropes with a larger diameter",
+    "Suitable for 8.9–11.0 mm single ropes",
+    "Rope can be paid out faster to a leader by holding device in the ‘open’ position with the thumb",
+    "High braking performance assists the belayer with leader falls"
+   ],
+   "specs": {
+    "Approved rope diameter": "8.9 - 11 mm",
+    "Material": "Steel/ALU"
+   },
+   "properties": [
+    "Geometric",
+    "Manual"
+   ],
+   "certifications": [
+    "EN 15151-2",
+    "EN 12275"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Climbing & mountaineering"
    ],
@@ -32988,11 +33540,49 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285695811"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24024.webp",
+     "alt": "Jul 2 Belay Kit Bulletproof Triple, icemint",
+     "colour": "Icemint"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Jul 2",
+     "url": "https://avs.edelrid.com/images/attribut/54564_GAL_JUL2_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EN 15151-2",
+     "url": "https://avs.edelrid.com/images/attribut/EN_15151-2.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "EN 12275",
+     "url": "https://avs.edelrid.com/images/attribut/EN_12275.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Belay Devices",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Sicherungsgeraet.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "mega-jul-belay-kit-bulletproof-screw-ii",
@@ -33000,10 +33590,18 @@
     "jul-2",
     "hannibal"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
+   "chips": [
+    "EN 15151-2"
+   ],
    "rank": 789,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/belay-devices/jul-2-belay-kit-bulletproof-triple",
+    "name": "JUL² BELAY KIT BULLETPROOF TRIPLE"
+   },
    "priceLists": [
     "sport"
    ]
@@ -33144,12 +33742,24 @@
      "subcategory": "descenders"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
-   "properties": [],
-   "certifications": [],
+   "shortDescription": "Figure 8 descender | enables enables different braking levels.",
+   "description": "The special geometry of the HANNIBAL enables different braking levels. This allows the rappelling speed to be controlled more precisely than with a conventional figure-eight descender.",
+   "features": [
+    "Suitable for single ropes from 8.5–12.0 mm",
+    "With internal rubber ring to hold the carabiner in place—prevents dangerous cross loading",
+    "Different braking positions due to horns",
+    "High-strength aluminum alloy"
+   ],
+   "specs": {
+    "Approved rope diameter": "8.5 - 12 mm",
+    "Material": "Aluminium"
+   },
+   "properties": [
+    "Manual"
+   ],
+   "certifications": [
+    "EN 15151-2"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -33166,11 +33776,39 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285295295"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/23781.webp",
+     "alt": "Hannibal, oasis",
+     "colour": "Oasis"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Hannibal",
+     "url": "https://avs.edelrid.com/images/attribut/54568_GAL_HANNIBAL_DINA4_Homepage_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "Declaration of Conformity Hannibal",
+     "url": "https://avs.edelrid.com/images/attribut/72022-04_Hannibal_Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 15151-2",
+     "url": "https://avs.edelrid.com/images/attribut/EN_15151-2.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Belay Devices",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Sicherungsgeraet.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "nano-jul",
@@ -33179,9 +33817,14 @@
     "mega-jul-belay-kit-bulletproof-screw-ii"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "EN 15151-2"
+   ],
    "rank": 791,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/descenders-shop/hannibal",
+    "name": "HANNIBAL"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -33200,12 +33843,22 @@
      "subcategory": "descenders"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
-   "properties": [],
-   "certifications": [],
+   "shortDescription": "Robust figure 8 descender made of aluminum | for belaying and rappelling",
+   "description": "The EDELRID classic in a new design. No further explanation required. For universal usage such as abseiling and belaying.",
+   "features": [
+    "Suitable for single ropes from 7.8–12.0 mm"
+   ],
+   "specs": {
+    "Width": "76 mm",
+    "Approved rope diameter": "7.8 - 12 mm",
+    "Material": "Aluminium"
+   },
+   "properties": [
+    "Manual"
+   ],
+   "certifications": [
+    "EN 15151-2"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -33222,7 +33875,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573790743"
     },
     {
      "sku": "717620006630",
@@ -33233,11 +33887,44 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573790750"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/23657.webp",
+     "alt": "Bud, royal",
+     "colour": "Royal"
+    },
+    {
+     "src": "/products/23658.webp",
+     "alt": "Bud, slate",
+     "colour": "Slate"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Figure of Eight",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_GAL_Figure_of_Eight_BUD_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "Declaration of Conformity Bud",
+     "url": "https://avs.edelrid.com/images/attribut/71762-06_Bud_Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 15151-2",
+     "url": "https://avs.edelrid.com/images/attribut/EN_15151-2.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Belay Devices",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Sicherungsgeraet.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "hannibal",
@@ -33246,9 +33933,14 @@
     "jul-2-belay-kit-bulletproof-triple"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "EN 15151-2"
+   ],
    "rank": 792,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/descenders-shop/bud",
+    "name": "BUD"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -33261,12 +33953,24 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "belay-devices",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
-   "properties": [],
-   "certifications": [],
+   "shortDescription": "Ultralight figure 8 descender | suitable for ropes with a small diameter",
+   "description": "Ultra-light figure 8 descender for use on low-diameter ropes. The special geometry enables several different friction modes, making it possible to precisely adjust the abseiling speed.",
+   "features": [
+    "Ultra-light, compact design for minimum weight and a small pack size",
+    "Plate function for bringing up a second as a doubled rope with the Rap Line II",
+    "Special geometry with little horns for implementing several different friction modes",
+    "Ideal for use with the Rap Line II"
+   ],
+   "specs": {
+    "Approved rope diameter": "6 - 9.5 mm",
+    "Material": "Aluminium"
+   },
+   "properties": [
+    "Manual"
+   ],
+   "certifications": [
+    "EN 15151-2"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -33282,11 +33986,39 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545059556"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24039.webp",
+     "alt": "Mago 8, icemint",
+     "colour": "Icemint"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Mago 8",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_GAL_MAGO8_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "Declaration of Conformity Mago 8",
+     "url": "https://avs.edelrid.com/images/attribut/73744-02_Mago_8_Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 15151-2",
+     "url": "https://avs.edelrid.com/images/attribut/EN_15151-2.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Belay Devices",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Sicherungsgeraet.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "bud",
@@ -33295,9 +34027,14 @@
     "jul-2-belay-kit-bulletproof-triple"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "EN 15151-2"
+   ],
    "rank": 794,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/belay-devices/mago-8",
+    "name": "MAGO 8"
+   },
    "priceLists": [
     "sport"
    ]
@@ -35386,10 +36123,12 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Six-point walking crampons with strap binding | for easy terrain",
+   "description": "6-point walking crampon for frozen and icy ground. The size can be easily adjusted using a coin. Storage bag included.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Material": "Steel"
+   },
    "properties": [],
    "certifications": [],
    "technologies": [],
@@ -35407,11 +36146,39 @@
      "unit": {
       "kind": "pair"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573308320"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/36799.webp",
+     "alt": "6 Point Grödel, lead",
+     "colour": "Lead"
+    },
+    {
+     "src": "/products/36800.webp",
+     "alt": "6 Point Grödel, lead",
+     "colour": "Lead"
+    },
+    {
+     "src": "/products/36801.webp",
+     "alt": "6 Point Grödel, lead",
+     "colour": "Lead"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual 6 Point Grödel",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_GAL_Grödel_07_DRUCK.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity 6 Point",
+     "url": "https://avs.edelrid.com/images/attribut/71901-07_6_Point_EU-Conf.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "nemo-kids-soft",
@@ -35422,7 +36189,10 @@
    "tags": [],
    "chips": [],
    "rank": 817,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes/6-point-groedel",
+    "name": "6 POINT GRÖDEL"
+   },
    "priceLists": [
     "sport"
    ]
@@ -35903,7 +36673,9 @@
    },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -35952,7 +36724,9 @@
     "spare-crampon-beast-lite-front-ii",
     "spare-crampon-nemo-front"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 826,
    "source": {
@@ -35978,7 +36752,9 @@
    },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -36012,7 +36788,9 @@
     "spare-crampon-shark-beast-lite-heel-ii",
     "spare-crampon-nemo-lite-front"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 827,
    "source": {
@@ -36038,7 +36816,9 @@
    },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -36072,7 +36852,9 @@
     "spare-crampon-demon-front",
     "spare-crampon-nemo-lite-back"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 828,
    "source": {
@@ -36417,7 +37199,9 @@
    },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -36451,7 +37235,9 @@
     "spare-crampon-strap-keeper",
     "spare-crampon-binding-soft-back"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 834,
    "source": {
@@ -36868,13 +37654,20 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Anti-bot plates | suitable for SHARK crampons",
+   "description": "Anti-bot plates for use with the BEAST LITE AUTO crampons. Reliably prevent snow from accumulating. Compatible with articles 74422 SPARE CRAMPON BEAST LITE FRONT and 74423 SPARE CRAMPON SHARK / BEAST LITE HEEL. Packaging contents: Set of 4 paired anti-bot plates for 1 pair of crampons (2 anti-bot plates for the front sections and 2 for the heel sections). Including 8 screws for fixation.",
+   "features": [
+    "Easy assembly thanks to the three-dimensional fit between crampon and anti-bot plate",
+    "For use with our Shark crampons"
+   ],
+   "specs": {
+    "Material": "TPU"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -36889,10 +37682,27 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574193345"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23746.webp",
+     "alt": "Anti Shark, night-oasis",
+     "colour": "Night-oasis"
+    },
+    {
+     "src": "/products/2310551.webp",
+     "alt": "Anti Shark, night-oasis",
+     "colour": "Night-oasis"
+    },
+    {
+     "src": "/products/2310552.webp",
+     "alt": "Anti Shark, night-oasis",
+     "colour": "Night-oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -36901,10 +37711,15 @@
     "spare-crampon-binding-strap-lite",
     "anti-beast-lite"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 841,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes-shop/anti-shark",
+    "name": "ANTI SHARK"
+   },
    "priceLists": [
     "sport"
    ]
@@ -36916,13 +37731,17 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Anti-bot plates | suitable for BEAST crampons",
+   "description": "Anti-bot plates for use with the BEAST AUTO crampons. Reliably prevent snow from accumulating. Compatible with articles 74421 SPARE CRAMPON BEAST FRONT and 74420 SPARE CRAMPON SHARK / BEAST HEEL.\n\nPackaging contents: Set of 4 paired anti-bot plates for 1 pair of crampons (2 anti-bot plates for the front sections and 2 for the heel sections). Including 8 screws for fixation.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Material": "TPU"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -36937,10 +37756,27 @@
      "unit": {
       "kind": "pair"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545061252"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24130.webp",
+     "alt": "Anti Beast II, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/2310565.webp",
+     "alt": "Anti Beast II, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/2310566.webp",
+     "alt": "Anti Beast II, oasis",
+     "colour": "Oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -36949,10 +37785,15 @@
     "spare-crampon-binding-strap-short",
     "spare-anti-nemo"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 842,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes-shop/anti-beast",
+    "name": "ANTI BEAST"
+   },
    "priceLists": [
     "sport"
    ]
@@ -36964,13 +37805,17 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Anti-bot plates | suitable for BEAST LITE crampons",
+   "description": "Anti-bot plate for our Beast Lite crampons. Reliably prevents snow build-up.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Material": "TPU"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -36985,10 +37830,27 @@
      "unit": {
       "kind": "pair"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4028545061436"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24132.webp",
+     "alt": "Anti Beast Lite, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/2310567.webp",
+     "alt": "Anti Beast Lite, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/2310568.webp",
+     "alt": "Anti Beast Lite, oasis",
+     "colour": "Oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -36997,10 +37859,15 @@
     "anti-shark",
     "spare-anti-demon"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 843,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes-shop/anti-beast-lite",
+    "name": "ANTI BEAST LITE"
+   },
    "priceLists": [
     "sport"
    ]
@@ -37367,7 +38234,9 @@
    },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -37406,7 +38275,9 @@
     "spare-anti-nemo-hybrid",
     "spare-crampon-bridge-long"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 849,
    "source": {
@@ -37627,7 +38498,9 @@
    },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -37661,7 +38534,9 @@
     "spare-crampon-bridge-long",
     "mixed-blade-ii"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 853,
    "source": {
@@ -37935,13 +38810,17 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Hammer for ice tools | suitable for the RAGE, RIOT, and RAID",
+   "description": "The hammer is suitable for RAGE, RIOT and RAID.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Material": "Steel"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -37956,10 +38835,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574004269"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23723.webp",
+     "alt": "Hammer, silver",
+     "colour": "Silver"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -37968,10 +38854,15 @@
     "ice-blade-ii",
     "blind-washer"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 858,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes-shop/hammer",
+    "name": "HAMMER"
+   },
    "priceLists": [
     "sport"
    ]
@@ -37983,13 +38874,17 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Ice tool adze | suitable for the RAGE, RIOT, and RAID",
+   "description": "Adze suitable for RAGE, RIOT and RAID.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Material": "Steel"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -38004,10 +38899,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574004276"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23731.webp",
+     "alt": "Adze, silver",
+     "colour": "Silver"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -38016,10 +38918,15 @@
     "revolt-blade",
     "accelerator-ii"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 859,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes-shop/adze",
+    "name": "ADZE"
+   },
    "priceLists": [
     "sport"
    ]
@@ -38031,13 +38938,17 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Blind washer | suitable for the RAGE, RIOT, and RAID",
+   "description": "The Blind Washer is suitable for RAGE, RIOT and RAID.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Material": "Steel"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing"
@@ -38052,10 +38963,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574009288"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23732.webp",
+     "alt": "Blind Washer, night",
+     "colour": "Night"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -38064,10 +38982,15 @@
     "hammer",
     "fingerrest-ii"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 860,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes-shop/blind-washer",
+    "name": "BLIND WASHER"
+   },
    "priceLists": [
     "sport"
    ]
@@ -38387,9 +39310,11 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
+   "shortDescription": "Vulcanizing tape for optimum grip",
+   "description": "Vulcanising 25 mm wide tape for optimum grip.",
+   "features": [
+    "Length: 2m"
+   ],
    "specs": {},
    "properties": [],
    "certifications": [],
@@ -38408,10 +39333,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285118709"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23656.webp",
+     "alt": "Grip Tape, night",
+     "colour": "Night"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -38423,7 +39355,10 @@
    "tags": [],
    "chips": [],
    "rank": 866,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes-shop/grip-tape",
+    "name": "GRIP TAPE"
+   },
    "priceLists": [
     "sport"
    ]
@@ -38502,14 +39437,24 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "ice-climbing",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Leash for securing ice tools when climbing",
+   "description": "Elastic Y-shaped sling to secure your ice tools when climbing without leashes.",
+   "features": [
+    "Elastic ends keep ice axes near to hand, yet allow full stretch",
+    "Sewn-in, aluminium mini-carabiner for clipping to tools",
+    "150 kg strength"
+   ],
+   "specs": {
+    "Material": "Polyester"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Ice climbing"
    ],
@@ -38523,10 +39468,27 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574004320"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23740.webp",
+     "alt": "Spinner Leash, oasis-night",
+     "colour": "Oasis-night"
+    },
+    {
+     "src": "/products/36825.webp",
+     "alt": "Spinner Leash, oasis-night",
+     "colour": "Oasis-night"
+    },
+    {
+     "src": "/products/36826.webp",
+     "alt": "Spinner Leash, oasis-night",
+     "colour": "Oasis-night"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -38535,10 +39497,16 @@
     "grip-tape",
     "sm-clip"
    ],
-   "tags": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 868,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crampons-and-ice-axes-shop/spinner-leash",
+    "name": "SPINNER LEASH"
+   },
    "priceLists": [
     "sport"
    ]
@@ -38648,13 +39616,20 @@
      "subcategory": "work-harnesses"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Large gear carabiner",
+   "description": "Racking carabiner for gear organisation (ice screws etc.).",
+   "features": [
+    "Suitable for all climbing harnesses",
+    "Maximum load limit: 5 kg"
+   ],
+   "specs": {
+    "Material": "Polyamide"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Ice climbing",
@@ -38671,10 +39646,27 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285295356"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23715.webp",
+     "alt": "SM-Clip, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/36823.webp",
+     "alt": "SM-Clip, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/36824.webp",
+     "alt": "SM-Clip, oasis",
+     "colour": "Oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -38683,10 +39675,15 @@
     "spinner-leash",
     "crampon-bag-lite-ii"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 870,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/work-safety-harness/sm-clip",
+    "name": "SM-CLIP"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -38993,7 +39990,7 @@
     }
    ],
    "shortDescription": "Women’s insulated jacket | suitable as an outer jacket or midlayer",
-   "description": "This versatile insulated jacket with a synthetic lining can be worn as a light outer jacket or a thin midlayer. The simple, functional thermal layer is easy to store, comes with an adjustable hood, environmentally friendly, water-repellent DWR coating, and hemmed cuffs. The underarm panels provide freedom of movement.",
+   "description": "This versatile insulated jacket with synthetic filling can be worn as a lightweight outer jacket or a thin midlayer. The jacket packs away easily and features an adjustable hood, bound cuffs, and a water-repellent DWR finish. Underarm inserts provide freedom of movement.",
    "features": [
     "Water-repellent DWR impregnation, C-0",
     "Two-way zipper",
@@ -39299,7 +40296,7 @@
     }
    ],
    "shortDescription": "Women’s fleece jacket | napped waffle structure on the inside",
-   "description": "A light and very comfortable thermal layer made from technical fleece. The napped waffle structure on the inside provides cozy warmth in unsettled weather in the summer and when the seasons change. Thanks to the stretch content and regular fit, the jacket is comfortable and offers ample freedom of movement.",
+   "description": "Lightweight fleece layer for cool days in summer and during the transitional seasons. The brushed waffle structure on the inside helps retain warmth. Stretch fabric and a regular fit provide a comfortable fit and good freedom of movement.",
    "features": [
     "Mixture of recycled polyester and recycled elastane",
     "Chest pocket and two zippered slash pockets on the sides",
@@ -43940,8 +44937,8 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "clothing",
-   "shortDescription": "Hard-wearing women’s climbing pants made of organic cotton",
-   "description": "Robust climbing pants made from organic cotton, recycled cotton, and recycled polyester. The wide, finely-ribbed waistband feels comfortable under a harness while the logo transfer print on the back right gives the design that extra special something.",
+   "shortDescription": "Durable women’s climbing pants",
+   "description": "Climbing trousers with a slightly wider fit for greater freedom of movement during wide stemming moves and dynamic climbing moves. 3% elastane provides flexibility, while a 24% polyester content contributes to durability on rock. The wide fine-rib waistband feels comfortable under a climbing harness, while the logo transfer print on the back right adds a distinctive touch.",
    "features": [
     "Two patched front pockets",
     "Stretch hem at the ankles",
@@ -45689,7 +46686,7 @@
     }
    ],
    "shortDescription": "Men’s insulated jacket | suitable as an outer jacket or midlayer",
-   "description": "This versatile insulated jacket with a synthetic lining can be worn as a light outer jacket or a thin midlayer. The simple, functional thermal layer is easy to store, comes with an adjustable hood, environmentally friendly, water-repellent DWR coating, and hemmed cuffs. The underarm panels provide freedom of movement.",
+   "description": "This versatile insulated jacket with synthetic filling can be worn as a lightweight outer jacket or a thin midlayer. The jacket packs away easily and features an adjustable hood, bound cuffs, and a water-repellent DWR finish. Underarm inserts provide freedom of movement.",
    "features": [
     "Water-repellent DWR impregnation, C-0",
     "Two-way zipper",
@@ -46139,18 +47136,10 @@
     "Logo transfer print on the chest pocket and shoulder",
     "Figure-hugging fit"
    ],
-   "specs": {
-    "Material": "95% recycled Polyester, 5% recycled Elastan"
-   },
-   "properties": [
-    "Recycled material",
-    "Insulating",
-    "UV protection"
-   ],
+   "specs": {},
+   "properties": [],
    "certifications": [],
-   "technologies": [
-    "Fair Wear"
-   ],
+   "technologies": [],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -46333,9 +47322,7 @@
     "mens-dreamcatcher-jacket",
     "mens-spotter-hoody-v"
    ],
-   "tags": [
-    "Fair Wear"
-   ],
+   "tags": [],
    "chips": [],
    "rank": 1246,
    "source": {
@@ -47645,16 +48632,10 @@
     "FUZE anti-odor coating",
     "Small logo transfer print on the front"
    ],
-   "specs": {
-    "Material": "Main Fabric: 100% Polyester"
-   },
-   "properties": [
-    "UV protection"
-   ],
+   "specs": {},
+   "properties": [],
    "certifications": [],
-   "technologies": [
-    "Fair Wear"
-   ],
+   "technologies": [],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -47887,9 +48868,7 @@
     "mens-tecu-hoody",
     "mens-onset-t-shirt"
    ],
-   "tags": [
-    "Fair Wear"
-   ],
+   "tags": [],
    "chips": [],
    "rank": 1321,
    "source": {
@@ -50487,8 +51466,8 @@
      "subcategory": "workwear-gloves"
     }
    ],
-   "shortDescription": "Durable climbing pants with freedom of movement and practical features",
-   "description": "The robust climbing pants combine durability and freedom of movement with several practical features. The durable main material comprising a polyester-cotton blend is combined with elasticated panels in a sophisticated design. So as not to restrict mobility even during acrobatic tasks in trees, the ANKYLO’s rear waistband, yoke, pre-shaped knee panels and gusset are all made from stretchy softshell. Zippered ventilation slots enable rapid ventilation in warm weather or when working hard. The flat waistband sits comfortably below the harness.",
+   "shortDescription": "Tree climbing pants with freedom of movement",
+   "description": "The arborist trousers combine durability with freedom of movement. The main fabric, a polyester-cotton blend, is combined with stretch softshell inserts at the back waistband, yoke, pre-shaped knees, and gusset. Zipped ventilation openings on the thighs allow airflow in warm weather or during intensive work. The low-profile waistband sits comfortably under a harness. The reinforced trouser hems can also be extended by a few centimetres by unpicking the bottom seam, making the trousers suitable for taller sizes as well.",
    "features": [
     "Tapered fit",
     "Flat waistband with belt loops and a slot button",
@@ -51067,7 +52046,7 @@
    "mainCategory": "sport",
    "subcategory": "clothing",
    "shortDescription": "Men’s climbing pants | casual cut for outstanding freedom of movement",
-   "description": "The casual cut is perfect for intensive climbing moves. The DOME PANTS feature practical details such as a flat slot button closure, adjustable ankles, knee darts, and large front and back pockets.",
+   "description": "The relaxed fit and articulated knees provide plenty of freedom of movement when climbing. A low-profile slot-button closure, adjustable leg cuffs, and spacious front and back pockets complete the functional design.",
    "features": [
     "Knee darts and gusseted crotch for maximum freedom of movement",
     "Two front slash pockets and two seat pockets",
@@ -51075,19 +52054,10 @@
     "Flat waistband with a slot button",
     "Adjustable ankles"
    ],
-   "specs": {
-    "Material": "69% Organic Cotton, 29% Recycled Cotton, 2% EL"
-   },
-   "properties": [
-    "Recycled material",
-    "Stretch",
-    "UV protection",
-    "Organic cotton"
-   ],
+   "specs": {},
+   "properties": [],
    "certifications": [],
-   "technologies": [
-    "Fair Wear"
-   ],
+   "technologies": [],
    "badges": [],
    "use": [
     "Climbing & mountaineering"
@@ -51319,9 +52289,7 @@
     "mens-piaz-pants",
     "mens-ankylo-pants"
    ],
-   "tags": [
-    "Fair Wear"
-   ],
+   "tags": [],
    "chips": [],
    "rank": 1496,
    "source": {
@@ -51339,8 +52307,8 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "clothing",
-   "shortDescription": "Men’s climbing pants made of organic cotton | maximum freedom of movement",
-   "description": "Durable climbing pants made from organic cotton, recycled cotton, and elastane with a slightly wider cut for maximum freedom of movement during tricky climbs.",
+   "shortDescription": "Men’s climbing pants | Relaxed fit for greater freedom of movement",
+   "description": "Climbing trousers with a slightly wider fit for greater freedom of movement during wide stemming moves and dynamic climbing moves. 3% elastane provides flexibility, while a 24% polyester content contributes to durability on rock.",
    "features": [
     "Knee darts and gusseted crotch for maximum freedom of movement",
     "Two front patch pockets",
@@ -52155,8 +53123,8 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "clothing",
-   "shortDescription": "Men’s climbing and bouldering shorts made of organic cotton",
-   "description": "Durable climbing and bouldering shorts made from organic cotton, recycled cotton, and elastane.",
+   "shortDescription": "Men’s climbing and bouldering shorts",
+   "description": "Climbing shorts with a slightly wider fit. 3% elastane provides flexibility, while a 24% polyester content contributes to durability on rock.",
    "features": [
     "Wide elasticated waistband with EDELRID logo",
     "Gusseted crotch for maximum freedom of movement",
@@ -53796,8 +54764,8 @@
      "subcategory": "workwear-gloves"
     }
    ],
-   "shortDescription": "Simple beanie made of recycled polyester | with a soft fleece lining",
-   "description": "Simple beanie made of recycled polyester with a wonderfully soft fleece lining. Muted colors and tonal stripes create a modern style.",
+   "shortDescription": "Beanie made from 97% post-consumer recycled polyester",
+   "description": "Warm beanie made from 97% post-consumer recycled polyester, with a pleasantly soft fleece insert also made from recycled polyester (Repreve). The materials are certified according to the Global Recycled Standard. Muted colours and the tonal stripe create a modern look.",
    "features": [],
    "specs": {
     "Material": "Outer: 97% recycled Polyester, 3% Elastan, Lining: 100% Repreve (recycled Polyester)"
@@ -54333,13 +55301,19 @@
      "subcategory": "workwear-gloves"
     }
    ],
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Infinitely adjustable webbing belt",
+   "description": "Practical belt with an Easy Glider buckle. It can be used, for example, for guying out, bundling, or securing lightweight equipment items.",
    "features": [],
-   "specs": {},
-   "properties": [],
+   "specs": {
+    "Material": "Main fabric: 100 % Polyamide"
+   },
+   "properties": [
+    "UV protection"
+   ],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -54356,10 +55330,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573181145"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24048.webp",
+     "alt": "Easy Glider Belt, night",
+     "colour": "Night"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -54368,10 +55349,15 @@
     "skinny-glove-ii",
     "lapnor-beanie"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 1642,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/clothing-and-accessories-shop/easy-glider-belt",
+    "name": "EASY GLIDER BELT"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -55380,7 +56366,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285468781"
     },
     {
      "sku": "720940009000",
@@ -55397,34 +56384,29 @@
    ],
    "images": [
     {
+     "src": "/products/23872.webp",
+     "alt": "Drone II, jade",
+     "colour": "Jade"
+    },
+    {
      "src": "/products/45335.webp",
      "alt": "Drone II, assorted colours",
      "colour": "Assorted colours"
     },
     {
-     "src": "/products/45336.webp",
-     "alt": "Drone II, assorted colours",
-     "colour": "Assorted colours"
+     "src": "/products/36930.webp",
+     "alt": "Drone II, jade",
+     "colour": "Jade"
     },
     {
-     "src": "/products/45337.webp",
-     "alt": "Drone II, assorted colours",
-     "colour": "Assorted colours"
+     "src": "/products/36931.webp",
+     "alt": "Drone II, jade",
+     "colour": "Jade"
     },
     {
-     "src": "/products/45338.webp",
-     "alt": "Drone II, assorted colours",
-     "colour": "Assorted colours"
-    },
-    {
-     "src": "/products/45339.webp",
-     "alt": "Drone II, assorted colours",
-     "colour": "Assorted colours"
-    },
-    {
-     "src": "/products/45340.webp",
-     "alt": "Drone II, assorted colours",
-     "colour": "Assorted colours"
+     "src": "/products/885507.webp",
+     "alt": "Drone II, jade",
+     "colour": "Jade"
     }
    ],
    "downloads": [],
@@ -55455,13 +56437,23 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "bags",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Robust rope bag offering unbeatable value for money",
+   "description": "A no-frills rope bag that provides excellent value for money.",
+   "features": [
+    "Reliable protection from dust and dirt",
+    "Funnel principle for rapid rope storage",
+    "Two tie-in points for better rope management",
+    "Shoulder and compression straps",
+    "Sized to accommodate all ropes up to 80 m"
+   ],
+   "specs": {
+    "Material": "100% Polyester"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering"
@@ -55476,10 +56468,32 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574006423"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23885.webp",
+     "alt": "Liner, night-oasis",
+     "colour": "Night-oasis"
+    },
+    {
+     "src": "/products/36937.webp",
+     "alt": "Liner, night-oasis",
+     "colour": "Night-oasis"
+    },
+    {
+     "src": "/products/23886.webp",
+     "alt": "Liner, night-oasis",
+     "colour": "Night-oasis"
+    },
+    {
+     "src": "/products/36938.webp",
+     "alt": "Liner, night-oasis",
+     "colour": "Night-oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -55488,10 +56502,15 @@
     "caddy-ii",
     "tillit"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 1659,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/backpacks-and-rope-bags-shop/liner",
+    "name": "LINER"
+   },
    "priceLists": [
     "sport"
    ]
@@ -55887,13 +56906,23 @@
      "subcategory": "bags"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Canyoning bag made of robust tarpaulin",
+   "description": "Canyoning transport pack made of robust tarpaulin.",
+   "features": [
+    "Robust, abrasion-resistant tarpaulin with numerous openings to allow water to drain out",
+    "Adjustable shoulder straps",
+    "Inner mesh compartment with robust zip",
+    "1 gear loop and 3 color-coded loops inside to allow an organized overview of all your equipment"
+   ],
+   "specs": {
+    "Volume": "45 l",
+    "Material": "Tarpoline"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Canyoning",
@@ -55904,16 +56933,43 @@
      "sku": "721020456450",
      "options": {
       "colour": "Snow-oasis",
-      "size": "45"
+      "length": "45 cm"
      },
      "price": 95,
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285294168"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23880.webp",
+     "alt": "Canyoneer Bag 45, snow-oasis",
+     "colour": "Snow-oasis"
+    },
+    {
+     "src": "/products/36951.webp",
+     "alt": "Canyoneer Bag 45, snow-oasis",
+     "colour": "Snow-oasis"
+    },
+    {
+     "src": "/products/36953.webp",
+     "alt": "Canyoneer Bag 45, snow-oasis",
+     "colour": "Snow-oasis"
+    },
+    {
+     "src": "/products/36952.webp",
+     "alt": "Canyoneer Bag 45, snow-oasis",
+     "colour": "Snow-oasis"
+    },
+    {
+     "src": "/products/36954.webp",
+     "alt": "Canyoneer Bag 45, snow-oasis",
+     "colour": "Snow-oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -55922,10 +56978,15 @@
     "seat-protector-iguazu-iii",
     "agent"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 1666,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/backpacks-and-rope-bags-shop/canyoneer-bag-45",
+    "name": "CANYONEER BAG 45"
+   },
    "priceLists": [
     "sport"
    ]
@@ -55937,13 +56998,28 @@
    "brand": "EDELRID",
    "mainCategory": "sport",
    "subcategory": "chalk-bouldering",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
-   "properties": [],
+   "shortDescription": "XXL crash pad with carrying system | robust and water repellent",
+   "description": "The ultimate mega crash pad for bold highballs and soft landings.",
+   "features": [
+    "Integrated EDELRID foot mat to clean your shoes on",
+    "Unhinged (taco) construction",
+    "Improved, four-layer foam for even better shock absorbency",
+    "Robust wear- and water-resistant, ballistic nylon base and sides",
+    "Carry system with adjustable shoulder straps and waist belt",
+    "Indestructible aluminium buckles and recycled rope carry handles"
+   ],
+   "specs": {
+    "Height": "100 mm",
+    "Width": "1.100 mm",
+    "Length": "2.000 mm"
+   },
+   "properties": [
+    "Bulky Good"
+   ],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering"
@@ -55958,10 +57034,27 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285468866"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23865.webp",
+     "alt": "Crux III, night-oasis",
+     "colour": "Night-oasis"
+    },
+    {
+     "src": "/products/37788.webp",
+     "alt": "Crux III, night-oasis",
+     "colour": "Night-oasis"
+    },
+    {
+     "src": "/products/37789.webp",
+     "alt": "Crux III, night-oasis",
+     "colour": "Night-oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -55970,10 +57063,15 @@
     "boulder-bag-herkules",
     "chalk-bag-splitter-twist"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 1667,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/sport/crashpads-shop/crux",
+    "name": "CRUX"
+   },
    "priceLists": [
     "sport"
    ]
@@ -57391,13 +58489,20 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Single-hand knife made of stainless steel",
+   "description": "Compact stainless steel knife.",
+   "features": [
+    "Large swivel hole for attaching to a harness or backpack with a carabiner",
+    "Sharp, locking blade (partly serrated)"
+   ],
+   "specs": {
+    "Material": "Stainless Steel, ABS"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -57413,10 +58518,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573622525"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24003.webp",
+     "alt": "Rope Tooth One-Hand Knife, night-oasis",
+     "colour": "Night-oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -57425,10 +58537,15 @@
     "gear-carabiner",
     "wave"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 1698,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/accesories-shop/rope-tooth-einhandmesser",
+    "name": "ROPE TOOTH SINGLE-HAND KNIFE"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -57451,13 +58568,23 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Rescue and cutting knife for severing rope and webbing",
+   "description": "Rescue and rope knife for cutting rope and webbing when using personal fall protection equipment.",
+   "features": [
+    "Ergonomically-shaped handle with finger hole for a secure grip when swinging",
+    "High-quality stainless steel serrated blade",
+    "Rounded point for additional safety",
+    "Robust plastic holder for attachment to a canyoning harness",
+    "With safety leash"
+   ],
+   "specs": {
+    "Material": "Stainless Steel, ABS, Nylon"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -57474,10 +58601,27 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285295370"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23784.webp",
+     "alt": "Rescue Canyoning Knife, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/38429.webp",
+     "alt": "Rescue Canyoning Knife, oasis",
+     "colour": "Oasis"
+    },
+    {
+     "src": "/products/38430.webp",
+     "alt": "Rescue Canyoning Knife, oasis",
+     "colour": "Oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -57486,10 +58630,15 @@
     "gear-carabiner",
     "wave"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 1699,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/accesories-shop/rescue-canyoning-knife",
+    "name": "RESCUE CANYONING KNIFE"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -57508,13 +58657,19 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "First-aid set for minor emergencies | waterproof packaging",
+   "description": "First aid kit for emergencies. Waterproof bag with roll top and waistband.",
+   "features": [
+    "Contents: 1x assorted plasters, 1x assorted bandages, 4x alcohol swab, 1x elastic bandage, 1x plaster roll, 2 pairs disposable gloves, 1x triangular bandage, 2x first-aid dressing, 1x sterile dressing, 1x finger bandage, 1x tick pincers, 1x scissors, 1x emergency blanket"
+   ],
+   "specs": {
+    "Material": "Nylon, TPU"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -57530,10 +58685,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573645616"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23965.webp",
+     "alt": "First Aid Kit, red",
+     "colour": "Red"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -57542,10 +58704,15 @@
     "rope-tooth-one-hand-knife",
     "wave"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 1700,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/accesories-shop/erste-hilfe-set",
+    "name": "FIRST AID KIT"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -57564,13 +58731,19 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Gear carabiner with a large opening",
+   "description": "Gear carabiner with a huge gate opening. Not to be used for climbing.\n\nPackage contents: 10 pcs.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Width": "43 mm",
+    "Length": "79 mm",
+    "Material": "Aluminium"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -57587,10 +58760,27 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573288905"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23697.webp",
+     "alt": "Gear Carabiner, blue",
+     "colour": "Blue"
+    },
+    {
+     "src": "/products/38427.webp",
+     "alt": "Gear Carabiner, blue",
+     "colour": "Blue"
+    },
+    {
+     "src": "/products/38428.webp",
+     "alt": "Gear Carabiner, blue",
+     "colour": "Blue"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -57599,10 +58789,15 @@
     "rescue-canyoning-knife",
     "aranya"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 1701,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/materialkarabiner",
+    "name": "GEAR CARABINER"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -57621,10 +58816,14 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Gear carabiner with a wire gate",
+   "description": "Gear carabiners for many purposes. Not suitable for climbing!\n\nPackage contents: 10 pcs.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Width": "44 mm",
+    "Length": "78 mm",
+    "Material": "Aluminium"
+   },
    "properties": [],
    "certifications": [],
    "technologies": [],
@@ -57645,7 +58844,8 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573881151"
     },
     {
      "sku": "852300009000",
@@ -57661,7 +58861,13 @@
      "stock": null
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24417.webp",
+     "alt": "Wave, assorted colours",
+     "colour": "Assorted colours"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -57673,7 +58879,10 @@
    "tags": [],
    "chips": [],
    "rank": 1702,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/wave",
+    "name": "WAVE"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -57692,13 +58901,23 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Medium gear carabiner with a wire gate",
+   "description": "Medium-sized gear carabiner with wire gate. Not to be used for climbing.\n\nPackage contents: 10 pcs.",
+   "features": [
+    "Maximum breaking strength (Major axis): 250 kg"
+   ],
+   "specs": {
+    "Width": "46 mm",
+    "Length": "73 mm",
+    "Material": "Aluminium",
+    "Closure": "Normal",
+    "Carabiner shape": "Offset D"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -57716,7 +58935,8 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573304308"
     },
     {
      "sku": "738480009000",
@@ -57732,7 +58952,13 @@
      "stock": null
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23707.webp",
+     "alt": "Aranya, assorted colours",
+     "colour": "Assorted colours"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -57741,10 +58967,18 @@
     "gear-carabiner",
     "micro-0"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "Offset D",
+    "Normal"
+   ],
    "rank": 1703,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/aranya",
+    "name": "ARANYA"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -57855,13 +59089,21 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Small gear carabiner with a wire gate",
+   "description": "Small gear carabiner with wire gate and wide opening. Not to be used for climbing. No PPE.\n\nPackage contents: 10 pcs.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Width": "27 mm",
+    "Length": "40 mm",
+    "Material": "Aluminium",
+    "Closure": "Normal",
+    "Carabiner shape": "Offset D"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -57879,7 +59121,8 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285932008"
     },
     {
      "sku": "738450009000",
@@ -57895,7 +59138,13 @@
      "stock": null
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23571.webp",
+     "alt": "Micro 0, assorted colours",
+     "colour": "Assorted colours"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -57904,10 +59153,18 @@
     "aranya",
     "micro-s"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "Offset D",
+    "Normal"
+   ],
    "rank": 1705,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/micro-0",
+    "name": "MICRO 0"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -57926,13 +59183,21 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Small gear carabiner with a wire gate",
+   "description": "Small gear carabiner with wire gate. Not to be used for climbing. No PPE.\n\nPackage contents: 10 pcs.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Width": "32 mm",
+    "Length": "61 mm",
+    "Material": "Aluminium",
+    "Closure": "Normal",
+    "Carabiner shape": "Offset D"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -57950,7 +59215,8 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573304292"
     },
     {
      "sku": "738460009000",
@@ -57966,7 +59232,13 @@
      "stock": null
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23705.webp",
+     "alt": "Micro 3, assorted colours",
+     "colour": "Assorted colours"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -57975,10 +59247,18 @@
     "mini-o",
     "corazon"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "Offset D",
+    "Normal"
+   ],
    "rank": 1706,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/micro-3",
+    "name": "MICRO 3"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -58087,13 +59367,23 @@
      "subcategory": "protection-accessories"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Heart-shaped gear carabiner with a wire gate",
+   "description": "Heart-shaped gear carabiner with wire gate. Not to be used for climbing. No PPE.\n\nPackage contents: 10 pcs.",
+   "features": [
+    "Maximum breaking strength (Major axis): 10 kg"
+   ],
+   "specs": {
+    "Width": "44 mm",
+    "Length": "42 mm",
+    "Material": "Aluminium",
+    "Closure": "Normal",
+    "Carabiner shape": "Heart"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Climbing & mountaineering",
@@ -58111,7 +59401,8 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573304117"
     },
     {
      "sku": "738490002140",
@@ -58127,7 +59418,18 @@
      "stock": null
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/23702.webp",
+     "alt": "Corazon, fire",
+     "colour": "Fire"
+    },
+    {
+     "src": "/products/38381.webp",
+     "alt": "Corazon, fire",
+     "colour": "Fire"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -58136,10 +59438,18 @@
     "micro-0",
     "mini-o"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "Heart",
+    "Normal"
+   ],
    "rank": 1708,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/corazon",
+    "name": "CORAZON"
+   },
    "priceLists": [
     "sport",
     "safety"
@@ -58398,7 +59708,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -58610,7 +59920,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -58934,7 +60244,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -59257,7 +60567,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -59440,7 +60750,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -59668,7 +60978,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -59943,7 +61253,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -60170,7 +61480,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -60356,7 +61666,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -60900,7 +62210,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -61051,7 +62361,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -61194,7 +62504,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -61382,7 +62692,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -61574,7 +62884,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -61764,7 +63074,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -61914,7 +63224,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -62059,7 +63369,7 @@
    "downloads": [
     {
      "label": "WS User Manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_DINA4_Homepage_ANSICHT_1.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage.pdf",
      "kind": "manual"
     },
     {
@@ -62207,7 +63517,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -62413,7 +63723,7 @@
    "downloads": [
     {
      "label": "User manual Static Ropes",
-     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_DINA4_Homepage_Static_Seil_HM_241219.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54518_GAL_Static_Seil_ANSICHT_DINA4_Homepage_1.pdf",
      "kind": "manual"
     },
     {
@@ -63350,13 +64660,19 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "protection-accessories",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Flexible rope guard for retrospective fitting with a VCR fastener",
+   "description": "Flexible rope protection for subsequent fitting, thanks to Velcro fastener.",
+   "features": [
+    "Use with carabiner for fitting at critical points"
+   ],
+   "specs": {
+    "Diameter": "13 mm"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Work at height"
@@ -63372,10 +64688,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285010966"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24330.webp",
+     "alt": "Protector III, oasis",
+     "colour": "Oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -63384,10 +64707,17 @@
     "apollo",
     "spare-rope-termination-cover"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "13 mm"
+   ],
    "rank": 2131,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/ropes/protector",
+    "name": "PROTECTOR"
+   },
    "priceLists": [
     "safety"
    ]
@@ -66424,13 +67754,21 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "work-harnesses",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
+   "shortDescription": "Work positioning seat for greater comfort when working at height",
+   "description": "Work positioning seat with edge protection for enhanced comfort when working at height for longer periods.",
+   "features": [
+    "Two Easy Glider buckles for simple strap length adjustment",
+    "Two integrated carabiners for attaching the seat to the harness to prevent interference during transportation",
+    "Company logo can be attached to the underneath of the seat (VCR)",
+    "Four gear loops inside for gear organization (25 kg maximum load capacity each)",
+    "Seat 20 x 45 cm"
+   ],
    "specs": {},
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Work at height"
@@ -66446,10 +67784,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285765934"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24312.webp",
+     "alt": "Air Lounge L II, night-icemint",
+     "colour": "Night-icemint"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -66458,10 +67803,15 @@
     "back-plate-flex-pro-pro-plus",
     "fast-saver-air"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 2175,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/work-safety-harness/air-lounge-l",
+    "name": "AIR LOUNGE L"
+   },
    "priceLists": [
     "safety"
    ]
@@ -68290,13 +69640,17 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "work-helmets",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
+   "shortDescription": "Spare head strap | suitable for the ULTRALIGHT WORK",
+   "description": "Practical accessories for use with the ULTRALIGHT WORK industrial helmets.",
+   "features": [
+    "Interchangeable headband"
+   ],
    "specs": {},
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Work at height"
@@ -68312,10 +69666,17 @@
       "kind": "pack",
       "size": 5
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573990860"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24180.webp",
+     "alt": "Ultralight Work Headband Replacement Kit, no color",
+     "colour": "No color"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -68324,10 +69685,15 @@
     "helmet-visor-clip",
     "ear-muffs-hygiene-set"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 2230,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/helmet/ultralight-work-headband-replacement-kit",
+    "name": "ULTRALIGHT WORK HEADBAND REPLACEMENT KIT"
+   },
    "priceLists": [
     "safety"
    ]
@@ -68339,13 +69705,17 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "work-helmets",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
+   "shortDescription": "Kit for closing the air vents in the ULTRALIGHT WORK",
+   "description": "Practical accessories for use with the ULTRALIGHT WORK industrial helmets.",
+   "features": [
+    "Plug-in kit: for closing the air vents"
+   ],
    "specs": {},
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Work at height"
@@ -68361,10 +69731,17 @@
       "kind": "pack",
       "size": 10
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573990877"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24181.webp",
+     "alt": "Ultralight Work Plug in Kit, no color",
+     "colour": "No color"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -68373,10 +69750,15 @@
     "helmet-visor-clip",
     "ear-muffs-hygiene-set"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 2231,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/helmet/ultralight-work-plug-in-kit",
+    "name": "ULTRALIGHT WORK PLUG IN KIT"
+   },
    "priceLists": [
     "safety"
    ]
@@ -71249,14 +72631,31 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "tree-care",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Cambium saver specially developed for tree care use",
+   "description": "The cambium saver was developed especially for tree care use. It is a mobile sling anchor and belay anchor for climbing ropes",
+   "features": [
+    "Differently colored aluminum rings and dual-colored webbing allow quick and easy rigging and removal from the ground",
+    "Wide webbing prevents the cambium saver from twisting",
+    "Large and small eyelets for ropes with spliced ends (splice is attached to the small eyelet)",
+    "Ring diameter large ring (inside/outside): 40/64 mm",
+    "Ring diameter smal ring (inside/outside): 28/53 mm",
+    "Length discrimination by different tape colors",
+    "Includes suitable retrieval cone"
+   ],
+   "specs": {
+    "Minimum breaking strength": "25 kN"
+   },
    "properties": [],
-   "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "certifications": [
+    "EN 354",
+    "EN 795 Type B"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Tree care"
    ],
@@ -71271,7 +72670,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574091320"
     },
     {
      "sku": "837911502180",
@@ -71283,7 +72683,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574257818"
     },
     {
      "sku": "837911203140",
@@ -71295,11 +72696,64 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574091337"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24270.webp",
+     "alt": "Cambiumsaver Bicolor, oasis-night",
+     "colour": "Oasis-night"
+    },
+    {
+     "src": "/products/24271.webp",
+     "alt": "Cambiumsaver Bicolor, sahara-night",
+     "colour": "Sahara-night"
+    },
+    {
+     "src": "/products/24272.webp",
+     "alt": "Cambiumsaver Bicolor, blue-night",
+     "colour": "Blue-night"
+    },
+    {
+     "src": "/products/39871.webp",
+     "alt": "Cambiumsaver Bicolor, oasis-night",
+     "colour": "Oasis-night"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Connecting Elements",
+     "url": "https://avs.edelrid.com/images/attribut/54526_GAL_Verbindungsmittel_ANSICHT_NEU.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "WS User manual Cambium Saver",
+     "url": "https://avs.edelrid.com/images/attribut/54632_54639_GAL_CambiumSaver_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Cambiumsaver Bicolor",
+     "url": "https://avs.edelrid.com/images/attribut/83791-05_Cambiumsaver_Bicolor_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 795",
+     "url": "https://avs.edelrid.com/images/attribut/EN_795.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "EN 354",
+     "url": "https://avs.edelrid.com/images/attribut/EN_354.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Nuts & Steel Wire",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Klemmkeil-Stahlseil.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "adjustable-cambium-saver",
@@ -71307,10 +72761,18 @@
     "tibor-8-mm-loop",
     "tibor-8-mm-loop-w-ring"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
+   "chips": [
+    "EN 354"
+   ],
    "rank": 2309,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors/cambiumsaver-bicolor",
+    "name": "CAMBIUMSAVER BICOLOR"
+   },
    "priceLists": [
     "safety"
    ]
@@ -72940,7 +74402,7 @@
    "downloads": [
     {
      "label": "WS User Manual Cupid",
-     "url": "https://avs.edelrid.com/images/attribut/54693_GAL_CUPID_CUPID-STEEL_DINA4_ANSICHT.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54693_GAL_CUPID_CUPID-STEEL_ANSICHT.pdf",
      "kind": "manual"
     },
     {
@@ -73041,7 +74503,7 @@
    "downloads": [
     {
      "label": "WS User Manual Cupid",
-     "url": "https://avs.edelrid.com/images/attribut/54693_GAL_CUPID_CUPID-STEEL_DINA4_ANSICHT.pdf",
+     "url": "https://avs.edelrid.com/images/attribut/54693_GAL_CUPID_CUPID-STEEL_ANSICHT.pdf",
      "kind": "manual"
     },
     {
@@ -73398,12 +74860,29 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "connectors",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Easy-to-handle, versatile, oval carabiner made of steel",
+   "description": "Compact oval steel carabiner for a wide range of applications, such as creating anchor points, use with pulleys, and as a component of rope safety systems.",
+   "features": [
+    "Keylock closure mechanism for a good handling when clipping and unclipping",
+    "Brass sleeve ensures optimum gate strength",
+    "Oval shape for easy gear positioning",
+    "Available with either screw or twist lock"
+   ],
+   "specs": {
+    "Width": "59 mm",
+    "Length": "108 mm",
+    "Gate opening": "23 mm",
+    "Strength, major axis": "30 kN",
+    "Strength, minor axis": "15 kN",
+    "Strength, gate open": "10 kN",
+    "Material": "Steel",
+    "Closure": "Screw",
+    "Carabiner shape": "Oval"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "EN 362"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -73419,11 +74898,44 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573880710"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24391.webp",
+     "alt": "Steel Oval Screw, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/37018.webp",
+     "alt": "Steel Oval Screw, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Carabiners",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Steel Oval Screw",
+     "url": "https://avs.edelrid.com/images/attribut/88248-06_Steel_Oval_Screw_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 362",
+     "url": "https://avs.edelrid.com/images/attribut/EN_362.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "oval-power-steel-ansi",
@@ -73432,9 +74944,16 @@
     "maxiom-rig-slider"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "Oval",
+    "Screw",
+    "EN 362"
+   ],
    "rank": 2405,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/steel-oval-screw",
+    "name": "STEEL OVAL SCREW"
+   },
    "priceLists": [
     "safety"
    ]
@@ -73446,12 +74965,28 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "connectors",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Triple-lock carabiner made of hardened steel",
+   "description": "HMS carabiner with triple lock made of hardened steel for applications involving frequent loading cycles. Suitable for use in top-rope climbing, mountaineering schools and other applications where the carabiner is subjected to regular use.",
+   "features": [
+    "Keylock closure mechanism for a good handling when clipping and unclipping",
+    "Available as either screwgate or Triple Lock model",
+    "Brass sleeve ensures optimum gate strength"
+   ],
+   "specs": {
+    "Width": "74 mm",
+    "Length": "110 mm",
+    "Gate opening": "23 mm",
+    "Strength, major axis": "40 kN",
+    "Strength, minor axis": "15 kN",
+    "Strength, gate open": "15 kN",
+    "Material": "Steel",
+    "Closure": "Triple",
+    "Carabiner shape": "HMS"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "EN 362"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -73467,11 +75002,44 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573880758"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24419.webp",
+     "alt": "Steel HMS Triple, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/37023.webp",
+     "alt": "Steel HMS Triple, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Carabiners",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Steel HMS Triple",
+     "url": "https://avs.edelrid.com/images/attribut/88292-05_Steel_HMS_Triple_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 362",
+     "url": "https://avs.edelrid.com/images/attribut/EN_362.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "steel-strong-triple",
@@ -73480,9 +75048,16 @@
     "oval-power-steel-ansi"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "HMS",
+    "Triple",
+    "EN 362"
+   ],
    "rank": 2407,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/steel-hms-triple",
+    "name": "STEEL HMS TRIPLE"
+   },
    "priceLists": [
     "safety"
    ]
@@ -73494,12 +75069,29 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "connectors",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Steel carabiner with a large gate opening and a triple-lock closure",
+   "description": "Steel carabiner with a large gate opening for applications requiring high breaking strength",
+   "features": [
+    "Very high strength in both longitudinal and transverse directions (50 kN, M-type carabiner )",
+    "Keylock closure mechanism for a good handling when clipping and unclipping",
+    "Triple Lock closure mechanism for increased safety",
+    "Brass sleeve ensures optimum gate strength"
+   ],
+   "specs": {
+    "Width": "77 mm",
+    "Length": "118 mm",
+    "Gate opening": "24 mm",
+    "Strength, major axis": "50 kN",
+    "Strength, minor axis": "15 kN",
+    "Strength, gate open": "20 kN",
+    "Material": "Steel",
+    "Closure": "Triple",
+    "Carabiner shape": "Offset D"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "EN 362"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -73515,11 +75107,49 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573880765"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24390.webp",
+     "alt": "Steel Strong Triple, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/37016.webp",
+     "alt": "Steel Strong Triple, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/37017.webp",
+     "alt": "Steel Strong Triple, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Carabiners",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Steel Strong Triple",
+     "url": "https://avs.edelrid.com/images/attribut/88247-06_Steel_Strong_Triple_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 362",
+     "url": "https://avs.edelrid.com/images/attribut/EN_362.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "steel-hms-triple",
@@ -73528,9 +75158,16 @@
     "steel-oval-screw"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "Offset D",
+    "Triple",
+    "EN 362"
+   ],
    "rank": 2408,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/steel-strong-triple",
+    "name": "STEEL STRONG TRIPLE"
+   },
    "priceLists": [
     "safety"
    ]
@@ -73644,12 +75281,25 @@
      "subcategory": "adventure-parks"
     }
    ],
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Robust, triangular, steel screw link",
+   "description": "Certified triangle screw link for the most diverse fields of application, e.g. fixing a chest ascender on a chest harness.",
+   "features": [
+    "Triangle Captive: Locking device available as accessory"
+   ],
+   "specs": {
+    "Width": "56 mm",
+    "Length": "72 mm",
+    "Strength, major axis": "27 kN",
+    "Strength, gate open": "10 kN",
+    "Material": "Steel",
+    "Closure": "Screw",
+    "Carabiner shape": "Delta"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "EN 12275",
+    "EN 362"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -73666,11 +75316,54 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573881144"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24422.webp",
+     "alt": "Triangle, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/37024.webp",
+     "alt": "Triangle, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/37025.webp",
+     "alt": "Triangle, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Carabiners",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Triangle",
+     "url": "https://avs.edelrid.com/images/attribut/88294-04e (Triangle) EC-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 362",
+     "url": "https://avs.edelrid.com/images/attribut/EN_362.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "EN 12275",
+     "url": "https://avs.edelrid.com/images/attribut/EN_12275.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "taser-steel-ansi",
@@ -73679,9 +75372,16 @@
     "triangle-captive"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "Delta",
+    "Screw",
+    "EN 12275"
+   ],
    "rank": 2411,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/triangle",
+    "name": "TRIANGLE"
+   },
    "priceLists": [
     "safety",
     "adventure"
@@ -73784,12 +75484,26 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "connectors",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Steel carabiner with a palm latch mechanism | for use in PPE systems",
+   "description": "Steel carabiner with palm squeeze mechanism for use in PPE systems.",
+   "features": [
+    "Keylock closure mechanism for a good handling when clipping and unclipping",
+    "Palm squeeze mechanism prevents unintentional opening and ensures easy handling"
+   ],
+   "specs": {
+    "Width": "75 mm",
+    "Length": "141 mm",
+    "Gate opening": "25 mm",
+    "Strength, major axis": "40 kN",
+    "Strength, minor axis": "10 kN",
+    "Strength, gate open": "23 kN",
+    "Material": "Steel"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "EN 12275",
+    "EN 362"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -73805,11 +75519,49 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573881090"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24426.webp",
+     "alt": "DSG 4000 Steel, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/37033.webp",
+     "alt": "DSG 4000 Steel, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/37034.webp",
+     "alt": "DSG 4000 Steel, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Carabiners",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity DSG 4000 Steel",
+     "url": "https://avs.edelrid.com/images/attribut/88299-09_DSG_4000_Steel_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 362",
+     "url": "https://avs.edelrid.com/images/attribut/EN_362.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "dsg-triton",
@@ -73818,9 +75570,14 @@
     "triangle"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "EN 12275"
+   ],
    "rank": 2416,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/dsg-4000-steel",
+    "name": "DSG 4000 STEEL"
+   },
    "priceLists": [
     "safety"
    ]
@@ -73832,12 +75589,27 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "connectors",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Aluminum carabiner with a palm latch mechanism | for use in PPE systems",
+   "description": "Aluminium carabiner with palm-operated locking mechanism for use in PPE systems.",
+   "features": [
+    "Keylock closure mechanism for a good handling when clipping and unclipping",
+    "Palm squeeze mechanism prevents unintentional opening and ensures easy handling"
+   ],
+   "specs": {
+    "Width": "71 mm",
+    "Length": "136 mm",
+    "Gate opening": "25 mm",
+    "Strength, major axis": "33 kN",
+    "Strength, minor axis": "8 kN",
+    "Strength, gate open": "12 kN",
+    "Material": "Aluminium",
+    "Closure": "Keylock"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "EN 12275",
+    "EN 362"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -73853,7 +75625,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285381646"
     },
     {
      "sku": "882420000730",
@@ -73864,11 +75637,59 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573880789"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24386.webp",
+     "alt": "DSG Triton, night",
+     "colour": "Night"
+    },
+    {
+     "src": "/products/24387.webp",
+     "alt": "DSG Triton, titan",
+     "colour": "Titan"
+    },
+    {
+     "src": "/products/38441.webp",
+     "alt": "DSG Triton, night",
+     "colour": "Night"
+    },
+    {
+     "src": "/products/38442.webp",
+     "alt": "DSG Triton, night",
+     "colour": "Night"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Carabiners",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity DSG Triton",
+     "url": "https://avs.edelrid.com/images/attribut/88242-08_DSG_Triton_EU-Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 362",
+     "url": "https://avs.edelrid.com/images/attribut/EN_362.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "EN 12275",
+     "url": "https://avs.edelrid.com/images/attribut/EN_12275.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Carabiner",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Karabiner.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "dsg-4000-steel",
@@ -73877,9 +75698,15 @@
     "triangle"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "Keylock",
+    "EN 12275"
+   ],
    "rank": 2417,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/dsg-triton",
+    "name": "DSG TRITON"
+   },
    "priceLists": [
     "safety"
    ]
@@ -73891,13 +75718,28 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "connectors",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Innovative aluminum carabiner with an integrated swivel",
+   "description": "Aluminium carabiner with integrated swivel for use in PPE systems and material handling applications. The integrated swivel helps reduce twisting within the system.",
+   "features": [
+    "Integrated swivel prevents twisting of the lanyard.",
+    "Keylock closure mechanism for a good handling when clipping and unclipping",
+    "Triple Lock closure mechanism for increased safety"
+   ],
+   "specs": {
+    "Width": "78 mm",
+    "Length": "117 mm",
+    "Gate opening": "20 mm",
+    "Strength, major axis": "25 kN",
+    "Material": "Aluminium",
+    "Closure": "Triple"
+   },
    "properties": [],
-   "certifications": [],
-   "technologies": [],
+   "certifications": [
+    "EN 362"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Work at height"
@@ -73912,11 +75754,44 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285573959"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/27854.webp",
+     "alt": "Twister Triple 21 mm, titan",
+     "colour": "Titan"
+    },
+    {
+     "src": "/products/37031.webp",
+     "alt": "Twister Triple 21 mm, titan",
+     "colour": "Titan"
+    },
+    {
+     "src": "/products/37032.webp",
+     "alt": "Twister Triple 21 mm, titan",
+     "colour": "Titan"
+    },
+    {
+     "src": "/products/38444.webp",
+     "alt": "Twister Triple 21 mm, titan",
+     "colour": "Titan"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Carabiners",
+     "url": "https://avs.edelrid.com/images/attribut/54530_GAL_KARABINER_ANSICHT_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Twister Triple 21 mm",
+     "url": "https://avs.edelrid.com/images/attribut/88269_56118-05e_Twister_Triple_21_mm_EU-Conf.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "dsg-triton",
@@ -73924,10 +75799,18 @@
     "triangle-captive",
     "triangle"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "Triple",
+    "EN 362"
+   ],
    "rank": 2419,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors-shop/twister-triple-21mm",
+    "name": "TWISTER TRIPLE 21MM"
+   },
    "priceLists": [
     "safety"
    ]
@@ -74456,7 +76339,7 @@
    "mainCategory": "professional",
    "subcategory": "tree-care",
    "shortDescription": "Protective cover for the spike on the TALON tree climbing spurs",
-   "description": "Protective cover for the spike on the TALON tree-climbing spurs, for example for use during transportation.",
+   "description": "Protective cover for the spike on the TALON tree-climbing spurs, for example for use during transportation. Contents: 1 piece",
    "features": [],
    "specs": {
     "Material": "Polyurethan"
@@ -74579,10 +76462,15 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "tree-care",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Spare VCR strap for the TALON tree climbing spurs",
+   "description": "Spare Velcro for the Talon tree-climbing spurs.",
+   "features": [
+    "Upper and lower straps available separately",
+    "Washable velco straps for the foot"
+   ],
+   "specs": {
+    "Material": "Polyamide"
+   },
    "properties": [],
    "certifications": [],
    "technologies": [],
@@ -74600,11 +76488,24 @@
      "unit": {
       "kind": "set"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285674793"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24425.webp",
+     "alt": "Talon Calf Upper Straps, night",
+     "colour": "Night"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Talon",
+     "url": "https://avs.edelrid.com/images/attribut/54577_GAL_Talon_ANSICHT.pdf",
+     "kind": "manual"
+    }
+   ],
    "faqs": [],
    "related": [
     "talon-upper-bindings",
@@ -74615,7 +76516,10 @@
    "tags": [],
    "chips": [],
    "rank": 2438,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/tree-crampon-shop/talon-calf-upper-straps",
+    "name": "TALON CALF UPPER STRAPS"
+   },
    "priceLists": [
     "safety"
    ]
@@ -74627,10 +76531,15 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "tree-care",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Spare VCR strap for the TALON tree climbing spurs",
+   "description": "Spare Velcro for the Talon tree-climbing spurs.",
+   "features": [
+    "Only available in a set",
+    "Washable velco straps for the foot"
+   ],
+   "specs": {
+    "Material": "Polyester / Polyamide"
+   },
    "properties": [],
    "certifications": [],
    "technologies": [],
@@ -74648,11 +76557,24 @@
      "unit": {
       "kind": "pair"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285674809"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24427.webp",
+     "alt": "Talon Lower Straps System, night",
+     "colour": "Night"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Talon",
+     "url": "https://avs.edelrid.com/images/attribut/54577_GAL_Talon_ANSICHT.pdf",
+     "kind": "manual"
+    }
+   ],
    "faqs": [],
    "related": [
     "talon-calf-upper-straps",
@@ -74663,7 +76585,10 @@
    "tags": [],
    "chips": [],
    "rank": 2439,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/tree-crampon-shop/talon-lower-straps-system",
+    "name": "TALON LOWER STRAPS SYSTEM"
+   },
    "priceLists": [
     "safety"
    ]
@@ -74675,10 +76600,16 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "tree-care",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Spare padding for the TALON tree climbing spurs",
+   "description": "Spare padding for the Talon tree-climbing spurs.",
+   "features": [
+    "Calf padding with ventilated mesh for enhanced breathability",
+    "Only available in a set",
+    "Washable padding"
+   ],
+   "specs": {
+    "Material": "TPU"
+   },
    "properties": [],
    "certifications": [],
    "technologies": [],
@@ -74696,11 +76627,24 @@
      "unit": {
       "kind": "pair"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285674816"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24428.webp",
+     "alt": "Talon Calf Padding, night",
+     "colour": "Night"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Talon",
+     "url": "https://avs.edelrid.com/images/attribut/54577_GAL_Talon_ANSICHT.pdf",
+     "kind": "manual"
+    }
+   ],
    "faqs": [],
    "related": [
     "talon-lower-straps-system",
@@ -74711,7 +76655,10 @@
    "tags": [],
    "chips": [],
    "rank": 2440,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/tree-crampon-shop/talon-calf-padding",
+    "name": "TALON CALF PADDING"
+   },
    "priceLists": [
     "safety"
    ]
@@ -75951,12 +77898,18 @@
      "subcategory": "rescue"
     }
    ],
-   "shortDescription": "",
-   "description": "",
+   "shortDescription": "Large, aluminum figure 8 descender",
+   "description": "Large aluminium descender with ears for belay, descent and positioning.",
    "features": [],
-   "specs": {},
+   "specs": {
+    "Width": "170 mm",
+    "Approved rope diameter": "7.8 - 12.0 mm",
+    "Material": "Aluminium"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "EN 15151-2"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -75973,7 +77926,8 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573881182"
     },
     {
      "sku": "889200003000",
@@ -75984,20 +77938,58 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573881175"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24479.webp",
+     "alt": "Rescue 8, night",
+     "colour": "Night"
+    },
+    {
+     "src": "/products/24480.webp",
+     "alt": "Rescue 8, blue",
+     "colour": "Blue"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Rescue 8",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_GAL_Figure_of_Eight_DB_150721_1K_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "Declaration of Conformity Rescue 8",
+     "url": "https://avs.edelrid.com/images/attribut/88920-03_Rescue_8_Conf.pdf",
+     "kind": "doc"
+    },
+    {
+     "label": "EN 15151-2",
+     "url": "https://avs.edelrid.com/images/attribut/EN_15151-2.pdf",
+     "kind": "other"
+    },
+    {
+     "label": "Inspection Instruction Belay Devices",
+     "url": "https://avs.edelrid.com/images/attribut/Pruefanweisung_Sicherungsgeraet.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "megawatt",
     "fuse"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "EN 15151-2"
+   ],
    "rank": 2474,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/descenders-shop/rescue-8",
+    "name": "RESCUE 8"
+   },
    "priceLists": [
     "safety"
    ]
@@ -76656,12 +78648,21 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "pulleys",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Small, redundantly structured rigging plate | robust stainless steel",
+   "description": "Small, redundancy rigging plate made of robust stainless steel ideal for fire fighting and rescue operations.",
+   "features": [
+    "Two rigging plates riveted together for 100 % redundancy",
+    "Wide hole diameter (20 mm) with deflection radius designed to protect fabric",
+    "Dimensions: 60 x 60 x 10 mm"
+   ],
+   "specs": {
+    "Minimum breaking strength": "35 kN",
+    "Material": "Stainless Steel"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "CNB/P 11.114 PfE"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -76677,11 +78678,34 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4052285381097"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24485.webp",
+     "alt": "Maggi Rig, silver",
+     "colour": "Silver"
+    },
+    {
+     "src": "/products/24486.webp",
+     "alt": "Maggi Rig, silver",
+     "colour": "Silver"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "WS User Manual Maggi Rig",
+     "url": "https://avs.edelrid.com/images/attribut/54574_GAL_MAGGI_RIG_ANSICHT.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Maggi Rig",
+     "url": "https://avs.edelrid.com/images/attribut/88944-04_Maggi_Rig_EU-Conf.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "mini-rig",
@@ -76690,9 +78714,14 @@
     "cupid-swivel"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "CNB/P 11.114 PfE"
+   ],
    "rank": 2494,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors/maggi-rig",
+    "name": "MAGGI RIG"
+   },
    "priceLists": [
     "safety"
    ]
@@ -76704,13 +78733,26 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "pulleys",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Small, light, aluminum rigging plate",
+   "description": "Small, lightweight aluminium rigging plate suitable for extending from one to three anchor points.",
+   "features": [
+    "Hole diameter: 20 mm",
+    "Central opening can take up to three carabiners",
+    "Wrought construction for optimum material utilisation. Low weight and high strength",
+    "6 mm thick",
+    "Maximum breaking strength: 36 kN"
+   ],
+   "specs": {
+    "Minimum breaking strength": "30 kN",
+    "Material": "Aluminium"
+   },
    "properties": [],
-   "certifications": [],
-   "technologies": [],
+   "certifications": [
+    "CNB/P 11.114 PfE"
+   ],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Work at height"
@@ -76725,11 +78767,44 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573881229"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24483.webp",
+     "alt": "Mini Rig, orange",
+     "colour": "Orange"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Rigging Plates General 1",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_RiggingPlates_general_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Rigging Plates General 2",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_RiggingPlates_general_2.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Rigging Plates Specific 1",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_RiggingPlates_specific_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Rigging Plates Specific 2",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_RiggingPlates_specific_2.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Mini Rig",
+     "url": "https://avs.edelrid.com/images/attribut/88942-06_Mini_Rig_EU-Conf.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "maggi-rig",
@@ -76737,10 +78812,17 @@
     "ring-alu",
     "cupid-swivel-mix"
    ],
-   "tags": [],
-   "chips": [],
+   "tags": [
+    "Fair Wear"
+   ],
+   "chips": [
+    "CNB/P 11.114 PfE"
+   ],
    "rank": 2495,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors/mini-rig",
+    "name": "MINI RIG"
+   },
    "priceLists": [
     "safety"
    ]
@@ -76752,12 +78834,23 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "pulleys",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Large aluminium rigging plate",
+   "description": "Large aluminium rigging plate designed for organising multiple anchor points and for use in complex rigging systems.",
+   "features": [
+    "7 mm thick",
+    "Hole diameter: 20 mm",
+    "Central opening can take up to three carabiners",
+    "Wrought construction for optimum material utilisation. Low weight and high strength",
+    "Dimensions: 98 x 149 x 7 mm"
+   ],
+   "specs": {
+    "Minimum breaking strength": "40 kN",
+    "Material": "Aluminium"
+   },
    "properties": [],
-   "certifications": [],
+   "certifications": [
+    "CNB/P 11.114 PfE"
+   ],
    "technologies": [],
    "badges": [],
    "use": [
@@ -76773,11 +78866,44 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574255982"
     }
    ],
-   "images": [],
-   "downloads": [],
+   "images": [
+    {
+     "src": "/products/24484.webp",
+     "alt": "Master Rig II, night",
+     "colour": "Night"
+    }
+   ],
+   "downloads": [
+    {
+     "label": "User manual Rigging Plates General 1",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_RiggingPlates_general_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Rigging Plates General 2",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_RiggingPlates_general_2.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Rigging Plates Specific 1",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_RiggingPlates_specific_1.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "User manual Rigging Plates Specific 2",
+     "url": "https://avs.edelrid.com/images/attribut/5XXXX_RiggingPlates_specific_2.pdf",
+     "kind": "manual"
+    },
+    {
+     "label": "EU Declaration of Conformity Master Rig II",
+     "url": "https://avs.edelrid.com/images/attribut/88943-04_Master_Rig_II_EU-Conf.pdf",
+     "kind": "doc"
+    }
+   ],
    "faqs": [],
    "related": [
     "mini-rig",
@@ -76786,9 +78912,14 @@
     "cupid-swivel-mix"
    ],
    "tags": [],
-   "chips": [],
+   "chips": [
+    "CNB/P 11.114 PfE"
+   ],
    "rank": 2496,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/connectors/master-rig",
+    "name": "MASTER RIG"
+   },
    "priceLists": [
     "safety"
    ]
@@ -77915,13 +80046,20 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "bags-transport",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Small belt bag for small parts and tools",
+   "description": "Belt bag for small equipment and practical necessities.",
+   "features": [
+    "Pull cord with tanka cord lock"
+   ],
+   "specs": {
+    "Volume": "2.30 l",
+    "Material": "Polyester"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Work at height"
@@ -77936,10 +80074,27 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573881793"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24432.webp",
+     "alt": "Stuff Bag 2.3, grey",
+     "colour": "Grey"
+    },
+    {
+     "src": "/products/37071.webp",
+     "alt": "Stuff Bag 2.3, grey",
+     "colour": "Grey"
+    },
+    {
+     "src": "/products/37072.webp",
+     "alt": "Stuff Bag 2.3, grey",
+     "colour": "Grey"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -77948,10 +80103,15 @@
     "setter-belt",
     "beaker"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 2516,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/transport-sacks-and-bags-shop/stuff-bag-2-3",
+    "name": "STUFF BAG"
+   },
    "priceLists": [
     "safety"
    ]
@@ -78360,14 +80520,23 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "protection-accessories",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
-   "specs": {},
+   "shortDescription": "Webbing daisy chain sling | for storing work equipment",
+   "description": "EDELRID daisy chain of 19 mm webbing for equipment storage.",
+   "features": [
+    "Not PPE certified",
+    "Simple attachement with girth hitch loop"
+   ],
+   "specs": {
+    "Material": "Polyamide"
+   },
    "properties": [],
    "certifications": [],
-   "technologies": [],
-   "badges": [],
+   "technologies": [
+    "Fair Wear"
+   ],
+   "badges": [
+    "Made in Germany"
+   ],
    "use": [
     "Work at height"
    ],
@@ -78382,10 +80551,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021573881267"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24263.webp",
+     "alt": "Etrier, night-oasis",
+     "colour": "Night-oasis"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -78394,10 +80570,16 @@
     "weblink-replacement-cap",
     "protector-iii"
    ],
-   "tags": [],
+   "tags": [
+    "Made in Germany",
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 2534,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/accesories-shop/stufenschlinge",
+    "name": "DAISY CHAIN"
+   },
    "priceLists": [
     "safety"
    ]
@@ -78985,13 +81167,19 @@
    "brand": "EDELRID",
    "mainCategory": "professional",
    "subcategory": "adventure-parks",
-   "shortDescription": "",
-   "description": "",
-   "features": [],
+   "shortDescription": "Grip bar | accessory for the SMART BELAY",
+   "description": "PILOT BAR for support during the course and to ensure correct landing on the zip line.",
+   "features": [
+    "Simplifies self-rescue and loadable up to 120kg",
+    "Minimises twisting of the lanyard arms",
+    "Minimises risk of strangulation"
+   ],
    "specs": {},
    "properties": [],
    "certifications": [],
-   "technologies": [],
+   "technologies": [
+    "Fair Wear"
+   ],
    "badges": [],
    "use": [
     "Adventure parks"
@@ -79006,10 +81194,17 @@
      "unit": {
       "kind": "piece"
      },
-     "stock": null
+     "stock": null,
+     "gtin": "4021574338661"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "/products/24169.webp",
+     "alt": "Pilot Bar, night",
+     "colour": "Night"
+    }
+   ],
    "downloads": [],
    "faqs": [],
    "related": [
@@ -79018,10 +81213,15 @@
     "smart-belay-tie-in-loop",
     "switch-pro-y-static"
    ],
-   "tags": [],
+   "tags": [
+    "Fair Wear"
+   ],
    "chips": [],
    "rank": 2874,
-   "source": null,
+   "source": {
+    "url": "https://edelrid.com/int-en/professional/smart-belay/pilot-bar",
+    "name": "PILOT BAR"
+   },
    "priceLists": [
     "adventure"
    ]
