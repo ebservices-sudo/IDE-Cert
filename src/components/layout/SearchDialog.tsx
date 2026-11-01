@@ -92,8 +92,8 @@ export function SearchDialog({ className }: { className?: string }) {
                     {result.items.map((s) => (
                       <li key={s.href}>
                         <Link href={s.href} onClick={close} className="flex items-center gap-4 px-4 py-3 hover:bg-mist">
-                          <span className="relative size-14 shrink-0 overflow-hidden rounded border border-line bg-white">
-                            {s.image && <Image src={s.image} alt="" fill sizes="56px" className="object-contain p-1" />}
+                          <span className="relative size-14 shrink-0 overflow-hidden rounded border border-line bg-mist">
+                            {s.image && <Image src={s.image} alt="" fill sizes="56px" className="object-contain p-1 mix-blend-multiply" />}
                           </span>
                           <span className="min-w-0 flex-1">
                             <span className="block truncate font-semibold">{s.name}</span>

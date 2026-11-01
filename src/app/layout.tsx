@@ -36,7 +36,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="sq" data-lang="sq" className={archivo.variable} suppressHydrationWarning>
+    <html lang="sq" data-lang="sq" data-scroll-behavior="smooth" className={archivo.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: langBootScript }} />
       </head>

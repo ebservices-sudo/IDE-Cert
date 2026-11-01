@@ -117,8 +117,8 @@ function CartRow({ line, qty, onQty, onRemove }: { line: PricedLine; qty: number
   const metre = line.unit.kind === "metre";
   return (
     <li className="flex gap-4 py-5">
-      <Link href={line.href} className="relative size-20 shrink-0 overflow-hidden rounded-md border border-line bg-white sm:size-24">
-        {line.image && <Image src={line.image} alt="" fill sizes="96px" className="object-contain p-1.5" />}
+      <Link href={line.href} className="relative size-20 shrink-0 overflow-hidden rounded-md border border-line bg-mist sm:size-24">
+        {line.image && <Image src={line.image} alt="" fill sizes="96px" className="object-contain p-1.5 mix-blend-multiply" />}
       </Link>
       <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-start">
         <div className="min-w-0 flex-1">

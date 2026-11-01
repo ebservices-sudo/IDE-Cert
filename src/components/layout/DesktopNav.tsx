@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { SmoothLink } from "./SmoothLink";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { mainNav } from "@/config/site";
@@ -19,14 +19,14 @@ export function DesktopNav() {
           const current = shop ? path.startsWith("/shop") || path === "/search" : !l.href.includes("#") && path.startsWith(l.href);
           return (
             <li key={l.href}>
-              <Link
+              <SmoothLink
                 href={l.href}
                 aria-current={current ? "page" : undefined}
                 className={clsx("inline-flex items-center gap-2 text-[15px] transition-colors hover:text-white", current || shop ? "text-white" : "text-white/60")}
               >
                 {shop && <span aria-hidden className="size-[7px] rounded-full bg-brand" />}
                 <T sq={l.labelSq} en={l.label} />
-              </Link>
+              </SmoothLink>
             </li>
           );
         })}

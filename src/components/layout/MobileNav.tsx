@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { SmoothLink as Link } from "./SmoothLink";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Mail, Menu, Phone, X } from "lucide-react";
 import { subcategoryHref, worldHref, worlds } from "@/config/catalog";

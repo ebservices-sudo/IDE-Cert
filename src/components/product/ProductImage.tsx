@@ -1,13 +1,18 @@
 import Image from "next/image";
 import { IdeGlyphs } from "@/components/brand/Logo";
+import { T } from "@/lib/i18n/T";
 
-/** Product photo, or a branded placeholder while the photo is missing. */
+/**
+ * Product photo, or a branded placeholder while the photo is missing.
+ * EDELRID photos are on white; `mix-blend-multiply` drops the white into the tile colour
+ * behind it, so products look cut out on the light grey tiles.
+ */
 export function ProductImage({
   src,
   alt,
   sizes,
   preload = false,
-  className = "object-contain p-4 sm:p-6",
+  className = "object-contain p-4 mix-blend-multiply sm:p-6",
 }: {
   src?: string;
   alt: string;
@@ -23,7 +28,9 @@ export function ProductImage({
       <svg viewBox="0 0 324 144" aria-hidden="true" className="w-1/3 opacity-[0.12]">
         <IdeGlyphs fill="#141414" cuts={false} />
       </svg>
-      <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted">Photo coming soon</span>
+      <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted">
+        <T sq="Foto së shpejti" en="Photo coming soon" />
+      </span>
     </div>
   );
 }

@@ -577,7 +577,7 @@ function ProductTile({ it, priority }: { it: ExplorerItem; priority: boolean }) 
     <li className="group relative flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-[border-color,box-shadow] hover:border-ink/25 hover:shadow-[0_18px_40px_-28px_rgba(20,20,20,.45)]">
       <div className="relative aspect-square bg-mist">
         {it.image ? (
-          <Image src={it.image} alt="" fill priority={priority} sizes="(min-width:1280px) 240px, (min-width:768px) 30vw, 45vw" className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.04]" />
+          <Image src={it.image} alt="" fill priority={priority} sizes="(min-width:1280px) 240px, (min-width:768px) 30vw, 45vw" className="object-contain p-4 mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.04]" />
         ) : (
           <div className="grid h-full place-items-center text-ink/70">
             <ShopIcon name={categoryGuide[it.cat]?.icon ?? "acc"} className="size-16" />

@@ -85,13 +85,13 @@ function Gallery({ images, colour, name }: { images: Product["images"]; colour?:
 
   return (
     <div className="lg:sticky lg:top-28 lg:self-start">
-      <div className="relative aspect-square overflow-hidden rounded-xl border border-line bg-white">
+      <div className="relative aspect-square overflow-hidden rounded-xl border border-line bg-mist">
         <ProductImage
           src={current?.src}
           alt={current?.alt ?? name}
           sizes="(min-width: 1024px) 45vw, 100vw"
           preload
-          className="object-contain p-6 sm:p-10"
+          className="object-contain p-6 mix-blend-multiply sm:p-10"
         />
       </div>
       {shown.length > 1 && (
@@ -104,11 +104,11 @@ function Gallery({ images, colour, name }: { images: Product["images"]; colour?:
                 aria-label={t(`Shfaq foton ${i + 1} nga ${shown.length}`, `Show photo ${i + 1} of ${shown.length}`)}
                 aria-current={i === active}
                 className={clsx(
-                  "relative block size-16 overflow-hidden rounded-md border bg-white sm:size-20",
+                  "relative block size-16 overflow-hidden rounded-md border bg-mist sm:size-20",
                   i === active ? "border-ink" : "border-line hover:border-ink/40",
                 )}
               >
-                <Image src={im.src} alt="" fill sizes="80px" className="object-contain p-1.5" />
+                <Image src={im.src} alt="" fill sizes="80px" className="object-contain p-1.5 mix-blend-multiply" />
               </button>
             </li>
           ))}
@@ -221,8 +221,8 @@ function PurchasePanel({
                       )}
                     >
                       {img && (
-                        <span className="relative size-7 shrink-0 overflow-hidden rounded bg-white">
-                          <Image src={img} alt="" fill sizes="28px" className="object-contain" />
+                        <span className="relative size-7 shrink-0 overflow-hidden rounded bg-mist">
+                          <Image src={img} alt="" fill sizes="28px" className="object-contain mix-blend-multiply" />
                         </span>
                       )}
                       {shortLabel(dim, value)}

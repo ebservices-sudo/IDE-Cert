@@ -6,7 +6,7 @@ import { T } from "@/lib/i18n/T";
 export function ProductCard({ card, preload = false }: { card: CardData; preload?: boolean }) {
   return (
     <Link href={card.href} className="group flex h-full flex-col">
-      <div className="relative aspect-square overflow-hidden rounded-lg border border-line bg-white transition-colors group-hover:border-ink/25">
+      <div className="relative aspect-square overflow-hidden rounded-lg border border-line bg-mist transition-colors group-hover:border-ink/25">
         <ProductImage
           src={card.image?.src}
           alt={card.image?.alt ?? card.name}
