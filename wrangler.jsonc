@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   // Cloudflare Workers deployment via OpenNext (`npm run deploy`, or Workers Builds on push).
-  "name": "ide-cert",
+  "name": "ide-cert-demo",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
