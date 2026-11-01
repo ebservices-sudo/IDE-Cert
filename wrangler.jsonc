@@ -9,34 +9,13 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
-  "services": [
-    {
-      // Self-reference used by the OpenNext cache. Must match "name".
-      "binding": "WORKER_SELF_REFERENCE",
-      "service": "ide-cert"
-    }
-  ],
   "d1_databases": [
     {
-      // Orders, quotes, messages, accounts and price-list imports.
-      // TODO(deploy): `npx wrangler d1 create ide-cert-db` and paste the id here.
+      // Requests, messages, accounts and price-list imports. No database_id: Wrangler
+      // creates the database on the first deploy (free plan) and reuses it after.
       "binding": "DB",
       "database_name": "ide-cert-db",
-      "database_id": "00000000-0000-0000-0000-000000000000",
       "migrations_dir": "migrations"
-    },
-    {
-      // Next.js cache tags (OpenNext). Same database; the table is created on deploy.
-      "binding": "NEXT_TAG_CACHE_D1",
-      "database_name": "ide-cert-db",
-      "database_id": "00000000-0000-0000-0000-000000000000"
-    }
-  ],
-  "r2_buckets": [
-    {
-      // Next.js incremental cache. TODO(deploy): `npx wrangler r2 bucket create ide-cert-opennext-cache`
-      "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "ide-cert-opennext-cache"
     }
   ],
   "images": {

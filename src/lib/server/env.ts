@@ -22,7 +22,8 @@ export async function getEnv(): Promise<Env> {
 export async function getSecret(name: string): Promise<string | undefined> {
   const env = await getEnv();
   const v = env[name] ?? process.env[name];
-  return typeof v === "string" && v ? v : undefined;
+  // "none" lets a dashboard that insists on a value leave a secret switched off.
+  return typeof v === "string" && v && v.toLowerCase() !== "none" ? v : undefined;
 }
 
 export class ServiceUnavailableError extends Error {}
