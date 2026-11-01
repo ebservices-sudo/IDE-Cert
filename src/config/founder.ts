@@ -44,32 +44,62 @@ export const founder = {
     ziplines: ["Përmet", "Korçë", "Pukë", "Prizren", "Theth"],
     parks: ["Prishtinë", "Kamenicë", "Pukë"],
   },
-  bio: [
+  intro: {
+    sq: "Inxhinier mekanik dhe profesor universitar që projekton, inspekton dhe vlerëson sisteme sigurie në lartësi: zipline, parqe me litarë, Via Ferrata, vinça, ashensorë dhe teleferikë.",
+    en: "Mechanical engineer and university professor who designs, inspects and assesses safety systems at height: zip lines, rope parks, via ferratas, cranes, lifts and cable cars.",
+  } as L10n,
+  /** The CV as short, scannable groups for the About page. */
+  highlights: [
     {
-      sq: "Dr. sc. Shpetim Lajqi është profesor i asociuar në Fakultetin e Inxhinierisë Mekanike të Universitetit të Prishtinës. Studimet universitare dhe të magjistraturës i ka përfunduar në Universitetin e Prishtinës, ndërsa doktoratën në Inxhinieri Mekanike në Universitetin e Mariborit, Slloveni.",
-      en: "Dr. sc. Shpetim Lajqi is an associate professor at the Faculty of Mechanical Engineering of the University of Prishtina. He completed his undergraduate and master's studies at the University of Prishtina and his doctorate in Mechanical Engineering at the University of Maribor, Slovenia.",
+      title: { sq: "Edukimi", en: "Education" },
+      items: [
+        { sq: "Doktoratë në Inxhinieri Mekanike, Universiteti i Mariborit, Slloveni", en: "PhD in Mechanical Engineering, University of Maribor, Slovenia" },
+        { sq: "Studimet universitare dhe master, Universiteti i Prishtinës", en: "Bachelor's and master's studies, University of Prishtina" },
+      ],
     },
     {
-      sq: "Është ekspert gjyqësor në fushat e Sigurisë dhe Shëndetit në Punë, Inxhinierisë Mekanike, Makinerisë dhe Komunikacionit. Është gjithashtu ekspert dhe anëtar i Këshillit të Akreditimit pranë Drejtorisë së Akreditimit të Kosovës, si dhe anëtar i ERCA-s (Shoqata Evropiane e Kurseve me Litarë).",
-      en: "He is a court-appointed expert in Occupational Safety and Health, Mechanical Engineering, Machinery and Transport. He is also an expert and member of the Accreditation Council at the Kosovo Accreditation Directorate, and a member of ERCA (European Ropes Course Association).",
+      title: { sq: "Rolet", en: "Roles" },
+      items: [
+        { sq: "Profesor i asociuar, Fakulteti i Inxhinierisë Mekanike, Universiteti i Prishtinës", en: "Associate Professor, Faculty of Mechanical Engineering, University of Prishtina" },
+        { sq: "Ekspert gjyqësor: siguria dhe shëndeti në punë, inxhinieria mekanike, makineria dhe komunikacioni", en: "Court-appointed expert: occupational safety and health, mechanical engineering, machinery and transport" },
+        { sq: "Ekspert dhe anëtar i Këshillit të Akreditimit, Drejtoria e Akreditimit të Kosovës", en: "Expert and member of the Accreditation Council, Kosovo Accreditation Directorate" },
+        { sq: "Anëtar i ERCA (Shoqata Evropiane e Kurseve me Litarë)", en: "Member of ERCA (European Ropes Course Association)" },
+      ],
     },
     {
-      sq: "Fusha e tij profesionale përfshin projektimin e zipline-ve, parqeve me litarë dhe Via Ferrata-ve. Ka projektuar zipline në Përmet, Korçë, Pukë, Prizren dhe Theth, si dhe ka marrë pjesë në zhvillimin e projekteve të parqeve të aventurave në Prishtinë, Kamenicë, Pukë dhe lokacione të tjera. Ka zhvilluar projekte komplekse inxhinierike, duke përfshirë analizat, hartimin e zgjidhjeve teknike dhe përgatitjen e dokumentacionit përkatës.",
-      en: "His professional field includes the design of zip lines, rope parks and via ferratas. He has designed zip lines in Përmet, Korçë, Pukë, Prizren and Theth, and has taken part in developing adventure park projects in Prishtina, Kamenica, Pukë and other locations. He has delivered complex engineering projects, including analysis, technical solutions and the related documentation.",
+      title: { sq: "Projektim", en: "Design" },
+      items: [
+        { sq: "Zipline në Përmet, Korçë, Pukë, Prizren dhe Theth", en: "Zip lines in Përmet, Korçë, Pukë, Prizren and Theth" },
+        { sq: "Parqe aventure në Prishtinë, Kamenicë, Pukë dhe lokacione të tjera", en: "Adventure parks in Prishtina, Kamenica, Pukë and other locations" },
+        { sq: "Via Ferrata, parqe me litarë dhe projekte komplekse inxhinierike: analiza, zgjidhje teknike, dokumentacion", en: "Via ferratas, rope parks and complex engineering projects: analysis, technical solutions, documentation" },
+      ],
     },
     {
-      sq: "Përvoja e tij përfshin inspektimin dhe vlerësimin teknik të sistemeve të kurseve me litarë dhe pajisjeve të sigurisë, si dhe të vinçave, ashensorëve, teleferikëve dhe pajisjeve të tjera mekanike. Ka kontribuar në vlerësime të sigurisë për parqe aventuristike, zipline, Via Ferrata dhe ura tibetiane, si dhe në hartimin e raporteve teknike dhe dokumentacionit për inspektim e vlerësim të konformitetit.",
-      en: "His experience covers the inspection and technical assessment of ropes course systems and safety equipment, as well as cranes, lifts, cable cars and other mechanical equipment. He has contributed to safety assessments of adventure parks, zip lines, via ferratas and Tibetan bridges, and to technical reports and documentation for inspection and conformity assessment.",
+      title: { sq: "Inspektim dhe vlerësim", en: "Inspection and assessment" },
+      items: [
+        { sq: "Kurse me litarë dhe pajisje sigurie", en: "Ropes courses and safety equipment" },
+        { sq: "Vinça, ashensorë, teleferikë dhe pajisje të tjera mekanike", en: "Cranes, lifts, cable cars and other mechanical equipment" },
+        { sq: "Vlerësime sigurie për parqe aventure, zipline, Via Ferrata dhe ura tibetiane", en: "Safety assessments of adventure parks, zip lines, via ferratas and Tibetan bridges" },
+        { sq: "Raporte teknike dhe dokumentacion për inspektim dhe vlerësim konformiteti", en: "Technical reports and documentation for inspection and conformity assessment" },
+      ],
     },
     {
-      sq: "Ka ndjekur trajnime të specializuara për inspektimin periodik dhe operativ, operimin dhe mirëmbajtjen e kurseve me litarë, të organizuara nga trupa të ERCA-s në Suedi, Angli, Holandë dhe Gjermani. Është i certifikuar për punë në lartësi dhe ka ndjekur trajnime në fushën e vlerësimit të konformitetit dhe standardeve ISO/IEC 17020 dhe ISO/IEC 17025.",
-      en: "He has completed specialised training in periodic and operational inspection, operation and maintenance of ropes courses, organised by ERCA bodies in Sweden, England, the Netherlands and Germany. He is certified for work at height and has trained in conformity assessment and the ISO/IEC 17020 and ISO/IEC 17025 standards.",
+      title: { sq: "Trajnime dhe certifikime", en: "Training and certification" },
+      items: [
+        { sq: "ERCA: inspektim periodik dhe operativ, operim dhe mirëmbajtje e kurseve me litarë (Suedi, Angli, Holandë, Gjermani)", en: "ERCA: periodic and operational inspection, operation and maintenance of ropes courses (Sweden, England, the Netherlands, Germany)" },
+        { sq: "I certifikuar për punë në lartësi", en: "Certified for work at height" },
+        { sq: "Vlerësimi i konformitetit: ISO/IEC 17020 dhe ISO/IEC 17025", en: "Conformity assessment: ISO/IEC 17020 and ISO/IEC 17025" },
+      ],
     },
     {
-      sq: "Përvoja e tij shkencore dhe profesionale pasqyrohet në punime, publikime dhe projekte të shumta në fusha të ndryshme të Inxhinierisë Mekanike. Në IDE Cert, ai kontribuon në projektim, inspektim dhe vlerësim teknik, si dhe në përgatitjen e dokumentacionit për vlerësimin e sigurisë, konformitetit dhe certifikimit.",
-      en: "His scientific and professional experience is reflected in numerous papers, publications and projects across mechanical engineering. At IDE Cert he contributes to design, inspection and technical assessment, and to the documentation for safety, conformity and certification assessments.",
+      title: { sq: "Në IDE Cert", en: "At IDE Cert" },
+      items: [
+        { sq: "Projektim, inspektim dhe vlerësim teknik", en: "Design, inspection and technical assessment" },
+        { sq: "Dokumentacion për vlerësimin e sigurisë, konformitetit dhe certifikimit", en: "Documentation for safety, conformity and certification assessments" },
+        { sq: "Punime, publikime dhe projekte të shumta në inxhinierinë mekanike", en: "Numerous papers, publications and projects in mechanical engineering" },
+      ],
     },
-  ] as L10n[],
+  ] as { title: L10n; items: L10n[] }[],
 };
 
 export const distribution = {

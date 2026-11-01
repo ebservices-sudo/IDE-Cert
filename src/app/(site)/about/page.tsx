@@ -67,28 +67,27 @@ export default function AboutPage() {
             <h2 id="founder-title" className="mt-3 font-display text-3xl leading-tight sm:text-4xl">
               {founder.name}
             </h2>
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink/85">
-              {founder.bio.map((p, i) => (
-                <p key={i}>
-                  <T sq={p.sq} en={p.en} />
-                </p>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/85">
+              <T sq={founder.intro.sq} en={founder.intro.en} />
+            </p>
+            <div className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+              {founder.highlights.map((g) => (
+                <section key={g.title.en} className="border-t-2 border-ink pt-5">
+                  <h3 className="kicker text-ink">
+                    <T sq={g.title.sq} en={g.title.en} />
+                  </h3>
+                  <ul className="mt-4 space-y-3">
+                    {g.items.map((it) => (
+                      <li key={it.en} className="flex gap-3 text-[15px] leading-relaxed">
+                        <span aria-hidden className="mt-2.5 size-1.5 shrink-0 rounded-full bg-brand-strong" />
+                        <span>
+                          <T sq={it.sq} en={it.en} />
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
               ))}
-            </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-line bg-mist p-5">
-                <p className="kicker text-ink">
-                  <T sq="Zipline të projektuara" en="Zip lines designed" />
-                </p>
-                <p className="mt-3 font-semibold">{founder.projects.ziplines.join(" · ")}</p>
-              </div>
-              <div className="rounded-xl border border-line bg-mist p-5">
-                <p className="kicker text-ink">
-                  <T sq="Parqe aventure" en="Adventure parks" />
-                </p>
-                <p className="mt-3 font-semibold">
-                  {founder.projects.parks.join(" · ")} <T sq="dhe të tjera" en="and more" />
-                </p>
-              </div>
             </div>
           </div>
         </Container>
