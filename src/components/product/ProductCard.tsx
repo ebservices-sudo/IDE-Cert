@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CardData } from "@/lib/catalog/cards";
 import { ProductImage } from "./ProductImage";
+import { T } from "@/lib/i18n/T";
 
 export function ProductCard({ card, preload = false }: { card: CardData; preload?: boolean }) {
   return (
@@ -14,7 +15,7 @@ export function ProductCard({ card, preload = false }: { card: CardData; preload
         />
         {card.isNew && (
           <span className="absolute left-3 top-3 rounded bg-brand-strong px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white">
-            New
+            <T sq="E re" en="New" />
           </span>
         )}
       </div>
@@ -32,7 +33,7 @@ export function ProductCard({ card, preload = false }: { card: CardData; preload
         )}
         <div className="mt-auto flex items-end justify-between gap-2 pt-3">
           <p className="font-semibold tabular-nums">{card.price}</p>
-          {card.colours > 1 && <p className="shrink-0 text-xs text-muted">{card.colours} colours</p>}
+          {card.colours > 1 && <p className="shrink-0 text-xs text-muted">{card.colours} <T sq="ngjyra" en="colours" /></p>}
         </div>
       </div>
     </Link>

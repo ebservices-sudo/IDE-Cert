@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
-export type Crumb = { label: string; href?: string };
+export type Crumb = { label: React.ReactNode; href?: string };
 
 export function PageHeader({
   kicker,
@@ -11,9 +11,9 @@ export function PageHeader({
   breadcrumbs,
   children,
 }: {
-  kicker?: string;
-  title: string;
-  description?: string;
+  kicker?: React.ReactNode;
+  title: React.ReactNode;
+  description?: React.ReactNode;
   breadcrumbs?: Crumb[];
   children?: React.ReactNode;
 }) {
@@ -25,7 +25,7 @@ export function PageHeader({
           <nav aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-1.5 text-xs text-muted-dark">
               {breadcrumbs.map((c, i) => (
-                <li key={c.label} className="flex items-center gap-1.5">
+                <li key={i} className="flex items-center gap-1.5">
                   {i > 0 && <ChevronRight aria-hidden className="size-3.5" />}
                   {c.href ? (
                     <Link href={c.href} className="hover:text-white">

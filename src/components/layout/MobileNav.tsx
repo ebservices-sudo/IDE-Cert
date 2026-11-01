@@ -6,11 +6,15 @@ import { ChevronDown, Mail, Menu, Phone, X } from "lucide-react";
 import { subcategoryHref, worldHref, worlds } from "@/config/catalog";
 import { mainNav, site } from "@/config/site";
 import { Logo } from "@/components/brand/Logo";
+import { T } from "@/lib/i18n/T";
+import { useLang } from "@/lib/i18n/useLang";
+import { LangToggle } from "./LangToggle";
 
 // Full-screen menu on a native <dialog>: focus trap, Escape and inert background come built in.
 export function MobileNav() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(false);
+  const { t } = useLang();
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -27,16 +31,16 @@ export function MobileNav() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label="Open menu"
+        aria-label={t("Hap menunë", "Open menu")}
         aria-haspopup="dialog"
-        className="inline-flex size-10 items-center justify-center rounded-md text-white/85 hover:bg-white/5 hover:text-white lg:hidden"
+        className="inline-flex size-10 items-center justify-center rounded-md text-white/85 hover:bg-white/5 hover:text-white xl:hidden"
       >
         <Menu aria-hidden className="size-5" />
       </button>
 
       <dialog
         ref={dialogRef}
-        aria-label="Menu"
+        aria-label={t("Menuja", "Menu")}
         onClose={close}
         className="m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto bg-ink p-0 text-white backdrop:bg-black/60"
       >
@@ -47,7 +51,7 @@ export function MobileNav() {
           <button
             type="button"
             onClick={close}
-            aria-label="Close menu"
+            aria-label={t("Mbyll menunë", "Close menu")}
             className="inline-flex size-10 items-center justify-center rounded-md text-white/85 hover:bg-white/5 hover:text-white"
           >
             <X aria-hidden className="size-5" />
@@ -57,14 +61,17 @@ export function MobileNav() {
         <nav aria-label="Mobile" className="px-4 py-6 sm:px-6">
           <Link href="/shop" onClick={close} className="flex items-center gap-2.5 py-2 font-display text-lg uppercase">
             <span aria-hidden className="size-2 rounded-full bg-brand" />
-            All products
+            <T sq="Të gjitha produktet" en="All products" />
           </Link>
-          <p className="kicker mt-4 text-muted-dark">Shop by range</p>
+          <LangToggle className="mt-4 w-fit" />
+          <p className="kicker mt-6 text-muted-dark">
+            <T sq="Dyqani sipas gamës" en="Shop by range" />
+          </p>
           <div className="mt-3 divide-y divide-ink-line border-y border-ink-line">
             {worlds.map((world) => (
               <details key={world.slug} className="group">
                 <summary className="flex cursor-pointer list-none items-center justify-between py-4 [&::-webkit-details-marker]:hidden">
-                  <span className="font-display text-lg uppercase">{world.name}</span>
+                  <span className="font-display text-lg uppercase"><T sq={world.nameSq} en={world.name} /></span>
                   <ChevronDown aria-hidden className="size-5 text-muted-dark transition-transform group-open:rotate-180" />
                 </summary>
                 <ul className="pb-4">
@@ -74,7 +81,7 @@ export function MobileNav() {
                       onClick={close}
                       className="block py-2 text-sm font-semibold text-brand"
                     >
-                      All {world.name}
+                      <T sq={`Të gjitha: ${world.nameSq}`} en={`All ${world.name}`} />
                     </Link>
                   </li>
                   {world.subcategories.map((sub) => (
@@ -84,7 +91,7 @@ export function MobileNav() {
                         onClick={close}
                         className="block py-2 text-sm text-white/80 hover:text-white"
                       >
-                        {sub.name}
+                        <T sq={sub.nameSq} en={sub.name} />
                       </Link>
                     </li>
                   ))}
@@ -97,18 +104,18 @@ export function MobileNav() {
             {mainNav.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} onClick={close} className="block py-2.5 font-display text-lg uppercase">
-                  {item.label}
+                  <T sq={item.labelSq} en={item.label} />
                 </Link>
               </li>
             ))}
             <li>
               <Link href="/cart" onClick={close} className="block py-2.5 font-display text-lg uppercase">
-                Your request
+                <T sq="Kërkesa juaj" en="Your request" />
               </Link>
             </li>
             <li>
               <Link href="/account" onClick={close} className="block py-2.5 font-display text-lg uppercase">
-                Account
+                <T sq="Llogaria" en="Account" />
               </Link>
             </li>
           </ul>

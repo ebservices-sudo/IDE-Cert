@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getWorld, worldHref, worlds } from "@/config/catalog";
 import { getExplorerItems } from "@/lib/catalog/explorer-data";
 import { Suspense } from "react";
+import { T } from "@/lib/i18n/T";
 import { ShopExplorer, ShopExplorerFromUrl } from "@/components/shop/ShopExplorer";
 
 export function generateStaticParams() {
@@ -26,9 +27,9 @@ export default async function WorldPage({ params }: PageProps<"/shop/[world]">) 
   const props = {
     items: items,
     initialWorld: world.slug,
-    kicker: `Shop · ${world.tagline}`,
-    title: `EDELRID ${world.name}`,
-    lede: world.description,
+    kicker: <T sq={`Dyqani · ${world.taglineSq}`} en={`Shop · ${world.tagline}`} />,
+    title: <T sq={`EDELRID ${world.nameSq}`} en={`EDELRID ${world.name}`} />,
+    lede: <T sq={world.descriptionSq} en={world.description} />,
   };
   return (
     <Suspense key={world.slug} fallback={<ShopExplorer {...props} />}>

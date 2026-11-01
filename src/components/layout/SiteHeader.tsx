@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { UserRound } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { DesktopNav } from "./DesktopNav";
+import { LangToggle } from "./LangToggle";
 import { MobileNav } from "./MobileNav";
 import { RequestButton } from "./RequestButton";
 import { SearchDialog } from "./SearchDialog";
@@ -11,20 +11,18 @@ const iconLink =
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-ink text-white">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center gap-6 px-4 sm:px-6 lg:h-[72px] lg:px-8">
-        <Link href="/" aria-label="IDE Cert home" className="shrink-0">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[rgba(20,20,20,0.82)] text-white backdrop-blur-[14px]">
+      <div className="mx-auto flex h-16 w-full max-w-[90rem] items-center gap-5 px-4 sm:px-6 lg:h-[72px] lg:px-14">
+        <Link href="/" aria-label="IDE Cert" className="shrink-0">
           <Logo tone="light" className="h-9 w-auto lg:h-10" />
         </Link>
 
         <DesktopNav />
 
-        <div className="ml-auto flex items-center gap-1.5 lg:ml-4">
+        <div className="ml-auto flex items-center gap-2 xl:ml-3">
           <SearchDialog className={iconLink} />
-          <Link href="/account" aria-label="Your account" className={`${iconLink} hidden sm:inline-flex`}>
-            <UserRound aria-hidden className="size-5" />
-          </Link>
-          <div className="ml-1.5">
+          <LangToggle className="hidden sm:flex" />
+          <div className="ml-1">
             <RequestButton />
           </div>
           <MobileNav />

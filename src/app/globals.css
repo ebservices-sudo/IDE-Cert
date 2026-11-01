@@ -94,3 +94,16 @@
   from { left: 0%; }
   to { left: 100%; }
 }
+
+/* Bilingual text: <T sq en> renders both; show the one for the chosen language. */
+html[data-lang="sq"] .lang-en,
+html[data-lang="en"] .lang-sq {
+  display: none !important;
+}
+
+/* "What IDE stands for": a faint red light sweeps across the four letters. */
+@keyframes ide-scan {
+  0% { transform: translateX(-100%); opacity: 0; }
+  10%, 90% { opacity: 1; }
+  100% { transform: translateX(460%); opacity: 0; }
+}

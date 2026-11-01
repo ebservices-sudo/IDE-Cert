@@ -3,6 +3,7 @@ import { ProductCard } from "@/components/product/ProductCard";
 import { toCard } from "@/lib/catalog/cards";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { T } from "@/lib/i18n/T";
 
 export function FeaturedProducts({ products }: { products: Product[] }) {
   if (!products.length) return null;
@@ -11,9 +12,9 @@ export function FeaturedProducts({ products }: { products: Product[] }) {
       <Container>
         <SectionHeading
           id="featured-title"
-          kicker="Featured"
-          title="Popular equipment"
-          action={{ href: "/shop", label: "Browse the shop" }}
+          kicker={<T sq="Të zgjedhura" en="Featured" />}
+          title={<T sq="Pajisje të kërkuara" en="Popular equipment" />}
+          action={{ href: "/shop", label: <T sq="Shiko dyqanin" en="Browse the shop" /> }}
         />
         <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-4">
           {products.map((p) => (

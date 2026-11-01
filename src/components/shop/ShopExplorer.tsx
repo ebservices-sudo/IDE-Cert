@@ -4,20 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Check, ChevronDown, Info, Search, SlidersHorizontal, X } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Info, Search, SlidersHorizontal, X } from "lucide-react";
 import clsx from "clsx";
 import { getSubcategory, worlds, type WorldSlug } from "@/config/catalog";
 import { categoryGuide, filterHelp, uses } from "@/config/shopGuide";
 import type { ExplorerItem } from "@/lib/catalog/explorer";
 import { compareLengths, compareSizes } from "@/lib/catalog/options";
 import { formatPrice } from "@/lib/format";
+import { T, type L10n } from "@/lib/i18n/T";
+import { useLang } from "@/lib/i18n/useLang";
 import { ShopIcon } from "./ShopIcon";
-import { QuickView } from "./QuickView";
 import { colourFill } from "./colours";
 
 // The shop: search, "what is it for?", categories with plain-language help and
 // friendly refine filters, all filtering in the browser over the whole catalogue.
-// Cards open a quick view where visitors pick options and add to their request.
+// Cards open the full product page, where visitors pick options and add to their request.
 
 type World = "all" | WorldSlug;
 type Sort = "popular" | "new" | "price-asc" | "price-desc" | "name";
@@ -33,28 +34,29 @@ type State = {
 };
 
 const PAGE = 36;
-const SORTS: { key: Sort; label: string }[] = [
-  { key: "popular", label: "Popular" },
-  { key: "new", label: "New first" },
-  { key: "price-asc", label: "Price: low to high" },
-  { key: "price-desc", label: "Price: high to low" },
-  { key: "name", label: "Name A–Z" },
+const SORTS: { key: Sort; label: L10n }[] = [
+  { key: "popular", label: { sq: "Më të kërkuarat", en: "Popular" } },
+  { key: "new", label: { sq: "Të rejat së pari", en: "New first" } },
+  { key: "price-asc", label: { sq: "Çmimi: nga më i ulëti", en: "Price: low to high" } },
+  { key: "price-desc", label: { sq: "Çmimi: nga më i larti", en: "Price: high to low" } },
+  { key: "name", label: { sq: "Emri A–Z", en: "Name A–Z" } },
 ];
-const PRICE_BUCKETS: [string, string, number, number][] = [
-  ["0-25", "Under €25", 0, 25],
-  ["25-50", "€25 – €50", 25, 50],
-  ["50-100", "€50 – €100", 50, 100],
-  ["100-250", "€100 – €250", 100, 250],
-  ["250-500", "€250 – €500", 250, 500],
-  ["500+", "€500 and over", 500, Infinity],
+const PRICE_BUCKETS: [string, L10n, number, number][] = [
+  ["0-25", { sq: "Nën €25", en: "Under €25" }, 0, 25],
+  ["25-50", { sq: "€25 – €50", en: "€25 – €50" }, 25, 50],
+  ["50-100", { sq: "€50 – €100", en: "€50 – €100" }, 50, 100],
+  ["100-250", { sq: "€100 – €250", en: "€100 – €250" }, 100, 250],
+  ["250-500", { sq: "€250 – €500", en: "€250 – €500" }, 250, 500],
+  ["500+", { sq: "€500 e më shumë", en: "€500 and over" }, 500, Infinity],
 ];
-const REFINES: { key: RefineKey; label: string; help: string }[] = [
-  { key: "price", label: "Price", help: filterHelp.price },
-  { key: "size", label: "Size", help: filterHelp.size },
-  { key: "length", label: "Length", help: filterHelp.length },
-  { key: "colour", label: "Colour", help: filterHelp.colour },
-  { key: "std", label: "Safety standard", help: filterHelp.standard },
+const REFINES: { key: RefineKey; label: L10n; help: L10n }[] = [
+  { key: "price", label: { sq: "Çmimi", en: "Price" }, help: filterHelp.price },
+  { key: "size", label: { sq: "Madhësia", en: "Size" }, help: filterHelp.size },
+  { key: "length", label: { sq: "Gjatësia", en: "Length" }, help: filterHelp.length },
+  { key: "colour", label: { sq: "Ngjyra", en: "Colour" }, help: filterHelp.colour },
+  { key: "std", label: { sq: "Standardi i sigurisë", en: "Safety standard" }, help: filterHelp.standard },
 ];
+const Tx = ({ l }: { l: L10n }) => <T sq={l.sq} en={l.en} />;
 const emptyRefine = (): Record<RefineKey, string[]> => ({ price: [], size: [], length: [], colour: [], std: [] });
 
 const fold = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/,/g, ".");
@@ -72,10 +74,15 @@ const valuesOf = (it: ExplorerItem, key: RefineKey): string[] => {
       return it.stds;
   }
 };
-const labelOf = (key: RefineKey, v: string) => (key === "price" ? (PRICE_BUCKETS.find(([k]) => k === v)?.[1] ?? v) : v);
-const catLabel = (cat: string) => {
+const labelOf = (key: RefineKey, v: string): L10n => (key === "price" ? (PRICE_BUCKETS.find(([k]) => k === v)?.[1] ?? { sq: v, en: v }) : { sq: v, en: v });
+const catL = (cat: string): L10n => {
   const [w, s] = cat.split("/");
-  return getSubcategory(w, s)?.name ?? cat;
+  const sub = getSubcategory(w, s);
+  return sub ? { sq: sub.nameSq, en: sub.name } : { sq: cat, en: cat };
+};
+const worldL = (w: WorldSlug): L10n => {
+  const x = worlds.find((y) => y.slug === w)!;
+  return { sq: x.nameSq, en: x.name };
 };
 
 type Skip = "q" | "use" | "world" | "cat" | RefineKey | "isNew" | null;
@@ -84,9 +91,9 @@ type ExplorerProps = {
   items: ExplorerItem[];
   initialWorld?: WorldSlug;
   initialCat?: string;
-  kicker: string;
-  title: string;
-  lede: string;
+  kicker: React.ReactNode;
+  title: React.ReactNode;
+  lede: React.ReactNode;
 };
 
 /** Reads filters from the URL (?q=&use=&cat=…). Wrap in Suspense with <ShopExplorer> as the static fallback. */
@@ -119,7 +126,7 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
     ...fromUrl,
   }));
   const [shown, setShown] = useState(PAGE);
-  const [quick, setQuick] = useState<string | null>(null);
+  const { t } = useLang();
   const [sheet, setSheet] = useState(false);
   // Keep the URL in sync so filtered views can be shared and survive a reload.
   const synced = useRef(false);
@@ -142,7 +149,7 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
 
   const terms = useMemo(() => fold(st.q).split(/\s+/).filter(Boolean), [st.q]);
   const hay = useMemo(
-    () => new Map(items.map((it) => [it.slug, fold([it.name, it.catName, ...it.use, ...it.colours, ...it.sizes, ...it.lengths, ...it.stds, ...it.chips, ...it.skus].join(" "))])),
+    () => new Map(items.map((it) => [it.slug, fold([it.name, catL(it.cat).sq, catL(it.cat).en, ...it.use, ...it.use.map((u) => uses.find((x) => x.value === u)?.label.sq ?? ""), ...it.colours, ...it.sizes, ...it.lengths, ...it.stds, ...it.chips, ...it.skus].join(" "))])),
     [items],
   );
 
@@ -206,13 +213,20 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
     update({ refine: { ...st.refine, [key]: st.refine[key].includes(v) ? st.refine[key].filter((x) => x !== v) : [...st.refine[key], v] } });
   const clearAll = () => update({ q: "", use: null, world: initialWorld ?? "all", cat: initialCat ?? null, refine: emptyRefine(), isNew: false });
 
-  const active: { label: string; clear: () => void }[] = [
-    ...(st.q ? [{ label: `“${st.q}”`, clear: () => update({ q: "" }) }] : []),
-    ...(st.use ? [{ label: st.use, clear: () => update({ use: null }) }] : []),
-    ...(st.world !== "all" ? [{ label: worlds.find((w) => w.slug === st.world)!.name, clear: () => update({ world: "all", cat: null }) }] : []),
-    ...(st.cat ? [{ label: catLabel(st.cat), clear: () => update({ cat: null }) }] : []),
-    ...(st.isNew ? [{ label: "New for 2026", clear: () => update({ isNew: false }) }] : []),
-    ...REFINES.flatMap((r) => st.refine[r.key].map((v) => ({ label: `${r.label}: ${labelOf(r.key, v)}`, clear: () => toggleRefine(r.key, v) }))),
+  const labelForUse = (v: string): L10n => uses.find((u) => u.value === v)?.label ?? { sq: v, en: v };
+  const active: { key: string; label: L10n; clear: () => void }[] = [
+    ...(st.q ? [{ key: "q", label: { sq: `“${st.q}”`, en: `“${st.q}”` }, clear: () => update({ q: "" }) }] : []),
+    ...(st.use ? [{ key: "use", label: labelForUse(st.use), clear: () => update({ use: null }) }] : []),
+    ...(st.world !== "all" ? [{ key: "world", label: worldL(st.world), clear: () => update({ world: "all", cat: null }) }] : []),
+    ...(st.cat ? [{ key: "cat", label: catL(st.cat), clear: () => update({ cat: null }) }] : []),
+    ...(st.isNew ? [{ key: "new", label: { sq: "E re 2026", en: "New for 2026" }, clear: () => update({ isNew: false }) }] : []),
+    ...REFINES.flatMap((r) =>
+      st.refine[r.key].map((v) => ({
+        key: `${r.key}:${v}`,
+        label: { sq: `${r.label.sq}: ${labelOf(r.key, v).sq}`, en: `${r.label.en}: ${labelOf(r.key, v).en}` },
+        clear: () => toggleRefine(r.key, v),
+      })),
+    ),
   ];
 
   const guide = st.cat ? categoryGuide[st.cat] : null;
@@ -235,12 +249,16 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
           <h1 className="mt-4 max-w-4xl font-display text-[clamp(2rem,5vw,3.75rem)] leading-[1.02]">{title}</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">{lede}</p>
           <ul className="mt-6 flex flex-wrap gap-x-7 gap-y-2 text-sm text-muted">
-            {["Prices incl. 18% VAT", "Send a request, we confirm price and delivery", "Advice from the engineers who inspect it"].map((t) => (
-              <li key={t} className="flex items-center gap-2">
+            {[
+              { sq: "Çmimet me TVSH 18%", en: "Prices incl. 18% VAT" },
+              { sq: "Dërgoni kërkesë, ne konfirmojmë çmimin dhe dorëzimin", en: "Send a request, we confirm price and delivery" },
+              { sq: "Këshilla nga inxhinierët që i inspektojnë", en: "Advice from the engineers who inspect it" },
+            ].map((l) => (
+              <li key={l.en} className="flex items-center gap-2">
                 <span aria-hidden className="grid size-5 place-items-center rounded-full bg-brand-strong text-white">
                   <Check className="size-3" strokeWidth={3} />
                 </span>
-                {t}
+                <Tx l={l} />
               </li>
             ))}
           </ul>
@@ -252,9 +270,9 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
 
         {/* what is it for? */}
         <div className="mx-auto w-full max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
-          <p id="use-label" className="kicker text-ink">What is it for?</p>
+          <p id="use-label" className="kicker text-ink"><T sq="Për çfarë ju duhet?" en="What is it for?" /></p>
           <div role="group" aria-labelledby="use-label" className="-mx-4 mt-3 flex snap-x gap-2.5 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:px-0">
-            <UseButton icon="all" label="Everything" help="The whole EDELRID range." count={counts.useAll} selected={!st.use} onClick={() => update({ use: null })} />
+            <UseButton icon="all" label={{ sq: "Të gjitha", en: "Everything" }} help={{ sq: "E gjithë gama EDELRID.", en: "The whole EDELRID range." }} count={counts.useAll} selected={!st.use} onClick={() => update({ use: null })} />
             {uses.map((u) => (
               <UseButton key={u.value} icon={u.icon} label={u.label} help={u.help} count={counts.use[u.value] ?? 0} selected={st.use === u.value} onClick={() => update({ use: st.use === u.value ? null : u.value })} />
             ))}
@@ -266,17 +284,17 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
       <div className="z-30 border-b border-line bg-white/95 backdrop-blur lg:sticky lg:top-[72px]">
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
           <label className="relative min-w-0 basis-full sm:basis-auto sm:flex-[1_1_18rem]">
-            <span className="sr-only">Search the shop</span>
+            <span className="sr-only"><T sq="Kërko në dyqan" en="Search the shop" /></span>
             <Search aria-hidden className="pointer-events-none absolute left-3.5 top-1/2 size-[18px] -translate-y-1/2 text-muted" />
             <input
               type="search"
               value={st.q}
               onChange={(e) => update({ q: e.target.value })}
-              placeholder="Search: harness, 60 m rope, helmet, item number…"
+              placeholder={t("Kërko: rrip, litar 60 m, helmetë, numër artikulli…", "Search: harness, 60 m rope, helmet, item number…")}
               className="h-12 w-full rounded-lg border border-line bg-mist pl-11 pr-4 text-[15px] outline-none transition-colors placeholder:text-muted/80 hover:border-ink/30 focus:border-ink focus:bg-white"
             />
           </label>
-          <div role="group" aria-label="Range" className="flex min-w-0 flex-1 rounded-lg border border-line p-1 sm:flex-none">
+          <div role="group" aria-label={t("Gama", "Range")} className="flex min-w-0 flex-1 rounded-lg border border-line p-1 sm:flex-none">
             {(["all", "sport", "professional"] as World[]).map((w) => (
               <button
                 key={w}
@@ -284,11 +302,11 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
                 aria-pressed={st.world === w}
                 onClick={() => update({ world: w, cat: st.cat && w !== "all" && !st.cat.startsWith(w) ? null : st.cat })}
                 className={clsx(
-                  "inline-flex h-10 flex-1 items-center justify-center gap-1.5 rounded-md px-2.5 text-sm font-semibold transition-colors sm:flex-none sm:px-4",
+                  "inline-flex h-10 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-md px-2.5 text-sm font-semibold transition-colors sm:flex-none sm:px-4",
                   st.world === w ? "bg-ink text-white" : "text-ink/75 hover:bg-mist hover:text-ink",
                 )}
               >
-                {w === "all" ? "All" : worlds.find((x) => x.slug === w)!.name}
+                {w === "all" ? <T sq="Të gjitha" en="All" /> : <Tx l={worldL(w)} />}
                 <span className={clsx("hidden text-xs tabular-nums sm:inline", st.world === w ? "text-white/60" : "text-muted")}>{counts.world[w]}</span>
               </button>
             ))}
@@ -299,40 +317,44 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
             className="inline-flex h-12 shrink-0 items-center gap-2 rounded-lg border border-line px-4 text-sm font-semibold hover:border-ink/40 lg:hidden"
           >
             <SlidersHorizontal aria-hidden className="size-4" />
-            Filters
+            <T sq="Filtrat" en="Filters" />
             {active.length > 0 && <span className="grid min-w-5 place-items-center rounded-full bg-brand-strong px-1 text-[11px] text-white">{active.length}</span>}
           </button>
         </div>
       </div>
 
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[17rem_minmax(0,1fr)] lg:px-8">
-        <aside className="hidden lg:block" aria-label="Filters">
+        <aside className="hidden lg:block" aria-label={t("Filtrat", "Filters")}>
           <div className="sticky top-40 max-h-[calc(100dvh-11rem)] space-y-8 overflow-y-auto pb-6 pr-2 [scrollbar-width:thin]">
             {categoryList}
             {refinePanel}
           </div>
         </aside>
 
-        <section aria-live="polite" aria-label="Products" className="min-w-0">
+        <section aria-live="polite" aria-label={t("Produktet", "Products")} className="min-w-0">
           {(guide || useGuide) && (
             <div className="mb-6 flex gap-4 rounded-xl border border-line bg-mist p-5">
               <span className="grid size-12 shrink-0 place-items-center rounded-lg bg-white text-ink">
                 <ShopIcon name={guide ? guide.icon : useGuide!.icon} className="size-8" />
               </span>
               <div>
-                <p className="font-display text-lg">{guide ? catLabel(st.cat!) : useGuide!.label}</p>
-                <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted">{guide ? guide.what : useGuide!.help}</p>
-                {guide && useGuide && <p className="mt-2 text-xs text-muted">Showing items for {useGuide.label.toLowerCase()}.</p>}
+                <p className="font-display text-lg"><Tx l={guide ? catL(st.cat!) : useGuide!.label} /></p>
+                <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted"><Tx l={guide ? guide.what : useGuide!.help} /></p>
+                {guide && useGuide && (
+                  <p className="mt-2 text-xs text-muted">
+                    <T sq={`Duke shfaqur artikuj për: ${useGuide.label.sq.toLowerCase()}.`} en={`Showing items for ${useGuide.label.en.toLowerCase()}.`} />
+                  </p>
+                )}
               </div>
             </div>
           )}
 
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-sm text-muted">
-              <strong className="font-display text-xl text-ink tabular-nums">{results.length}</strong> {results.length === 1 ? "product" : "products"}
+              <strong className="font-display text-xl text-ink tabular-nums">{results.length}</strong> {results.length === 1 ? <T sq="produkt" en="product" /> : <T sq="produkte" en="products" />}
             </p>
             <label className="flex items-center gap-2 text-sm">
-              <span className="text-muted">Sort</span>
+              <span className="text-muted"><T sq="Rendit" en="Sort" /></span>
               <span className="relative">
                 <select
                   value={st.sort}
@@ -341,7 +363,7 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
                 >
                   {SORTS.map((s) => (
                     <option key={s.key} value={s.key}>
-                      {s.label}
+                      {t(s.label.sq, s.label.en)}
                     </option>
                   ))}
                 </select>
@@ -351,22 +373,22 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
           </div>
 
           {active.length > 0 && (
-            <ul className="mt-4 flex flex-wrap items-center gap-2" aria-label="Active filters">
+            <ul className="mt-4 flex flex-wrap items-center gap-2" aria-label={t("Filtrat aktivë", "Active filters")}>
               {active.map((a) => (
-                <li key={a.label}>
+                <li key={a.key}>
                   <button
                     type="button"
                     onClick={a.clear}
                     className="inline-flex h-8 items-center gap-1.5 rounded-full border border-ink/15 bg-mist pl-3 pr-2 text-xs font-semibold hover:border-ink/40"
                   >
-                    {a.label}
-                    <X aria-label={`Remove ${a.label}`} className="size-3.5" />
+                    <Tx l={a.label} />
+                    <X aria-label={t(`Hiq ${a.label.sq}`, `Remove ${a.label.en}`)} className="size-3.5" />
                   </button>
                 </li>
               ))}
               <li>
                 <button type="button" onClick={clearAll} className="h-8 px-2 text-xs font-semibold text-brand-strong hover:underline">
-                  Clear all
+                  <T sq="Pastro të gjitha" en="Clear all" />
                 </button>
               </li>
             </ul>
@@ -375,19 +397,21 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
           {results.length ? (
             <ul className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
               {results.slice(0, shown).map((it, i) => (
-                <ProductTile key={it.slug} it={it} priority={i < 4} onQuick={() => setQuick(it.slug)} />
+                <ProductTile key={it.slug} it={it} priority={i < 4} />
               ))}
             </ul>
           ) : (
             <div className="mt-6 rounded-xl border border-dashed border-line px-6 py-14 text-center">
-              <p className="font-semibold">No products match these filters.</p>
-              <p className="mt-1 text-sm text-muted">Remove a filter, try another word, or send us a request and we will find it for you.</p>
+              <p className="font-semibold"><T sq="Asnjë produkt nuk përputhet me këta filtra." en="No products match these filters." /></p>
+              <p className="mt-1 text-sm text-muted">
+                <T sq="Hiqni një filtër, provoni një fjalë tjetër ose na dërgoni kërkesë dhe e gjejmë për ju." en="Remove a filter, try another word, or send us a request and we will find it for you." />
+              </p>
               <div className="mt-5 flex flex-wrap justify-center gap-3">
                 <button type="button" onClick={clearAll} className="h-11 rounded-md bg-ink px-5 text-sm font-semibold text-white hover:bg-ink-3">
-                  Clear all filters
+                  <T sq="Pastro filtrat" en="Clear all filters" />
                 </button>
                 <Link href="/quote" className="inline-flex h-11 items-center rounded-md border border-line px-5 text-sm font-semibold hover:border-ink/40">
-                  Ask us for an item
+                  <T sq="Na pyesni për një artikull" en="Ask us for an item" />
                 </Link>
               </div>
             </div>
@@ -395,7 +419,7 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
           {results.length > shown && (
             <div className="mt-8 flex justify-center">
               <button type="button" onClick={() => setShown((n) => n + PAGE)} className="h-11 rounded-md border border-line px-6 text-sm font-semibold hover:border-ink/40">
-                Show more ({results.length - shown} left)
+                <T sq={`Shfaq më shumë (${results.length - shown} të tjera)`} en={`Show more (${results.length - shown} left)`} />
               </button>
             </div>
           )}
@@ -406,19 +430,19 @@ export function ShopExplorer({ items, initialWorld, initialCat, kicker, title, l
         {categoryList}
         {refinePanel}
       </FilterSheet>
-      <QuickView slug={quick} onClose={() => setQuick(null)} />
     </div>
   );
 }
 
-function UseButton({ icon, label, help, count, selected, onClick }: { icon: React.ComponentProps<typeof ShopIcon>["name"]; label: string; help: string; count: number; selected: boolean; onClick: () => void }) {
+function UseButton({ icon, label, help, count, selected, onClick }: { icon: React.ComponentProps<typeof ShopIcon>["name"]; label: L10n; help: L10n; count: number; selected: boolean; onClick: () => void }) {
+  const { t } = useLang();
   return (
     <button
       type="button"
       aria-pressed={selected}
       onClick={onClick}
       disabled={!count && !selected}
-      title={help}
+      title={t(help.sq, help.en)}
       className={clsx(
         "group flex min-w-[10.5rem] shrink-0 snap-start items-center gap-3 rounded-xl border p-3 pr-4 text-left transition-colors disabled:opacity-40",
         selected ? "border-ink bg-ink text-white" : "border-line bg-white hover:border-ink/40",
@@ -426,8 +450,10 @@ function UseButton({ icon, label, help, count, selected, onClick }: { icon: Reac
     >
       <ShopIcon name={icon} className={clsx("size-8 shrink-0", selected ? "text-white" : "text-ink")} />
       <span className="min-w-0">
-        <span className="block text-sm font-semibold leading-tight">{label}</span>
-        <span className={clsx("mt-0.5 block text-xs tabular-nums", selected ? "text-white/60" : "text-muted")}>{count} products</span>
+        <span className="block text-sm font-semibold leading-tight"><Tx l={label} /></span>
+        <span className={clsx("mt-0.5 block text-xs tabular-nums", selected ? "text-white/60" : "text-muted")}>
+          {count} <T sq="produkte" en="products" />
+        </span>
       </span>
     </button>
   );
@@ -444,8 +470,8 @@ function CategoryList({ st, counts, onPick }: { st: State; counts: Counts; onPic
   const groups = worlds.filter((w) => st.world === "all" || w.slug === st.world);
   return (
     <nav aria-label="Categories">
-      <h2 className="kicker text-ink">Categories</h2>
-      <p className="mt-1 text-xs text-muted">Pick one to see what it is and who it is for.</p>
+      <h2 className="kicker text-ink"><T sq="Kategoritë" en="Categories" /></h2>
+      <p className="mt-1 text-xs text-muted"><T sq="Zgjidhni një për të parë çfarë është dhe për kë është." en="Pick one to see what it is and who it is for." /></p>
       <button
         type="button"
         aria-pressed={!st.cat}
@@ -453,12 +479,12 @@ function CategoryList({ st, counts, onPick }: { st: State; counts: Counts; onPic
         className={clsx(catBtn, !st.cat && catOn)}
       >
         <ShopIcon name="all" className="size-6 shrink-0" />
-        <span className="flex-1">All categories</span>
+        <span className="flex-1"><T sq="Të gjitha kategoritë" en="All categories" /></span>
         <span className="text-xs tabular-nums text-muted">{counts.catAll}</span>
       </button>
       {groups.map((w) => (
         <div key={w.slug} className="mt-4">
-          <p className="px-2.5 text-[11px] font-bold uppercase tracking-[0.14em] text-muted">{w.name}</p>
+          <p className="px-2.5 text-[11px] font-bold uppercase tracking-[0.14em] text-muted"><T sq={w.nameSq} en={w.name} /></p>
           <ul className="mt-1">
             {w.subcategories.map((s) => {
               const key = `${w.slug}/${s.slug}`;
@@ -468,7 +494,7 @@ function CategoryList({ st, counts, onPick }: { st: State; counts: Counts; onPic
                 <li key={key}>
                   <button type="button" aria-pressed={st.cat === key} onClick={() => onPick(st.cat === key ? null : key)} className={clsx(catBtn, st.cat === key && catOn)}>
                     <ShopIcon name={categoryGuide[key]?.icon ?? "acc"} className="size-6 shrink-0" />
-                    <span className="flex-1 leading-snug">{s.name}</span>
+                    <span className="flex-1 leading-snug"><T sq={s.nameSq} en={s.name} /></span>
                     <span className="text-xs tabular-nums text-muted">{n}</span>
                   </button>
                 </li>
@@ -487,10 +513,10 @@ const catOn = "bg-mist font-semibold text-ink shadow-[inset_3px_0_0_var(--color-
 function RefinePanel({ st, counts, onToggle, onNew }: { st: State; counts: Counts; onToggle: (k: RefineKey, v: string) => void; onNew: (v: boolean) => void }) {
   return (
     <div>
-      <h2 className="kicker text-ink">Refine</h2>
+      <h2 className="kicker text-ink"><T sq="Përzgjidh më tej" en="Refine" /></h2>
       <label className="mt-3 flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-line px-3 text-sm font-semibold">
         <input type="checkbox" checked={st.isNew} onChange={(e) => onNew(e.target.checked)} className="size-4 accent-[#ce2c31]" />
-        New for 2026
+        <T sq="E re për 2026" en="New for 2026" />
         <span className="ml-auto text-xs font-normal tabular-nums text-muted">{counts.isNew}</span>
       </label>
       {REFINES.map((r) => (
@@ -515,14 +541,14 @@ function RefineGroup({ def, selected, counts, onToggle }: { def: (typeof REFINES
     <details open={def.key === "price" || selected.length > 0} className="group mt-3 border-b border-line pb-3">
       <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-sm font-semibold [&::-webkit-details-marker]:hidden">
         <span>
-          {def.label}
+          <Tx l={def.label} />
           {selected.length > 0 && <span className="ml-2 rounded-full bg-brand-strong px-1.5 py-0.5 text-[10px] text-white">{selected.length}</span>}
         </span>
         <ChevronDown aria-hidden className="size-4 text-muted transition-transform group-open:rotate-180" />
       </summary>
       <p className="mb-2 flex gap-1.5 text-xs leading-relaxed text-muted">
         <Info aria-hidden className="mt-0.5 size-3.5 shrink-0" />
-        {def.help}
+        <Tx l={def.help} />
       </p>
       <ul className={def.key === "colour" ? "grid grid-cols-1 gap-0.5" : "grid gap-0.5"}>
         {visible.map((v) => (
@@ -530,7 +556,7 @@ function RefineGroup({ def, selected, counts, onToggle }: { def: (typeof REFINES
             <label className="flex min-h-9 cursor-pointer items-center gap-2.5 rounded-md px-1.5 text-sm hover:bg-mist">
               <input type="checkbox" checked={selected.includes(v)} onChange={() => onToggle(v)} className="size-4 accent-[#ce2c31]" />
               {def.key === "colour" && <span aria-hidden className="size-4 shrink-0 rounded-full border border-ink/15" style={{ background: colourFill(v) }} />}
-              <span className="flex-1">{labelOf(def.key, v)}</span>
+              <span className="flex-1"><Tx l={labelOf(def.key, v)} /></span>
               <span className="text-xs tabular-nums text-muted">{counts[v] ?? 0}</span>
             </label>
           </li>
@@ -538,19 +564,15 @@ function RefineGroup({ def, selected, counts, onToggle }: { def: (typeof REFINES
       </ul>
       {values.length > limit && (
         <button type="button" onClick={() => setAll((a) => !a)} className="mt-1 px-1.5 text-xs font-semibold text-brand-strong hover:underline">
-          {all ? "Show fewer" : `Show all ${values.length}`}
+          {all ? <T sq="Shfaq më pak" en="Show fewer" /> : <T sq={`Shfaq të gjitha (${values.length})`} en={`Show all ${values.length}`} />}
         </button>
       )}
     </details>
   );
 }
 
-function ProductTile({ it, priority, onQuick }: { it: ExplorerItem; priority: boolean; onQuick: () => void }) {
-  const open = (e: React.MouseEvent) => {
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-    e.preventDefault();
-    onQuick();
-  };
+function ProductTile({ it, priority }: { it: ExplorerItem; priority: boolean }) {
+  const { t } = useLang();
   return (
     <li className="group relative flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-[border-color,box-shadow] hover:border-ink/25 hover:shadow-[0_18px_40px_-28px_rgba(20,20,20,.45)]">
       <div className="relative aspect-square bg-mist">
@@ -564,22 +586,22 @@ function ProductTile({ it, priority, onQuick }: { it: ExplorerItem; priority: bo
         {it.isNew && <span className="absolute left-2.5 top-2.5 rounded bg-brand-strong px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">New</span>}
       </div>
       <div className="flex flex-1 flex-col gap-1 p-3 sm:p-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted">{it.catName}</p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted"><Tx l={catL(it.cat)} /></p>
         <h3 className="text-sm font-semibold leading-snug sm:text-[15px]">
-          <Link href={it.href} onClick={open} className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none">
+          <Link href={it.href} className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none">
             {it.name}
           </Link>
         </h3>
         {it.chips.length > 0 && <p className="text-xs text-muted">{it.chips.join(" · ")}</p>}
         <div className="mt-auto flex items-end justify-between gap-2 pt-3">
           <div>
-            <p className="text-[11px] text-muted">{it.variants > 1 ? "from" : "price"}</p>
+            <p className="text-[11px] text-muted">{it.variants > 1 ? <T sq="nga" en="from" /> : <T sq="çmimi" en="price" />}</p>
             <p className="font-display text-base tabular-nums">
               {formatPrice(it.price)}
               {it.unit && <span className="ml-1 font-sans text-xs font-medium text-muted">{it.unit}</span>}
             </p>
             {it.colours.length > 1 && (
-              <span className="mt-1.5 flex items-center gap-1" aria-label={`${it.colours.length} colours`}>
+              <span className="mt-1.5 flex items-center gap-1" aria-label={t(`${it.colours.length} ngjyra`, `${it.colours.length} colours`)}>
                 {it.colours.slice(0, 5).map((c) => (
                   <i key={c} className="size-3 rounded-full border border-ink/15" style={{ background: colourFill(c) }} />
                 ))}
@@ -589,9 +611,9 @@ function ProductTile({ it, priority, onQuick }: { it: ExplorerItem; priority: bo
           </div>
           <span
             aria-hidden
-            className="grid size-9 shrink-0 place-items-center rounded-full border border-line text-lg leading-none transition-colors group-hover:border-brand-strong group-hover:bg-brand-strong group-hover:text-white"
+            className="grid size-9 shrink-0 place-items-center rounded-full border border-line transition-colors group-hover:border-brand-strong group-hover:bg-brand-strong group-hover:text-white"
           >
-            +
+            <ArrowRight className="size-4" />
           </span>
         </div>
       </div>
@@ -600,6 +622,7 @@ function ProductTile({ it, priority, onQuick }: { it: ExplorerItem; priority: bo
 }
 
 function FilterSheet({ open, onClose, count, onClear, children }: { open: boolean; onClose: () => void; count: number; onClear: () => void; children: React.ReactNode }) {
+  const { t } = useLang();
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const d = ref.current;
@@ -612,22 +635,22 @@ function FilterSheet({ open, onClose, count, onClear, children }: { open: boolea
       ref={ref}
       onClose={onClose}
       onClick={(e) => e.target === ref.current && onClose()}
-      aria-label="Filters"
+      aria-label={t("Filtrat", "Filters")}
       className="m-0 mt-auto max-h-[88dvh] w-full max-w-none rounded-t-2xl bg-white p-0 text-ink backdrop:bg-black/50 lg:hidden"
     >
       <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-white px-5 py-4">
-        <p className="font-display text-lg">Filters</p>
-        <button type="button" onClick={onClose} aria-label="Close filters" className="grid size-10 place-items-center rounded-full border border-line">
+        <p className="font-display text-lg"><T sq="Filtrat" en="Filters" /></p>
+        <button type="button" onClick={onClose} aria-label={t("Mbyll filtrat", "Close filters")} className="grid size-10 place-items-center rounded-full border border-line">
           <X aria-hidden className="size-4" />
         </button>
       </div>
       <div className="space-y-8 px-5 py-5">{children}</div>
       <div className="sticky bottom-0 flex gap-3 border-t border-line bg-white px-5 py-4">
         <button type="button" onClick={onClear} className="h-12 rounded-md border border-line px-4 text-sm font-semibold">
-          Clear all
+          <T sq="Pastro" en="Clear all" />
         </button>
         <button type="button" onClick={onClose} className="h-12 flex-1 rounded-md bg-brand-strong text-sm font-semibold text-white">
-          Show {count} products
+          <T sq={`Shfaq ${count} produkte`} en={`Show ${count} products`} />
         </button>
       </div>
     </dialog>

@@ -3,7 +3,7 @@ import { JsonLd, organizationLd } from "@/components/seo/JsonLd";
 import { EveryHeight } from "@/components/home/journey/EveryHeight";
 import { WorldTiles } from "@/components/home/WorldTiles";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
-import { ServicesTeaser } from "@/components/home/ServicesTeaser";
+import { IdeSection } from "@/components/home/IdeSection";
 import { CertifySection } from "@/components/home/CertifySection";
 import { LoadTest } from "@/components/home/LoadTest";
 import { TrustSection } from "@/components/home/TrustSection";
@@ -17,7 +17,7 @@ export default async function HomePage() {
       <EveryHeight />
       <WorldTiles />
       <FeaturedProducts products={catalog.featured(8)} />
-      <ServicesTeaser />
+      <IdeSection />
       <CertifySection />
       <LoadTest />
       <TrustSection />

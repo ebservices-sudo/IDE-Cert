@@ -5,6 +5,7 @@ import { subcategoryHref, worldHref, worlds } from "@/config/catalog";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { T } from "@/lib/i18n/T";
 
 export function WorldTiles() {
   return (
@@ -12,9 +13,14 @@ export function WorldTiles() {
       <Container>
         <SectionHeading
           id="worlds-title"
-          kicker="Shop"
-          title="Two worlds of equipment"
-          description="Gear for climbers and mountaineers in Sport; certified PPE for work at height, rescue, tree care and adventure parks in Professional."
+          kicker={<T sq="Dyqani" en="Shop" />}
+          title={<T sq="Dy botë pajisjesh" en="Two worlds of equipment" />}
+          description={
+            <T
+              sq="Pajisje për ngjitës dhe alpinistë te Sport; PPE e certifikuar për punë në lartësi, shpëtim, kujdes të pemëve dhe parqe aventure te Profesional."
+              en="Gear for climbers and mountaineers in Sport; certified PPE for work at height, rescue, tree care and adventure parks in Professional."
+            />
+          }
         />
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {worlds.map((world) => {
@@ -27,11 +33,11 @@ export function WorldTiles() {
                   dark ? "bg-ink text-white" : "bg-mist text-ink",
                 )}
               >
-                <p className={clsx("kicker", dark ? "text-brand" : "text-brand-strong")}>{world.shortTagline}</p>
+                <p className={clsx("kicker", dark ? "text-brand" : "text-brand-strong")}><T sq={world.shortTaglineSq} en={world.shortTagline} /></p>
                 {/* Fluid size: "PROFESSIONAL" in the wide display cut must fit a 320px phone. */}
-                <h3 className="mt-4 font-display text-[clamp(1.5rem,7vw,3rem)] uppercase">{world.name}</h3>
+                <h3 className="mt-4 font-display text-[clamp(1.5rem,7vw,3rem)] uppercase"><T sq={world.nameSq} en={world.name} /></h3>
                 <p className={clsx("mt-4 max-w-md text-sm leading-relaxed", dark ? "text-muted-dark" : "text-muted")}>
-                  {world.description}
+                  <T sq={world.descriptionSq} en={world.description} />
                 </p>
                 <ul className="mt-8 grid gap-2 sm:grid-cols-2">
                   {world.subcategories
@@ -47,7 +53,7 @@ export function WorldTiles() {
                               : "border-line bg-white hover:border-ink/30",
                           )}
                         >
-                          {sub.name}
+                          <T sq={sub.nameSq} en={sub.name} />
                           <ArrowUpRight
                             aria-hidden
                             className={clsx("size-4 shrink-0", dark ? "text-muted-dark" : "text-muted", "group-hover:text-brand")}
@@ -61,7 +67,7 @@ export function WorldTiles() {
                   variant={dark ? "primary" : "dark"}
                   className="mt-10 self-start"
                 >
-                  Shop {world.name}
+                  <T sq={`Dyqani ${world.nameSq}`} en={`Shop ${world.name}`} />
                   <ArrowRight aria-hidden className="size-4" />
                 </ButtonLink>
               </article>

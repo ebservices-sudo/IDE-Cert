@@ -173,14 +173,14 @@ function lift() {
   );
 }
 
-export type Check = { x: number; y: number; label: string };
-export type Station = { name: string; height: number; svg: string; checks: Check[] };
+export type Check = { x: number; y: number; label: string; labelSq: string };
+export type Station = { name: string; nameSq: string; height: number; svg: string; checks: Check[] };
 
 export const STATIONS: Station[] = [
-  { name: "Tower crane", height: 60, svg: crane(), checks: [{ x: 500, y: 205, label: "Hoist rope" }, { x: 270, y: 150, label: "Load limiter" }] },
-  { name: "Zip line", height: 45, svg: zip(), checks: [{ x: 150, y: 270, label: "Anchor" }, { x: 905, y: 512, label: "Brake" }] },
-  { name: "Via ferrata", height: 32, svg: ferrata(), checks: [{ x: 641, y: 300, label: "Rungs" }, { x: 722, y: 400, label: "Steel cable" }] },
-  { name: "Rope park", height: 18, svg: ropePark(), checks: [{ x: 602, y: 322, label: "Platform" }, { x: 742, y: 224, label: "Safety line" }] },
-  { name: "Climbing wall", height: 9, svg: wall(), checks: [{ x: 215, y: 290, label: "Holds" }, { x: 300, y: 64, label: "Belay points" }] },
-  { name: "Lift", height: 0, svg: lift(), checks: [{ x: 260, y: 466, label: "Doors" }, { x: 260, y: 364, label: "Safety brake" }] },
+  { name: "Tower crane", nameSq: "Vinç kullë", height: 60, svg: crane(), checks: [{ x: 500, y: 205, label: "Hoist rope", labelSq: "Kablloja e ngritjes" }, { x: 270, y: 150, label: "Load limiter", labelSq: "Kufizuesi i ngarkesës" }] },
+  { name: "Zip line", nameSq: "Tirolezë", height: 45, svg: zip(), checks: [{ x: 150, y: 270, label: "Anchor", labelSq: "Ankorimi" }, { x: 905, y: 512, label: "Brake", labelSq: "Frenimi" }] },
+  { name: "Via ferrata", nameSq: "Via ferrata", height: 32, svg: ferrata(), checks: [{ x: 641, y: 300, label: "Rungs", labelSq: "Shufrat" }, { x: 722, y: 400, label: "Steel cable", labelSq: "Kablloja çeliku" }] },
+  { name: "Rope park", nameSq: "Park me litarë", height: 18, svg: ropePark(), checks: [{ x: 602, y: 322, label: "Platform", labelSq: "Platforma" }, { x: 742, y: 224, label: "Safety line", labelSq: "Linja e sigurisë" }] },
+  { name: "Climbing wall", nameSq: "Mur ngjitjeje", height: 9, svg: wall(), checks: [{ x: 215, y: 290, label: "Holds", labelSq: "Mbajtëset" }, { x: 300, y: 64, label: "Belay points", labelSq: "Pikat e sigurimit" }] },
+  { name: "Lift", nameSq: "Ashensor", height: 0, svg: lift(), checks: [{ x: 260, y: 466, label: "Doors", labelSq: "Dyert" }, { x: 260, y: 364, label: "Safety brake", labelSq: "Freni i sigurisë" }] },
 ];

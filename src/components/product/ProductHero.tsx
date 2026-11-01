@@ -8,13 +8,23 @@ import clsx from "clsx";
 import { Check, FileText, Minus, Plus, ClipboardList, Truck } from "lucide-react";
 import { shop } from "@/config/site";
 import { useCart } from "@/lib/cart/store";
-import { OPTION_LABELS, type OptionDim, optionValues } from "@/lib/catalog/options";
+import { type OptionDim, optionValues } from "@/lib/catalog/options";
+import { T } from "@/lib/i18n/T";
+import { useLang } from "@/lib/i18n/useLang";
+
+const OPTION_LABELS: Record<OptionDim, React.ReactNode> = {
+  config: <T sq="Versioni" en="Version" />,
+  colour: <T sq="Ngjyra" en="Colour" />,
+  length: <T sq="Gjatësia" en="Length" />,
+  size: <T sq="Madhësia" en="Size" />,
+};
 import type { Product, Variant } from "@/lib/catalog/types";
 import { formatPrice, unitSuffix } from "@/lib/format";
 import { ProductImage } from "./ProductImage";
 
 export type HeroProduct = Pick<Product, "slug" | "name" | "brand" | "isNew" | "variants" | "images" | "shortDescription"> & {
   subcategoryName: string;
+  subcategoryNameSq: string;
   quoteNotes: string[];
   manualUrl?: string;
 };
@@ -71,6 +81,7 @@ function Gallery({ images, colour, name }: { images: Product["images"]; colour?:
     setActive(0);
   }
   const current = shown[Math.min(active, shown.length - 1)];
+  const { t } = useLang();
 
   return (
     <div className="lg:sticky lg:top-28 lg:self-start">
@@ -84,13 +95,13 @@ function Gallery({ images, colour, name }: { images: Product["images"]; colour?:
         />
       </div>
       {shown.length > 1 && (
-        <ul className="mt-3 flex gap-2 overflow-x-auto pb-1" aria-label="Product photos">
+        <ul className="mt-3 flex gap-2 overflow-x-auto pb-1" aria-label={t("Fotot e produktit", "Product photos")}>
           {shown.map((im, i) => (
             <li key={im.src} className="shrink-0">
               <button
                 type="button"
                 onClick={() => setActive(i)}
-                aria-label={`Show photo ${i + 1} of ${shown.length}`}
+                aria-label={t(`Shfaq foton ${i + 1} nga ${shown.length}`, `Show photo ${i + 1} of ${shown.length}`)}
                 aria-current={i === active}
                 className={clsx(
                   "relative block size-16 overflow-hidden rounded-md border bg-white sm:size-20",
@@ -119,6 +130,7 @@ function PurchasePanel({
   onChoose: (v: Variant) => void;
 }) {
   const { add } = useCart();
+  const { t } = useLang();
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState<string | null>(null);
   const options = useMemo(() => optionValues(product.variants), [product.variants]);
@@ -158,7 +170,7 @@ function PurchasePanel({
   return (
     <div>
       <p className="kicker text-brand-strong">
-        {product.brand} · {product.subcategoryName}
+        {product.brand} · <T sq={product.subcategoryNameSq} en={product.subcategoryName} />
       </p>
       <h1 className="mt-3 font-display text-3xl leading-tight sm:text-4xl">{product.name}</h1>
       {product.shortDescription && <p className="mt-3 text-base leading-relaxed text-muted">{product.shortDescription}</p>}
@@ -169,12 +181,13 @@ function PurchasePanel({
           {unitSuffix(variant.unit) && <span className="text-base font-semibold text-muted">{unitSuffix(variant.unit)}</span>}
           {variant.isNew && (
             <span className="ml-1 self-center rounded bg-brand-strong px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white">
-              New 2026
+              <T sq="E re 2026" en="New 2026" />
             </span>
           )}
         </p>
         <p className="mt-1 text-sm text-muted">
-          Incl. {Math.round(shop.vatRate * 100)}% VAT · <span className="tabular-nums">{formatPrice(net)}</span> excl. VAT
+          <T sq={`Me TVSH ${Math.round(shop.vatRate * 100)}%`} en={`Incl. ${Math.round(shop.vatRate * 100)}% VAT`} /> · <span className="tabular-nums">{formatPrice(net)}</span>{" "}
+          <T sq="pa TVSH" en="excl. VAT" />
         </p>
       </div>
 
@@ -200,7 +213,7 @@ function PurchasePanel({
                       type="button"
                       aria-pressed={selected}
                       onClick={() => select(dim, value)}
-                      title={available ? undefined : "Not available with the current selection — selecting it changes the other options"}
+                      title={available ? undefined : t("Nuk ofrohet me zgjedhjen aktuale: po e zgjodhët, ndryshojnë opsionet e tjera", "Not available with the current selection: selecting it changes the other options")}
                       className={clsx(
                         "inline-flex min-h-10 max-w-full items-center gap-2 rounded-md border px-3 py-1.5 text-left text-sm font-medium transition-colors",
                         selected ? "border-ink bg-ink text-white" : "border-line bg-white hover:border-ink/50",
@@ -226,14 +239,14 @@ function PurchasePanel({
       <div className="mt-7 flex flex-wrap items-end gap-3">
         <div>
           <label htmlFor="qty" className="block text-sm font-semibold">
-            {perMetre ? "Length in metres" : "Quantity"}
+            {perMetre ? <T sq="Gjatësia në metra" en="Length in metres" /> : <T sq="Sasia" en="Quantity" />}
           </label>
           <div className="mt-2 flex h-12 items-center rounded-md border border-line">
             <button
               type="button"
               onClick={() => setQty((q) => Math.max(1, q - 1))}
               className="grid size-12 place-items-center text-muted hover:text-ink"
-              aria-label="Decrease"
+              aria-label={t("Më pak", "Decrease")}
             >
               <Minus aria-hidden className="size-4" />
             </button>
@@ -251,7 +264,7 @@ function PurchasePanel({
               type="button"
               onClick={() => setQty((q) => Math.min(maxQty, q + 1))}
               className="grid size-12 place-items-center text-muted hover:text-ink"
-              aria-label="Increase"
+              aria-label={t("Më shumë", "Increase")}
             >
               <Plus aria-hidden className="size-4" />
             </button>
@@ -263,21 +276,24 @@ function PurchasePanel({
           className="inline-flex h-12 min-w-48 flex-1 items-center justify-center gap-2 rounded-md bg-brand-strong px-6 text-sm font-semibold text-white transition-colors hover:bg-[#b5252a]"
         >
           <ClipboardList aria-hidden className="size-4" />
-          Add to request · <span className="tabular-nums">{formatPrice(variant.price * qty)}</span>
+          <T sq="Shto në kërkesë" en="Add to request" /> · <span className="tabular-nums">{formatPrice(variant.price * qty)}</span>
         </button>
       </div>
       {perMetre && (
         <p className="mt-2 text-sm text-muted">
-          Cut to length from the spool, priced per metre. Up to {shop.maxCutLength} m per line.
+          <T
+            sq={`Prerë nga bobina sipas gjatësisë, çmimi për metër. Deri në ${shop.maxCutLength} m për rresht.`}
+            en={`Cut to length from the spool, priced per metre. Up to ${shop.maxCutLength} m per line.`}
+          />
         </p>
       )}
       <p role="status" className="mt-3 min-h-6 text-sm">
         {added === variant.sku && (
           <span className="inline-flex items-center gap-1.5 font-semibold text-ink">
             <Check aria-hidden className="size-4 text-brand-strong" />
-            Added to your request.
+            <T sq="U shtua në kërkesën tuaj." en="Added to your request." />
             <Link href="/cart" className="text-brand-strong hover:underline">
-              View request
+              <T sq="Shiko kërkesën" en="View request" />
             </Link>
           </span>
         )}
@@ -287,25 +303,34 @@ function PurchasePanel({
         <li className="flex items-start gap-3 p-4">
           <Truck aria-hidden className="mt-0.5 size-4 shrink-0 text-muted" />
           <div>
-            <p className="font-semibold">Ordered on demand from EDELRID</p>
+            <p className="font-semibold">
+              <T sq="Porositet nga EDELRID sipas kërkesës" en="Ordered on demand from EDELRID" />
+            </p>
             <p className="mt-0.5 text-muted">
-              {shop.leadTime ? `Usual delivery time: ${shop.leadTime}.` : "We confirm the delivery date by email after your request."} Delivery
-              across Kosovo and the Balkans.
+              <T
+                sq={`${shop.leadTime ? `Afati i zakonshëm: ${shop.leadTime}.` : "Datën e dorëzimit jua konfirmojmë me email pas kërkesës."} Dorëzim në Kosovë dhe Ballkan.`}
+                en={`${shop.leadTime ? `Usual delivery time: ${shop.leadTime}.` : "We confirm the delivery date by email after your request."} Delivery across Kosovo and the Balkans.`}
+              />
             </p>
           </div>
         </li>
         <li className="flex items-start gap-3 p-4">
           <FileText aria-hidden className="mt-0.5 size-4 shrink-0 text-muted" />
           <div>
-            <p className="font-semibold">Item number {variant.sku}</p>
+            <p className="font-semibold">
+              <T sq="Numri i artikullit" en="Item number" /> {variant.sku}
+            </p>
             <p className="mt-0.5 text-muted">
-              No payment now: send your request and we confirm price and delivery. Company invoice with your NUI available.
+              <T
+                sq="Pa pagesë tani: dërgoni kërkesën dhe ne konfirmojmë çmimin dhe dorëzimin. Faturë për kompaninë me NUI sipas kërkesës."
+                en="No payment now: send your request and we confirm price and delivery. Company invoice with your NUI available."
+              />
               {product.quoteNotes.length > 0 && (
                 <>
                   {" "}
                   {product.quoteNotes.join(" ")}{" "}
                   <Link href={`/quote?sku=${variant.sku}`} className="font-semibold text-brand-strong hover:underline">
-                    Request a quote
+                    <T sq="Kërko ofertë" en="Request a quote" />
                   </Link>
                 </>
               )}
@@ -315,11 +340,11 @@ function PurchasePanel({
       </ul>
       {product.manualUrl && (
         <p className="mt-4 text-xs leading-relaxed text-muted">
-          Personal protective equipment. Read the{" "}
+          <T sq="Pajisje mbrojtëse personale. Lexoni" en="Personal protective equipment. Read the" />{" "}
           <a href={product.manualUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">
-            EDELRID user manual
+            <T sq="manualin e përdorimit EDELRID" en="EDELRID user manual" />
           </a>{" "}
-          before use.
+          <T sq="para përdorimit." en="before use." />
         </p>
       )}
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getExplorerItems } from "@/lib/catalog/explorer-data";
 import { Suspense } from "react";
+import { T } from "@/lib/i18n/T";
 import { ShopExplorer, ShopExplorerFromUrl } from "@/components/shop/ShopExplorer";
 
 export const metadata: Metadata = {
@@ -14,9 +15,14 @@ export default async function ShopPage() {
   const items = await getExplorerItems();
   const props = {
     items: items,
-    kicker: "Shop · Official EDELRID partner",
-    title: "EDELRID gear for every height.",
-    lede: "Find what you need by what it is for, by category or by name. Add items to your request and send it. We reply with the final price and delivery date.",
+    kicker: <T sq="Dyqani · Partner zyrtar i EDELRID" en="Shop · Official EDELRID partner" />,
+    title: <T sq="Pajisje EDELRID për çdo lartësi." en="EDELRID gear for every height." />,
+    lede: (
+      <T
+        sq="Gjeni atë që ju duhet sipas përdorimit, kategorisë ose emrit. Shtoni artikujt në kërkesë dhe dërgojeni. Ju kthejmë çmimin përfundimtar dhe datën e dorëzimit."
+        en="Find what you need by what it is for, by category or by name. Add items to your request and send it. We reply with the final price and delivery date."
+      />
+    ),
   };
   return (
     <Suspense fallback={<ShopExplorer {...props} />}>

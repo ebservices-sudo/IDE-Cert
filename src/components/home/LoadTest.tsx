@@ -3,12 +3,18 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { Container } from "@/components/ui/Container";
+import { T } from "@/lib/i18n/T";
 
 // Press-and-hold load test: the one interactive moment on the home page.
 // Holding loads the anchor to 12 kN; releasing early eases the gauge back down.
 // Reduced motion gets the finished state with no hold required.
 
-const CHECKS = ["The anchor held the load", "No permanent deformation", "Cable within tolerance", "Ready for the report"];
+const CHECKS = [
+  { sq: "Ankorimi e mbajti ngarkesën", en: "The anchor held the load" },
+  { sq: "Asnjë deformim i përhershëm", en: "No permanent deformation" },
+  { sq: "Kablloja brenda tolerancës", en: "Cable within tolerance" },
+  { sq: "Gati për raportin", en: "Ready for the report" },
+];
 const CX = 200, CY = 210;
 const TICKS = Array.from({ length: 25 }, (_, i) => {
   const a = ((-120 + i * 10 - 90) * Math.PI) / 180, r1 = i % 4 ? 146 : 140, r2 = 154;
@@ -120,17 +126,17 @@ export function LoadTest() {
               passed ? "scale-100 opacity-100" : "scale-150 opacity-0",
             )}
           >
-            PASSED
+            <T sq="KALOI" en="PASSED" />
           </div>
         </div>
 
         <div>
-          <p className="kicker text-brand">Try it yourself</p>
+          <p className="kicker text-brand"><T sq="Provojeni vetë" en="Try it yourself" /></p>
           <h2 id="loadtest-title" className="mt-3 font-display text-3xl leading-tight sm:text-4xl">
-            What a load test feels like
+            <T sq="Si ndihet një test ngarkese" en="What a load test feels like" />
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-dark">
-            Press and hold the button. We load the anchor until it reaches the test load.
+            <T sq="Mbajeni butonin shtypur. Ne e ngarkojmë ankorimin derisa të arrijë ngarkesën e testit." en="Press and hold the button. We load the anchor until it reaches the test load." />
           </p>
           <button
             type="button"
@@ -166,12 +172,12 @@ export function LoadTest() {
             }}
           >
             <span aria-hidden className="absolute inset-0 origin-left bg-white/20" style={{ transform: `scaleX(${passed ? 0 : g})` }} />
-            <span className="relative">{passed ? "Test again" : "Hold to test"}</span>
+            <span className="relative">{passed ? <T sq="Testo përsëri" en="Test again" /> : <T sq="Mbaje për të testuar" en="Hold to test" />}</span>
           </button>
           <ul className="mt-8 grid gap-3" aria-live="polite">
             {CHECKS.map((c, i) => (
               <li
-                key={c}
+                key={c.en}
                 className={clsx("flex items-center gap-3.5 transition-colors duration-500", passed ? "text-white" : "text-muted-dark")}
                 style={{ transitionDelay: passed ? `${i * 180}ms` : "0ms" }}
               >
@@ -185,12 +191,12 @@ export function LoadTest() {
                 >
                   ✓
                 </span>
-                {c}
+                <T sq={c.sq} en={c.en} />
               </li>
             ))}
           </ul>
           <p className="mt-6 text-xs text-muted-dark">
-            This is an illustration. Real tests happen on site, to the standard for your installation.
+            <T sq="Ky është ilustrim. Testet e vërteta bëhen në vend, sipas standardit për instalimin tuaj." en="This is an illustration. Real tests happen on site, to the standard for your installation." />
           </p>
         </div>
       </Container>

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
 import { site } from "@/config/site";
+import { langBootScript } from "@/lib/i18n/T";
 import "./globals.css";
 
 // Variable font with a width axis: normal width for body text, 125% for display headings.
@@ -35,7 +36,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={archivo.variable}>
+    <html lang="sq" data-lang="sq" className={archivo.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: langBootScript }} />
+      </head>
       <body className="flex min-h-dvh flex-col">{children}</body>
     </html>
   );

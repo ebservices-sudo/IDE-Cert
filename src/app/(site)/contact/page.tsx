@@ -7,6 +7,7 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { ContactFormFromUrl } from "@/components/forms/ContactFormFromUrl";
 import { Container } from "@/components/ui/Container";
+import { T } from "@/lib/i18n/T";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -20,15 +21,22 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        kicker="Contact"
-        title="Talk to us"
-        description="Questions about equipment, an order, or our services — call, email or use the form."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+        kicker={<T sq="Kontakt" en="Contact" />}
+        title={<T sq="Flisni me ne" en="Talk to us" />}
+        description={
+          <T
+            sq="Pyetje për pajisjet, një porosi ose shërbimet tona? Telefononi, shkruani ose përdorni formularin."
+            en="Questions about equipment, an order, or our services? Call, email or use the form."
+          />
+        }
+        breadcrumbs={[{ label: <T sq="Ballina" en="Home" />, href: "/" }, { label: <T sq="Kontakt" en="Contact" /> }]}
       />
       <Container className="grid gap-12 py-14 lg:grid-cols-12 lg:py-20">
         <div className="space-y-8 lg:col-span-4">
           <div>
-            <h2 className="kicker text-muted">Phone</h2>
+            <h2 className="kicker text-muted">
+              <T sq="Telefoni" en="Phone" />
+            </h2>
             <ul className="mt-3 space-y-2">
               {site.phones.map((p) => (
                 <li key={p.href}>
@@ -48,7 +56,9 @@ export default function ContactPage() {
             </a>
           </div>
           <div>
-            <h2 className="kicker text-muted">Address</h2>
+            <h2 className="kicker text-muted">
+              <T sq="Adresa" en="Address" />
+            </h2>
             <address className="mt-3 flex gap-2.5 not-italic leading-relaxed">
               <MapPin aria-hidden className="mt-1 size-4 shrink-0 text-brand-strong" />
               <span>
@@ -58,23 +68,27 @@ export default function ContactPage() {
                 <br />
                 {site.address.locality}, {site.address.postalCode} {site.address.city}
                 <br />
-                {site.address.country}
+                <T sq="Republika e Kosovës" en={site.address.country} />
               </span>
             </address>
             <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-strong hover:underline">
-              Open in Google Maps
+              <T sq="Hape në Google Maps" en="Open in Google Maps" />
               <ExternalLink aria-hidden className="size-3.5" />
             </a>
           </div>
           <div className="rounded-xl bg-mist p-5 text-sm leading-relaxed">
-            <p className="font-semibold">Need a price for a custom rope length or a larger quantity?</p>
+            <p className="font-semibold">
+              <T sq="Ju duhet çmim për gjatësi të veçantë litari ose sasi më të madhe?" en="Need a price for a custom rope length or a larger quantity?" />
+            </p>
             <Link href="/quote" className="mt-1 inline-block font-semibold text-brand-strong hover:underline">
-              Request a quote
+              <T sq="Kërko ofertë" en="Request a quote" />
             </Link>
           </div>
         </div>
         <div className="lg:col-span-8">
-          <h2 className="font-display text-2xl">Send us a message</h2>
+          <h2 className="font-display text-2xl">
+            <T sq="Na dërgoni një mesazh" en="Send us a message" />
+          </h2>
           <div className="mt-6">
             <Suspense fallback={<ContactForm />}>
               <ContactFormFromUrl />

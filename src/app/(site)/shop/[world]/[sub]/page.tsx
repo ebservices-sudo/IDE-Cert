@@ -5,6 +5,7 @@ import { categoryGuide } from "@/config/shopGuide";
 import { categoryCounts } from "@/lib/catalog/data";
 import { getExplorerItems } from "@/lib/catalog/explorer-data";
 import { Suspense } from "react";
+import { T } from "@/lib/i18n/T";
 import { ShopExplorer, ShopExplorerFromUrl } from "@/components/shop/ShopExplorer";
 
 export function generateStaticParams() {
@@ -34,9 +35,9 @@ export default async function SubcategoryPage({ params }: PageProps<"/shop/[worl
     items: items,
     initialWorld: world.slug,
     initialCat: key,
-    kicker: `Shop · EDELRID ${world.name}`,
-    title: subcategory.name,
-    lede: categoryGuide[key]?.what ?? subcategory.blurb,
+    kicker: <T sq={`Dyqani · EDELRID ${world.nameSq}`} en={`Shop · EDELRID ${world.name}`} />,
+    title: <T sq={subcategory.nameSq} en={subcategory.name} />,
+    lede: <T sq={categoryGuide[key]?.what.sq ?? subcategory.blurbSq} en={categoryGuide[key]?.what.en ?? subcategory.blurb} />,
   };
   return (
     <Suspense key={key} fallback={<ShopExplorer {...props} />}>

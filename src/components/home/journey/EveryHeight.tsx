@@ -10,18 +10,58 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
+import { T, type L10n } from "@/lib/i18n/T";
 import { STATIONS, rng } from "./stations";
 import "./journey.css";
 
 type Fx = "drift" | "slide" | "rise" | "weave" | "snap" | "settle";
 
-const BANDS: { kicker: string; title: string; sub: string; fx: Fx; lane: "l" | "r" }[] = [
-  { kicker: "60 m · Tower crane", title: "Safe at every height.", sub: "Inspection, design, engineering and certification, and the EDELRID equipment to go with it.", fx: "drift", lane: "r" },
-  { kicker: "45 m · Zip line", title: "Every anchor. Every cable. Every brake.", sub: "We check the whole line, from the launch platform to the brake at the end.", fx: "slide", lane: "r" },
-  { kicker: "32 m · Via ferrata", title: "The mountain doesn't forgive mistakes.", sub: "So we check every rung, every steel cable and every anchor in the rock.", fx: "rise", lane: "l" },
-  { kicker: "18 m · Rope park", title: "Your guests see the fun. We see the load.", sub: "Platforms, bridges, trees and belay systems, checked part by part.", fx: "weave", lane: "l" },
-  { kicker: "9 m · Climbing wall", title: "Checked by an engineer. Every time.", sub: "You get a written report from the people who did the check.", fx: "snap", lane: "r" },
-  { kicker: "0 m · Certified", title: "Open. Safe. Certified.", sub: "From cranes and lifts to adventure parks: inspection and certification, plus the EDELRID gear to keep you running.", fx: "settle", lane: "r" },
+const BANDS: { kicker: L10n; title: L10n; sub: L10n; fx: Fx; lane: "l" | "r" }[] = [
+  {
+    kicker: { sq: "60 m · Vinç kullë", en: "60 m · Tower crane" },
+    title: { sq: "Siguri në çdo lartësi.", en: "Safe at every height." },
+    sub: { sq: "Inspektim, dizajnim, inxhinieri dhe certifikim, si dhe pajisjet EDELRID që ju duhen.", en: "Inspection, design, engineering and certification, and the EDELRID equipment to go with it." },
+    fx: "drift",
+    lane: "r",
+  },
+  {
+    kicker: { sq: "45 m · Tirolezë", en: "45 m · Zip line" },
+    title: { sq: "Çdo ankorim. Çdo kabllo. Çdo frenë.", en: "Every anchor. Every cable. Every brake." },
+    sub: { sq: "Kontrollojmë linjën e plotë, nga platforma e nisjes deri te frenimi në fund.", en: "We check the whole line, from the launch platform to the brake at the end." },
+    fx: "slide",
+    lane: "r",
+  },
+  {
+    kicker: { sq: "32 m · Via ferrata", en: "32 m · Via ferrata" },
+    title: { sq: "Mali nuk i fal gabimet.", en: "The mountain doesn't forgive mistakes." },
+    sub: { sq: "Prandaj kontrollojmë çdo shufër, çdo kabllo çeliku dhe çdo ankorim në shkëmb.", en: "So we check every rung, every steel cable and every anchor in the rock." },
+    fx: "rise",
+    lane: "l",
+  },
+  {
+    kicker: { sq: "18 m · Park me litarë", en: "18 m · Rope park" },
+    title: { sq: "Vizitorët shohin argëtimin. Ne shohim ngarkesën.", en: "Your guests see the fun. We see the load." },
+    sub: { sq: "Platforma, ura, pemë dhe sisteme sigurie, të kontrolluara pjesë për pjesë.", en: "Platforms, bridges, trees and belay systems, checked part by part." },
+    fx: "weave",
+    lane: "l",
+  },
+  {
+    kicker: { sq: "9 m · Mur ngjitjeje", en: "9 m · Climbing wall" },
+    title: { sq: "Kontrolluar nga inxhinieri. Çdo herë.", en: "Checked by an engineer. Every time." },
+    sub: { sq: "Merrni raport me shkrim nga njerëzit që bënë kontrollin.", en: "You get a written report from the people who did the check." },
+    fx: "snap",
+    lane: "r",
+  },
+  {
+    kicker: { sq: "0 m · E certifikuar", en: "0 m · Certified" },
+    title: { sq: "Hapur. I sigurt. I certifikuar.", en: "Open. Safe. Certified." },
+    sub: {
+      sq: "Nga vinçat dhe ashensorët deri te parqet aventure: inspektim dhe certifikim, plus pajisjet EDELRID që ju mbajnë në punë.",
+      en: "From cranes and lifts to adventure parks: inspection and certification, plus the EDELRID gear to keep you running.",
+    },
+    fx: "settle",
+    lane: "r",
+  },
 ];
 
 /** Splits a headline into word and character spans with seeded entrance offsets. */
@@ -106,7 +146,8 @@ export function EveryHeight() {
     const rNear = $(".eh-near");
     const rulerI = $(".eh-ruler i");
     const altN = $(".eh-alt-n b");
-    const altS = $(".eh-alt-s");
+    const altSq = $(".eh-alt-s .lang-sq");
+    const altEn = $(".eh-alt-s .lang-en");
     const ropeDone = $(".eh-rope.eh-done");
     const ropeTodo = $(".eh-rope.eh-todo");
     const marker = $(".eh-marker");
@@ -197,7 +238,9 @@ export function EveryHeight() {
         const si = Math.round(s);
         if (si !== lastStation) {
           lastStation = si;
-          altS.textContent = String(si + 1).padStart(2, "0") + "/06 · " + STATIONS[si].name;
+          const n = String(si + 1).padStart(2, "0") + "/06 · ";
+          altSq.textContent = n + STATIONS[si].nameSq;
+          altEn.textContent = n + STATIONS[si].name;
         }
       }
       bands.forEach((b, i) => {
@@ -347,7 +390,7 @@ export function EveryHeight() {
                   style={{ left: `${c.x / 10}%`, top: `${c.y / 7}%` }}
                 >
                   <b>✓</b>
-                  {c.label}
+                  <T sq={c.labelSq} en={c.label} />
                   <em>OK</em>
                 </span>
               ))}
@@ -369,8 +412,12 @@ export function EveryHeight() {
               <b>60.0</b>
               <i>m</i>
             </div>
-            <div className="eh-alt-l">Height</div>
-            <div className="eh-alt-s">01/06 · Tower crane</div>
+            <div className="eh-alt-l">
+              <T sq="Lartësia" en="Height" />
+            </div>
+            <div className="eh-alt-s">
+              <T sq="01/06 · Vinç kullë" en="01/06 · Tower crane" />
+            </div>
           </div>
         </div>
 
@@ -378,19 +425,23 @@ export function EveryHeight() {
           const Heading = i === 0 ? "h1" : "h2";
           return (
             <div key={i} className={`eh-band eh-${b.lane}`} data-i={i} data-fx={b.fx}>
-              <p className="eh-kick">{b.kicker}</p>
+              <p className="eh-kick">
+                <T sq={b.kicker.sq} en={b.kicker.en} />
+              </p>
               <Heading id={i === 0 ? "hero-title" : undefined} className="eh-h font-display">
-                <SplitText text={b.title} fx={b.fx} seed={1000 + i * 17} />
+                <T sq={<SplitText text={b.title.sq} fx={b.fx} seed={1000 + i * 17} />} en={<SplitText text={b.title.en} fx={b.fx} seed={2000 + i * 17} />} />
               </Heading>
-              <p className="eh-sub">{b.sub}</p>
+              <p className="eh-sub">
+                <T sq={b.sub.sq} en={b.sub.en} />
+              </p>
               {(i === 0 || i === 5) && (
                 <div className={`eh-row${i === 0 ? " eh-static-only" : ""}`}>
                   <ButtonLink href="/shop">
-                    Shop equipment
+                    <T sq="Dyqani EDELRID" en="Shop equipment" />
                     <ArrowRight aria-hidden className="size-4" />
                   </ButtonLink>
                   <ButtonLink href="/services#request" variant="outline-light">
-                    Request an inspection
+                    <T sq="Kërko inspektim" en="Request an inspection" />
                   </ButtonLink>
                 </div>
               )}
@@ -398,7 +449,7 @@ export function EveryHeight() {
           );
         })}
         <div className="eh-cue" aria-hidden="true">
-          Scroll down
+          <T sq="Rrëshqit poshtë" en="Scroll down" />
           <i />
         </div>
       </div>

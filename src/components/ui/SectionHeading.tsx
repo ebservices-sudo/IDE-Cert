@@ -10,10 +10,10 @@ export function SectionHeading({
   tone = "light",
   id,
 }: {
-  kicker?: string;
-  title: string;
-  description?: string;
-  action?: { href: string; label: string };
+  kicker?: React.ReactNode;
+  title: React.ReactNode;
+  description?: React.ReactNode;
+  action?: { href: string; label: React.ReactNode };
   tone?: "light" | "dark";
   id?: string;
 }) {

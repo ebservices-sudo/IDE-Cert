@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { T } from "@/lib/i18n/T";
 
 // The six kinds of installation IDE Cert inspects, drawn in the same line style as the
 // home page hero. Icons draw themselves once the grid scrolls into view.
 const installations = [
   {
-    name: "Zip lines",
-    text: "Cables, anchors, trolleys and brake systems.",
+    name: <T sq="Tirolezë" en="Zip lines" />,
+    text: <T sq="Kabllo, ankorime, trolej dhe sisteme frenimi." en="Cables, anchors, trolleys and brake systems." />,
     icon: (
       <>
         <path pathLength={1} d="M6 60V14M2 60h10M4 14h12" />
@@ -22,8 +23,8 @@ const installations = [
     ),
   },
   {
-    name: "Rope parks",
-    text: "Platforms, bridges, trees and continuous belay lines.",
+    name: <T sq="Parqe me litarë" en="Rope parks" />,
+    text: <T sq="Platforma, ura, pemë dhe linja të vazhdueshme sigurie." en="Platforms, bridges, trees and continuous belay lines." />,
     icon: (
       <>
         <path pathLength={1} d="M14 60V24M50 60V24" />
@@ -35,8 +36,8 @@ const installations = [
     ),
   },
   {
-    name: "Via ferrata",
-    text: "Rungs, steel cables and rock anchors.",
+    name: <T sq="Via ferrata" en="Via ferrata" />,
+    text: <T sq="Shufra, kabllo çeliku dhe ankorime në shkëmb." en="Rungs, steel cables and rock anchors." />,
     icon: (
       <>
         <path pathLength={1} d="M30 2L22 16L32 28L24 42L34 62" />
@@ -46,8 +47,8 @@ const installations = [
     ),
   },
   {
-    name: "Climbing walls",
-    text: "Structure, panels, holds and belay points.",
+    name: <T sq="Mure ngjitjeje" en="Climbing walls" />,
+    text: <T sq="Struktura, panele, mbajtëse dhe pika sigurimi." en="Structure, panels, holds and belay points." />,
     icon: (
       <>
         <path pathLength={1} d="M10 58L14 6H52L48 58Z" />
@@ -61,8 +62,8 @@ const installations = [
     ),
   },
   {
-    name: "Tower cranes",
-    text: "Structure, hoist ropes, brakes and load limiters.",
+    name: <T sq="Vinça kullë" en="Tower cranes" />,
+    text: <T sq="Struktura, kabllo ngritjeje, frena dhe kufizues ngarkese." en="Structure, hoist ropes, brakes and load limiters." />,
     icon: (
       <>
         <path pathLength={1} d="M18 60V10M24 60V10M18 20l6 8M24 28l-6 8M18 36l6 8M24 44l-6 8" />
@@ -73,8 +74,8 @@ const installations = [
     ),
   },
   {
-    name: "Lifts",
-    text: "Cars, doors, ropes and safety brakes.",
+    name: <T sq="Ashensorë" en="Lifts" />,
+    text: <T sq="Kabina, dyer, kabllo dhe frena sigurie." en="Cars, doors, ropes and safety brakes." />,
     icon: (
       <>
         <path pathLength={1} d="M14 4H50V60H14Z" />
@@ -107,19 +108,19 @@ export function CertifySection() {
   }, []);
 
   return (
-    <section className="py-16 sm:py-20" aria-labelledby="certify-title">
+    <section id="certify" className="scroll-mt-20 py-16 sm:py-20" aria-labelledby="certify-title">
       <Container>
         <SectionHeading
           id="certify-title"
-          kicker="What we inspect"
-          title="Everything that works up high"
-          description="Six kinds of installation, one rule: safe for the people who use them."
-          action={{ href: "/services#inspection", label: "About inspection" }}
+          kicker={<T sq="Çfarë inspektojmë" en="What we inspect" />}
+          title={<T sq="Gjithçka që punon lart" en="Everything that works up high" />}
+          description={<T sq="Gjashtë lloje instalimesh, një rregull: të sigurta për njerëzit që i përdorin." en="Six kinds of installation, one rule: safe for the people who use them." />}
+          action={{ href: "/services#inspection", label: <T sq="Rreth inspektimit" en="About inspection" /> }}
         />
         <ul ref={ref} className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {installations.map((it, i) => (
             <li
-              key={it.name}
+              key={i}
               className="rounded-xl border border-line bg-white p-6 transition-colors hover:border-ink/25"
             >
               <svg
@@ -141,7 +142,7 @@ export function CertifySection() {
         </ul>
         <div className="mt-10">
           <ButtonLink href="/services#request" variant="dark">
-            Request an inspection
+            <T sq="Kërko inspektim" en="Request an inspection" />
           </ButtonLink>
         </div>
       </Container>

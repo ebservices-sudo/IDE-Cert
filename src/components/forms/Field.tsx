@@ -1,11 +1,12 @@
 import clsx from "clsx";
+import { T } from "@/lib/i18n/T";
 
 // Labelled form controls with inline errors (aria-invalid + aria-describedby).
 
 const control =
   "block w-full rounded-md border bg-white px-3.5 text-[15px] text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-brand";
 
-type Base = { name: string; label: string; error?: string; hint?: string; optional?: boolean; className?: string };
+type Base = { name: string; label: React.ReactNode; error?: string; hint?: React.ReactNode; optional?: boolean; className?: string };
 
 export function Field({
   name,
@@ -22,7 +23,11 @@ export function Field({
     <div className={className}>
       <label htmlFor={id} className="block text-sm font-semibold">
         {label}
-        {optional && <span className="ml-1.5 font-normal text-muted">(optional)</span>}
+        {optional && (
+          <span className="ml-1.5 font-normal text-muted">
+            <T sq="(opsionale)" en="(optional)" />
+          </span>
+        )}
       </label>
       <div className="mt-1.5">
         {children({

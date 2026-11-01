@@ -14,6 +14,7 @@ import { ProductCard } from "@/components/product/ProductCard";
 import { toCard } from "@/lib/catalog/cards";
 import { JsonLd, breadcrumbLd, productLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
+import { T } from "@/lib/i18n/T";
 
 export function generateStaticParams() {
   return baseProducts.map((p) => ({ world: p.mainCategory, sub: p.subcategory, slug: p.slug }));
@@ -65,6 +66,7 @@ async function ProductContent({ params }: Pick<PageProps<"/shop/[world]/[sub]/[s
     variants: product.variants,
     images: product.images,
     subcategoryName: subcategory.name,
+    subcategoryNameSq: subcategory.nameSq,
     quoteNotes: product.quoteNotes ?? [],
     manualUrl: isPpe(product) ? manual?.url : undefined,
   };
@@ -87,10 +89,10 @@ async function ProductContent({ params }: Pick<PageProps<"/shop/[world]/[sub]/[s
           <nav aria-label="Breadcrumb" className="py-3">
             <ol className="flex flex-wrap items-center gap-1.5 text-xs text-muted">
               {[
-                { label: "Home", href: "/" },
-                { label: "Shop", href: "/shop" },
-                { label: w.name, href: worldHref(w.slug) },
-                { label: subcategory.name, href: subcategoryHref(w.slug, subcategory.slug) },
+                { label: <T sq="Ballina" en="Home" />, href: "/" },
+                { label: <T sq="Dyqani" en="Shop" />, href: "/shop" },
+                { label: <T sq={w.nameSq} en={w.name} />, href: worldHref(w.slug) },
+                { label: <T sq={subcategory.nameSq} en={subcategory.name} />, href: subcategoryHref(w.slug, subcategory.slug) },
               ].map((c) => (
                 <li key={c.href} className="flex items-center gap-1.5">
                   <Link href={c.href} className="hover:text-ink">
@@ -119,7 +121,7 @@ async function ProductContent({ params }: Pick<PageProps<"/shop/[world]/[sub]/[s
         <section className="border-t border-line bg-mist py-14" aria-labelledby="related-title">
           <Container>
             <h2 id="related-title" className="font-display text-2xl">
-              More {subcategory.name.toLowerCase()}
+              <T sq={`Më shumë: ${subcategory.nameSq.toLowerCase()}`} en={`More ${subcategory.name.toLowerCase()}`} />
             </h2>
             <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-4">
               {related.map((p) => (
@@ -159,10 +161,10 @@ function ProductSkeleton() {
 function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<typeof productFaqs> }) {
   const specs = Object.entries(product.specs);
   const sections = [
-    { id: "overview", label: "Overview", show: Boolean(product.description || product.features.length) },
-    { id: "technical", label: "Technical data", show: true },
-    { id: "downloads", label: "Downloads", show: product.downloads.length > 0 },
-    { id: "faq", label: "FAQ", show: faqs.length > 0 },
+    { id: "overview", label: <T sq="Përshkrimi" en="Overview" />, show: Boolean(product.description || product.features.length) },
+    { id: "technical", label: <T sq="Të dhëna teknike" en="Technical data" />, show: true },
+    { id: "downloads", label: <T sq="Shkarkime" en="Downloads" />, show: product.downloads.length > 0 },
+    { id: "faq", label: <T sq="Pyetje" en="FAQ" />, show: faqs.length > 0 },
   ].filter((s) => s.show);
 
   return (
@@ -187,12 +189,14 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
             <div className="flex gap-3 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-relaxed text-amber-950">
               <AlertTriangle aria-hidden className="mt-0.5 size-5 shrink-0 text-amber-600" />
               <p>
-                EDELRID has not yet published the product page, technical data and user manual for this item online. We list it
-                with the name, item numbers and prices from the EDELRID 2026 price list only.{" "}
+                <T
+                  sq="EDELRID ende nuk e ka publikuar online faqen e produktit, të dhënat teknike dhe manualin për këtë artikull. E listojmë vetëm me emrin, numrat e artikujve dhe çmimet nga lista EDELRID 2026."
+                  en="EDELRID has not yet published the product page, technical data and user manual for this item online. We list it with the name, item numbers and prices from the EDELRID 2026 price list only."
+                />{" "}
                 <Link href={`/contact?about=${encodeURIComponent(`EDELRID ${product.name} (item ${product.variants[0].sku}${product.variants.length > 1 ? " and variants" : ""})`)}`} className="font-semibold underline">
-                  Ask us for the product sheet
+                  <T sq="Na kërkoni fletën e produktit" en="Ask us for the product sheet" />
                 </Link>{" "}
-                before ordering.
+                <T sq="para se të porositni." en="before ordering." />
               </p>
             </div>
           )}
@@ -200,7 +204,7 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
           {sections.some((s) => s.id === "overview") && (
             <section id="overview" aria-labelledby="overview-title" className="scroll-mt-36">
               <h2 id="overview-title" className="font-display text-2xl">
-                Overview
+                <T sq="Përshkrimi" en="Overview" />
               </h2>
               {product.description && (
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-ink/85">
@@ -211,7 +215,7 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
               )}
               {product.features.length > 0 && (
                 <>
-                  <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-muted">Features</h3>
+                  <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-muted"><T sq="Karakteristikat" en="Features" /></h3>
                   <ul className="mt-3 space-y-2.5">
                     {product.features.map((f) => (
                       <li key={f} className="flex gap-3 leading-relaxed">
@@ -236,11 +240,11 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
 
           <section id="technical" aria-labelledby="technical-title" className="scroll-mt-36">
             <h2 id="technical-title" className="font-display text-2xl">
-              Technical data
+              <T sq="Të dhëna teknike" en="Technical data" />
             </h2>
             {product.certifications.length > 0 && (
               <div className="mt-5">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">Certification</h3>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted"><T sq="Certifikimi" en="Certification" /></h3>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {product.certifications.map((c) => (
                     <li key={c} className="rounded-md bg-ink px-3 py-1.5 text-sm font-semibold text-white">
@@ -266,11 +270,11 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
               </table>
             ) : (
               <p className="mt-5 text-sm text-muted">
-                EDELRID does not publish technical data for this item online yet.{" "}
+                <T sq="EDELRID ende nuk publikon online të dhëna teknike për këtë artikull." en="EDELRID does not publish technical data for this item online yet." />{" "}
                 <Link href={`/contact?about=${encodeURIComponent(`EDELRID ${product.name} (item ${product.variants[0].sku}${product.variants.length > 1 ? " and variants" : ""})`)}`} className="font-semibold text-brand-strong hover:underline">
-                  Ask us
+                  <T sq="Na pyesni" en="Ask us" />
                 </Link>{" "}
-                for the product sheet.
+                <T sq="për fletën e produktit." en="for the product sheet." />
               </p>
             )}
             {product.properties.length > 0 && (
@@ -285,11 +289,11 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
             <VariantTable product={product} />
             {product.source && (
               <p className="mt-6 text-xs text-muted">
-                Technical data, descriptions and photos: EDELRID GmbH &amp; Co. KG,{" "}
+                <T sq="Të dhënat teknike, përshkrimet dhe fotot:" en="Technical data, descriptions and photos:" /> EDELRID GmbH &amp; Co. KG,{" "}
                 <a href={product.source.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink">
                   edelrid.com
                 </a>
-                . Always follow the EDELRID user manual.
+                . <T sq="Ndiqni gjithmonë manualin e përdorimit EDELRID." en="Always follow the EDELRID user manual." />
               </p>
             )}
           </section>
@@ -297,7 +301,7 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
           {product.downloads.length > 0 && (
             <section id="downloads" aria-labelledby="downloads-title" className="scroll-mt-36">
               <h2 id="downloads-title" className="font-display text-2xl">
-                Downloads
+                <T sq="Shkarkime" en="Downloads" />
               </h2>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {product.downloads.map((d) => (
@@ -312,18 +316,22 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
           {faqs.length > 0 && (
             <section id="faq" aria-labelledby="faq-title" className="scroll-mt-36">
               <h2 id="faq-title" className="font-display text-2xl">
-                Questions about ordering
+                <T sq="Pyetje për porosinë" en="Questions about ordering" />
               </h2>
               <div className="mt-5 divide-y divide-line border-y border-line">
                 {faqs.map((f) => (
                   <details key={f.question} className="group py-4">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">
-                      {f.question}
+                      <span>
+                        <T sq={f.questionSq} en={f.question} />
+                      </span>
                       <span aria-hidden className="text-xl leading-none text-muted transition-transform group-open:rotate-45">
                         +
                       </span>
                     </summary>
-                    <p className="mt-3 leading-relaxed text-muted">{f.answer}</p>
+                    <p className="mt-3 leading-relaxed text-muted">
+                      <T sq={f.answerSq} en={f.answer} />
+                    </p>
                   </details>
                 ))}
               </div>
@@ -335,11 +343,11 @@ function ProductDetails({ product, faqs }: { product: Product; faqs: ReturnType<
   );
 }
 
-const KIND_LABEL: Record<DownloadT["kind"], string> = {
-  manual: "User manual",
-  doc: "Certificate / inspection",
-  datasheet: "Data sheet",
-  other: "Document",
+const KIND_LABEL: Record<DownloadT["kind"], React.ReactNode> = {
+  manual: <T sq="Manuali i përdorimit" en="User manual" />,
+  doc: <T sq="Certifikatë / inspektim" en="Certificate / inspection" />,
+  datasheet: <T sq="Fleta e të dhënave" en="Data sheet" />,
+  other: <T sq="Dokument" en="Document" />,
 };
 
 function DownloadLink({ d }: { d: DownloadT }) {
@@ -356,7 +364,9 @@ function DownloadLink({ d }: { d: DownloadT }) {
         <span className="mt-1 block break-words font-semibold leading-snug group-hover:text-brand-strong">{d.label}</span>
       </span>
       <ExternalLink aria-hidden className="mt-0.5 size-4 shrink-0 text-muted" />
-      <span className="sr-only">(PDF, opens in a new tab)</span>
+      <span className="sr-only">
+        <T sq="(PDF, hapet në skedë të re)" en="(PDF, opens in a new tab)" />
+      </span>
     </a>
   );
 }
@@ -365,11 +375,16 @@ function DownloadLink({ d }: { d: DownloadT }) {
 function VariantTable({ product }: { product: Product }) {
   if (product.variants.length < 2) return null;
   const dims = (["config", "colour", "length", "size"] as const).filter((d) => product.variants.some((v) => v.options[d]));
-  const label = { config: "Version", colour: "Colour", length: "Length", size: "Size" };
+  const label = {
+    config: <T sq="Versioni" en="Version" />,
+    colour: <T sq="Ngjyra" en="Colour" />,
+    length: <T sq="Gjatësia" en="Length" />,
+    size: <T sq="Madhësia" en="Size" />,
+  };
   return (
     <details className="group mt-8 rounded-lg border border-line">
       <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-semibold [&::-webkit-details-marker]:hidden">
-        All {product.variants.length} item numbers
+        <T sq={`Të gjithë ${product.variants.length} numrat e artikujve`} en={`All ${product.variants.length} item numbers`} />
         <span aria-hidden className="text-lg leading-none text-muted transition-transform group-open:rotate-45">
           +
         </span>
@@ -379,7 +394,7 @@ function VariantTable({ product }: { product: Product }) {
           <thead className="bg-mist text-left text-xs uppercase tracking-wider text-muted">
             <tr>
               <th scope="col" className="px-4 py-2.5 font-semibold">
-                Item no.
+                <T sq="Nr. artikulli" en="Item no." />
               </th>
               {dims.map((d) => (
                 <th key={d} scope="col" className="px-4 py-2.5 font-semibold">
@@ -387,7 +402,7 @@ function VariantTable({ product }: { product: Product }) {
                 </th>
               ))}
               <th scope="col" className="px-4 py-2.5 text-right font-semibold">
-                Price
+                <T sq="Çmimi" en="Price" />
               </th>
             </tr>
           </thead>

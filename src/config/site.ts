@@ -35,15 +35,16 @@ export const shop = {
 } as const;
 
 export const mainNav = [
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Services", labelSq: "Shërbimet", href: "/services" },
+  { label: "What we certify", labelSq: "Çfarë certifikojmë", href: "/#certify" },
+  { label: "About", labelSq: "Rreth nesh", href: "/about" },
+  { label: "Contact", labelSq: "Kontakt", href: "/contact" },
 ] as const;
 
 export const legalNav = [
-  { label: "Shipping & returns", href: "/shipping-returns" },
-  { label: "Terms", href: "/terms" },
-  { label: "Privacy", href: "/privacy" },
+  { label: "Shipping & returns", labelSq: "Dërgesa dhe kthimet", href: "/shipping-returns" },
+  { label: "Terms", labelSq: "Kushtet", href: "/terms" },
+  { label: "Privacy", labelSq: "Privatësia", href: "/privacy" },
 ] as const;
 
 export const legal = {

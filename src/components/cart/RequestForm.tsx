@@ -10,6 +10,8 @@ import type { PricedLine } from "@/lib/orders/pricing";
 import { formatPrice, unitSuffix } from "@/lib/format";
 import { SelectField, TextArea, TextField } from "@/components/forms/Field";
 import { useTurnstile } from "@/components/forms/Turnstile";
+import { T } from "@/lib/i18n/T";
+import { useLang } from "@/lib/i18n/useLang";
 
 // Sends the request list through the quote system (saved in the admin under Quotes and
 // emailed to the shop). No payment is taken: we reply with the final price and delivery.
@@ -31,6 +33,7 @@ export function RequestForm({ lines, onSent }: { lines: PricedLine[]; onSent: ()
   const errors = state.status === "error" ? (state.errors ?? {}) : {};
   const formRef = useRef<HTMLFormElement>(null);
   const sentRef = useRef(false);
+  const { t } = useLang();
 
   useEffect(() => {
     if (state.status === "ok" && !sentRef.current) {
@@ -46,13 +49,18 @@ export function RequestForm({ lines, onSent }: { lines: PricedLine[]; onSent: ()
     return (
       <div role="status" className="rounded-xl border border-line bg-white p-6 text-center">
         <CheckCircle2 aria-hidden className="mx-auto size-10 text-brand-strong" />
-        <h2 className="mt-3 font-display text-xl">Request sent</h2>
+        <h2 className="mt-3 font-display text-xl">
+          <T sq="Kërkesa u dërgua" en="Request sent" />
+        </h2>
         <p className="mt-2 text-sm text-muted">
-          Your reference is <strong className="text-ink">{state.number}</strong>. A copy went to {state.email}. We reply with the final price and
-          delivery date.
+          <T sq="Numri i referencës:" en="Your reference is" /> <strong className="text-ink">{state.number}</strong>.{" "}
+          <T
+            sq={`Një kopje shkoi te ${state.email}. Ju kthejmë çmimin përfundimtar dhe datën e dorëzimit.`}
+            en={`A copy went to ${state.email}. We reply with the final price and delivery date.`}
+          />
         </p>
         <Link href="/shop" className="mt-5 inline-flex h-11 items-center rounded-md bg-ink px-5 text-sm font-semibold text-white hover:bg-ink-3">
-          Back to the shop
+          <T sq="Kthehu te dyqani" en="Back to the shop" />
         </Link>
       </div>
     );
@@ -89,23 +97,27 @@ export function RequestForm({ lines, onSent }: { lines: PricedLine[]; onSent: ()
           </div>
         ) : (
           <div role="alert" tabIndex={-1} className="rounded-lg border border-line bg-white p-4 text-sm">
-            <p className="font-semibold">We couldn’t send it from the website just now.</p>
-            <p className="mt-1 text-muted">Send the same list by email: it opens ready to go, you just press send.</p>
+            <p className="font-semibold">
+              <T sq="Nuk mundëm ta dërgonim nga faqja tani." en="We couldn’t send it from the website just now." />
+            </p>
+            <p className="mt-1 text-muted">
+              <T sq="Dërgoni të njëjtën listë me email: hapet gati, ju vetëm shtypni dërgo." en="Send the same list by email: it opens ready to go, you just press send." />
+            </p>
             <a
               href={mailto}
               className="mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-ink text-sm font-semibold text-white hover:bg-ink-3"
             >
               <Mail aria-hidden className="size-4" />
-              Send by email
+              <T sq="Dërgo me email" en="Send by email" />
             </a>
           </div>
         ))}
-      <TextField name="name" label="Full name" autoComplete="name" error={errors.name} />
+      <TextField name="name" label={<T sq="Emri dhe mbiemri" en="Full name" />} autoComplete="name" error={errors.name} />
       <TextField name="email" label="Email" type="email" autoComplete="email" error={errors.email} />
-      <TextField name="phone" label="Phone" type="tel" autoComplete="tel" optional error={errors.phone} />
-      <TextField name="company" label="Company or park" autoComplete="organization" optional />
-      <SelectField name="country" label="Delivery country" defaultValue="XK" options={[]} groups={groups} error={errors.country} />
-      <TextArea name="message" label="Note" optional rows={3} placeholder="Delivery date, sizing questions, invoice details…" />
+      <TextField name="phone" label={<T sq="Telefoni" en="Phone" />} type="tel" autoComplete="tel" optional error={errors.phone} />
+      <TextField name="company" label={<T sq="Kompania ose parku" en="Company or park" />} autoComplete="organization" optional />
+      <SelectField name="country" label={<T sq="Shteti i dorëzimit" en="Delivery country" />} defaultValue="XK" options={[]} groups={groups} error={errors.country} />
+      <TextArea name="message" label={<T sq="Shënim" en="Note" />} optional rows={3} placeholder={t("Data e dorëzimit, pyetje për madhësitë, të dhëna për faturën…", "Delivery date, sizing questions, invoice details…")} />
       {errors.items && <p className="text-sm font-medium text-brand-strong">{errors.items}</p>}
       {turnstile.widget}
       <button
@@ -113,10 +125,13 @@ export function RequestForm({ lines, onSent }: { lines: PricedLine[]; onSent: ()
         disabled={pending || !turnstile.ready || !lines.length}
         className="inline-flex h-12 w-full items-center justify-center rounded-md bg-brand-strong text-sm font-semibold text-white transition-colors hover:bg-[#b5252a] disabled:opacity-60"
       >
-        {pending ? "Sending…" : "Send request"}
+        {pending ? <T sq="Duke dërguar…" en="Sending…" /> : <T sq="Dërgo kërkesën" en="Send request" />}
       </button>
       <p className="text-xs leading-relaxed text-muted">
-        No payment now. We check availability with EDELRID and reply with the final price, delivery date and a proforma invoice. Or email{" "}
+        <T
+          sq="Pa pagesë tani. Kontrollojmë disponueshmërinë te EDELRID dhe ju kthejmë çmimin përfundimtar, datën e dorëzimit dhe faturën proforma. Ose shkruani te"
+          en="No payment now. We check availability with EDELRID and reply with the final price, delivery date and a proforma invoice. Or email"
+        />{" "}
         <a href={mailto} className="font-semibold underline">
           {site.email}
         </a>
