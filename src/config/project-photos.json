@@ -1,1 +1,158 @@
-{}
+{
+ "decan-zipline": [
+  {
+   "src": "/projects/_web/decan-zipline/001.webp",
+   "small": "/projects/_web/decan-zipline/001-s.webp",
+   "w": 1477,
+   "h": 1065,
+   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwBACdASoYABEAPu1kq0+ppSOiMBgIATAdiWMAtOgREV81rJfKOMuYZsA8ErJAAM3ZVE6pnSaYt+he3D5IQik2GE5JRZrmULc1VvIXW0Ki/VFmJns1Q3ASzCP4AAAA",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/002.webp",
+   "small": "/projects/_web/decan-zipline/002-s.webp",
+   "w": 1478,
+   "h": 1064,
+   "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwBACdASoYABEAPu1crE2ppKSiMBgMATAdiWMAuwANpLk05KlZPWypgAAAnzemErhCJ6nzXN64WyvpPY+qKq1vWCKeD1ETFQHKF1n4pAfXgAAA",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/003.webp",
+   "small": "/projects/_web/decan-zipline/003-s.webp",
+   "w": 1480,
+   "h": 1063,
+   "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwBQCdASoYABEAPu1oqk8ppiOiMBgIATAdiWMAuDAR7Y6zA0PbAyLr0cqiqWHj+iIK0AD+pEmxynj2jxNg3tPcul68fiRCYOgfklaOBC5oU6zciDNHshuRjdWRPbYCCbQvnY4B0YgAAA==",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/004.webp",
+   "small": "/projects/_web/decan-zipline/004-s.webp",
+   "w": 1397,
+   "h": 1126,
+   "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwBQCdASoYABMAPulcp02pJSOiN/VYASAdCWMAgkkDkVzeiyDcrTUQBLbObLWb6UnGsAD5uDo5QOoStk3wDSKxJRf3jzLnGyQm7jA8LJhAqmuYqMvJRqcWJST2VO5Hx4QxUAAA",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/005.webp",
+   "small": "/projects/_web/decan-zipline/005-s.webp",
+   "w": 1478,
+   "h": 1064,
+   "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwBACdASoYABEAPuFaqU2opSQiMAwBEBwJZgCdMoM+QDQY+aSsUjEPDJhHVDNgAP7RDNIeabw3T7YUSqHBfyUGRs8Jt1RdJpWI2sAEEROQu9+oJeIv5KlfJPJuhtbnqxmISBiQCD7bcDOIkrF9ij+MJb7TkWeI3kIeK+AA",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/006.webp",
+   "small": "/projects/_web/decan-zipline/006-s.webp",
+   "w": 1477,
+   "h": 1065,
+   "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBQCdASoYABEAPulmq02pJiQiMBgMASAdCWQAsR9odGAMJqszk/9JhsNhcwY1+M2fAAD8UnajO7yYnZ1JZXoYd28sDBNyD9d3gxBJnMJUkjPM3e0C/4LGdW/VkWuy+IL6mA+vNeySrfdg/oWCHl26YwBdM7GHYAA=",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/007.webp",
+   "small": "/projects/_web/decan-zipline/007-s.webp",
+   "w": 1680,
+   "h": 1278,
+   "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABQBACdASoYABIAPtleo02oJaMiN/qoAQAbCWkAAFKaPqaeJum6dgkl+u+AAP7Xb/htVLdlSgjQqD3IgbMsEsmwI8dp3MgA",
+   "kind": "drawing"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/008.webp",
+   "small": "/projects/_web/decan-zipline/008-s.webp",
+   "w": 1638,
+   "h": 1680,
+   "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwBACdASoYABkAPuVgp02pJaOiMAwBIByJZQAASb1x1DhTgTDQCRlJbnrDTzwGAAAA/vOCgSEbyIK1xBs8CDjvcXp74iSTylmjxLPcBostKATfASbT69kx1Khmf8NM4UlXfmoX4bpAAA==",
+   "kind": "drawing"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/009.webp",
+   "small": "/projects/_web/decan-zipline/009-s.webp",
+   "w": 1680,
+   "h": 1564,
+   "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACQBACdASoYABYAPuFWpE2opKOiN/qoARAcCWUAyywhefEcOk9Bp1KEK56HoMAA/vTT08xwefRQ1/b0kQw+Ru+inFivcNX6/+yLm1h9i68EFhajbrMeLH9Ou7Uh1KrQAAA=",
+   "kind": "drawing"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/010.webp",
+   "small": "/projects/_web/decan-zipline/010-s.webp",
+   "w": 1680,
+   "h": 1392,
+   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABwBACdASoYABQAPt1cpU2opaOiN/qoARAbiWUAwzQejj/ri8k57+QvAj0YAAD+8jRGY2BrcZW1dhAzlHP/YV9/2rCuUthcYNFcfSYwXGnO7kNTealsuPeJhviVyCgA",
+   "kind": "drawing"
+  },
+  {
+   "src": "/projects/_web/decan-zipline/011.webp",
+   "small": "/projects/_web/decan-zipline/011-s.webp",
+   "w": 1680,
+   "h": 1131,
+   "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAwAwCdASoYABAALrV2u12jqampiYC0S0gABSxxtcEhX/IAAP7rHGrNtggTumOghNvtDLinzzEWupS/3YAAAA==",
+   "kind": "drawing"
+  }
+ ],
+ "theth-zipline": [
+  {
+   "src": "/projects/_web/theth-zipline/001.webp",
+   "small": "/projects/_web/theth-zipline/001-s.webp",
+   "w": 1600,
+   "h": 809,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoYAAwAPu1kqk4ppaQiMAgBMB2JQBOgBEMRrk7VYAKYAAD+Gwo9jLVwiLXmGLhkJ8+KKVNdJi0Ay8c1wnrn+Or5AAA=",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/theth-zipline/002.webp",
+   "small": "/projects/_web/theth-zipline/002-s.webp",
+   "w": 1600,
+   "h": 809,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAABQAwCdASoYAAwAPu1kqU2ppaQiMAgBMB2JQAAEb6Lv7H9ZAAD8qylOMNWf4yUVmwXwkZ9g/960UBhzv11IHdnaPNpJ4iCXDcUE8iAPkAA=",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/theth-zipline/003.webp",
+   "small": "/projects/_web/theth-zipline/003-s.webp",
+   "w": 1600,
+   "h": 809,
+   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQBACdASoYAAwAPu1oqk6ppiQiMAgBMB2JYwCdACK2iP8SewuYrxY6YAD+M7yL+v03WF730cV6T+ju7uU01TWefOaP/niPfEAsAAAA",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/theth-zipline/004.webp",
+   "small": "/projects/_web/theth-zipline/004-s.webp",
+   "w": 1600,
+   "h": 807,
+   "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoYAAwAPu1iqU2ppaQiMAgBMB2JQBOgAb8t3ceHch0gAADMhRgdrh3QLEIpHKgju/ay45ztf1P2DyQysBgRbtRUmKuaUKMrDm04e1/vtOAAAA==",
+   "kind": "photo"
+  },
+  {
+   "src": "/projects/_web/theth-zipline/005.webp",
+   "small": "/projects/_web/theth-zipline/005-s.webp",
+   "w": 1680,
+   "h": 1231,
+   "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABwBACdASoYABEAPu1kqE2ppaOiMAgBMB2JZwAAUgps7sUF1TEnhFayT/DQYAD+8fZKK3Q31+NtLwMBDMOtjp95s05dBltm+5MaL20urAdUCAAA",
+   "kind": "drawing"
+  },
+  {
+   "src": "/projects/_web/theth-zipline/006.webp",
+   "small": "/projects/_web/theth-zipline/006-s.webp",
+   "w": 1680,
+   "h": 889,
+   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoYAA0APu1kqk2ppaQiMAgBMB2JZwC7ACHdmdGniZWeWkQA/raceIb2PPtUwIDTo7VfqMCTv6/OcCDm/jQJE2BQDK5opgAA",
+   "kind": "drawing"
+  },
+  {
+   "src": "/projects/_web/theth-zipline/007.webp",
+   "small": "/projects/_web/theth-zipline/007-s.webp",
+   "w": 1680,
+   "h": 889,
+   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAABwAwCdASoYAA0ALrV2u12jqampiYC0SxgF2AId9JBJIqXjagAA/vCKwylNezVjYWAogMaBQT3G3Teeg2WYqMitjinzSKnBSI6PpwAA",
+   "kind": "drawing"
+  },
+  {
+   "src": "/projects/_web/theth-zipline/008.webp",
+   "small": "/projects/_web/theth-zipline/008-s.webp",
+   "w": 1680,
+   "h": 889,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAwCdASoYAA0APu1kqU4ppaOiMAgBMB2JZQCo9CHw1iWu25SAsUAA/tXUx3eQeFvZNaMbN1sBC4/yIewc/YSwlNEmWjGwAAA=",
+   "kind": "drawing"
+  }
+ ]
+}

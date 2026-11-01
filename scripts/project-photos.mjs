@@ -6,6 +6,9 @@
 //      public/projects/_web/ (not committed),
 //   3. writes src/config/project-photos.json, which the pages read.
 // Photos are ordered by file name; a file called "cover", "kryesore" or "main" comes first.
+// Technical drawings go in a sub-folder named "vizatime" (or "drawings"): they are shown
+// apart from the photos and renders, trimmed of their white margins.
+// Renders and photos get a light touch-up: a little more contrast, colour and sharpness.
 // Without any photos the pages show a tidy placeholder instead.
 
 import { existsSync, mkdirSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
@@ -22,6 +25,7 @@ const MATCH = [
   ["theth-zipline", /theth|thet\b|thethi/],
 ];
 const COVER = /^(cover|kryesore|main|ballina)/;
+const DRAWING = /(^|\/)(vizatime?|drawings?|cad)\//;
 
 const plain = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
@@ -66,26 +70,34 @@ const collator = new Intl.Collator("en", { numeric: true, sensitivity: "base" })
 const url = (p) => "/" + p.split(sep).slice(1).map(encodeURIComponent).join("/");
 
 for (const [slug, list] of Object.entries(bySlug)) {
+  const isDrawing = (f) => DRAWING.test(plain(relative(ROOT, f)).split(sep).join("/"));
   list.sort((a, b) => {
+    const da = isDrawing(a), db = isDrawing(b);
+    if (da !== db) return da ? 1 : -1;
     const ca = COVER.test(plain(basename(a))), cb = COVER.test(plain(basename(b)));
     return ca !== cb ? (ca ? -1 : 1) : collator.compare(a, b);
   });
   mkdirSync(join(OUT, slug), { recursive: true });
   manifest[slug] = [];
   for (const [i, f] of list.entries()) {
-    const n = String(i + 1).padStart(2, "0");
+    const n = String(i + 1).padStart(3, "0");
+    const drawing = DRAWING.test(plain(relative(ROOT, f)).split(sep).join("/"));
+    const kind = drawing ? "drawing" : "photo";
     if (!sharp) {
-      manifest[slug].push({ src: url(f), small: url(f), w: 3, h: 2, blur: "" });
+      manifest[slug].push({ src: url(f), small: url(f), w: 3, h: 2, blur: "", kind });
       continue;
     }
     try {
-      const img = sharp(f, { failOn: "none" }).rotate();
+      let img = sharp(f, { failOn: "none" }).rotate();
+      img = drawing
+        ? sharp(await img.trim({ background: "#ffffff", threshold: 18 }).extend({ top: 40, bottom: 40, left: 40, right: 40, background: "#ffffff" }).toBuffer())
+        : img.modulate({ saturation: 1.08, brightness: 1.01 }).linear(1.06, -6).sharpen({ sigma: 0.7 });
       const big = join(OUT, slug, `${n}.webp`);
       const small = join(OUT, slug, `${n}-s.webp`);
       const info = await img.clone().resize({ width: 2000, withoutEnlargement: true }).webp({ quality: 80 }).toFile(big);
       await img.clone().resize({ width: 900, withoutEnlargement: true }).webp({ quality: 74 }).toFile(small);
       const blur = await img.clone().resize({ width: 24 }).blur(1.2).webp({ quality: 40 }).toBuffer();
-      manifest[slug].push({ src: url(big), small: url(small), w: info.width, h: info.height, blur: `data:image/webp;base64,${blur.toString("base64")}` });
+      manifest[slug].push({ src: url(big), small: url(small), w: info.width, h: info.height, blur: `data:image/webp;base64,${blur.toString("base64")}`, kind });
     } catch (e) {
       console.warn(`project-photos: skipped "${relative(ROOT, f)}": ${e.message}`);
     }

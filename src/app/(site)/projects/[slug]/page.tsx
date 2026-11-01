@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ExternalLink, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { getProject, projects, STATUS } from "@/config/projects";
 import { site } from "@/config/site";
-import { coverPhoto, projectPhotos } from "@/lib/projectPhotos";
+import { coverPhoto, projectDrawings, projectPhotos } from "@/lib/projectPhotos";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { T } from "@/lib/i18n/T";
@@ -50,6 +50,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
   const p = getProject((await params).slug);
   if (!p) notFound();
   const photos = projectPhotos(p.slug);
+  const drawings = projectDrawings(p.slug);
   const others = projects.filter((o) => o.slug !== p.slug);
 
   return (
@@ -150,7 +151,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
         <Container>
           <div className="flex items-end justify-between gap-4">
             <h2 id="photos-title" className="font-display text-[clamp(1.8rem,3.5vw,2.6rem)] leading-none">
-              <T sq="Fotografi" en="Photos" />
+              {p.status === "built" ? <T sq="Fotografi" en="Photos" /> : <T sq="Pamje nga projekti" en="Design views" />}
             </h2>
             {photos.length > 0 && <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted">{photos.length}</p>}
           </div>
@@ -159,6 +160,27 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
           </div>
         </Container>
       </section>
+
+      {drawings.length > 0 && (
+        <section className="border-t border-line bg-mist py-16 sm:py-20" aria-labelledby="drawings-title">
+          <Container>
+            <div className="flex items-end justify-between gap-4">
+              <div>
+                <p className="kicker text-brand-strong">
+                  <T sq="Projektimi inxhinierik" en="Engineering design" />
+                </p>
+                <h2 id="drawings-title" className="mt-3 font-display text-[clamp(1.8rem,3.5vw,2.6rem)] leading-none">
+                  <T sq="Vizatime teknike" en="Technical drawings" />
+                </h2>
+              </div>
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted">{drawings.length}</p>
+            </div>
+            <div className="mt-8">
+              <Gallery photos={drawings} name={p.name} drawings />
+            </div>
+          </Container>
+        </section>
+      )}
 
       <section className="border-t border-line bg-mist py-16 sm:py-20" aria-labelledby="more-title">
         <Container>

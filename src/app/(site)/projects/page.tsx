@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { projects, STATUS } from "@/config/projects";
 import { site } from "@/config/site";
-import { coverPhoto, projectPhotos } from "@/lib/projectPhotos";
+import { allPhotos, coverPhoto, projectPhotos } from "@/lib/projectPhotos";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { T } from "@/lib/i18n/T";
@@ -12,6 +12,7 @@ import { Photo } from "@/components/projects/Photo";
 import { NoPhoto } from "@/components/projects/NoPhoto";
 import { InView } from "@/components/projects/InView";
 import { Slideshow } from "@/components/projects/Slideshow";
+import { Marquee } from "@/components/projects/Marquee";
 import { projectStats } from "@/components/projects/stats";
 import "@/components/projects/projects.css";
 
@@ -74,6 +75,10 @@ export default function ProjectsPage() {
           </dl>
         </Slideshow>
       </section>
+
+      <div className="bg-ink pb-4 pt-4">
+        <Marquee items={allPhotos(projects.map((p) => p.slug))} names={Object.fromEntries(projects.map((p) => [p.slug, p.name]))} />
+      </div>
 
       <section className="py-16 sm:py-24" aria-label="Projects">
         <Container className="space-y-24 sm:space-y-32">

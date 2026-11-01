@@ -8,7 +8,7 @@ import { Photo } from "./Photo";
 
 // All of a project's photos: a masonry grid whose tiles rise in as they scroll into view,
 // and a full-screen viewer (arrow keys, swipe, Esc).
-export function Gallery({ photos, name }: { photos: P[]; name: string }) {
+export function Gallery({ photos, name, drawings = false }: { photos: P[]; name: string; drawings?: boolean }) {
   const { lang } = useLang();
   const [open, setOpen] = useState<number | null>(null);
   const grid = useRef<HTMLDivElement>(null);
@@ -66,15 +66,16 @@ export function Gallery({ photos, name }: { photos: P[]; name: string }) {
           <button
             key={p.src}
             type="button"
-            className="pr-tile"
+            className={drawings ? "pr-tile pr-tile-d" : "pr-tile"}
             onClick={(e) => {
               opener.current = e.currentTarget;
               setOpen(i);
             }}
             aria-label={label(i)}
           >
-            <Photo photo={p} alt="" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="w-full" />
-            <style>{`.pr-tile:nth-child(${i + 1}) .pr-ph{aspect-ratio:${p.w}/${p.h}}`}</style>
+            <div style={{ aspectRatio: `${p.w} / ${p.h}` }}>
+              <Photo photo={p} alt="" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="h-full w-full" />
+            </div>
           </button>
         ))}
       </div>
