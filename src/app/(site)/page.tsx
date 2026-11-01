@@ -6,7 +6,7 @@ import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { IdeSection } from "@/components/home/IdeSection";
 import { CertifySection } from "@/components/home/CertifySection";
 import { LoadTest } from "@/components/home/LoadTest";
-import { TrustSection } from "@/components/home/TrustSection";
+import { FounderSection } from "@/components/home/FounderSection";
 import { ContactBand } from "@/components/home/ContactBand";
 
 export default async function HomePage() {
@@ -20,7 +20,7 @@ export default async function HomePage() {
       <IdeSection />
       <CertifySection />
       <LoadTest />
-      <TrustSection />
+      <FounderSection />
       <ContactBand />
     </>
   );

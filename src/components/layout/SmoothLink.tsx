@@ -49,6 +49,15 @@ function glide(hash?: string) {
 /** After a menu click on another page, scrolls smoothly to the requested section once the new page is shown. */
 export function PendingScroll() {
   const path = usePathname();
+  // Opening a #section URL directly: the home hero grows after hydration, so the browser's
+  // own jump lands too high. Re-target the section once the page has laid out.
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) return;
+    const jump = () => document.getElementById(id)?.scrollIntoView({ block: "start", behavior: "instant" });
+    const timers = [250, 900].map((ms) => window.setTimeout(jump, ms));
+    return () => timers.forEach((t) => window.clearTimeout(t));
+  }, []);
   useEffect(() => {
     let hash: string | null = null;
     try {

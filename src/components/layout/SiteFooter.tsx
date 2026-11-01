@@ -41,8 +41,8 @@ export function SiteFooter() {
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed">
             <T
-              sq="Pajisje EDELRID për ngjitje dhe punë në lartësi, si dhe shërbime inspektimi, dizajnimi, inxhinierie dhe certifikimi nga Prishtina."
-              en="Climbing and work-at-height equipment from the EDELRID range, and inspection, design, engineering and certification services from Prishtinë."
+              sq="Inspektim, dizajnim, inxhinieri dhe certifikim nga Prishtina. Distributor në Kosovë dhe Shqipëri për Edelrid, Pfeiffer dhe TruBlue Technology. Siguria mbi të gjitha."
+              en="Inspection, design, engineering and certification from Prishtinë. Distributor for Kosovo and Albania of Edelrid, Pfeiffer and TruBlue Technology. Safety above all."
             />
           </p>
           <ul className="mt-6 space-y-2.5 text-sm">

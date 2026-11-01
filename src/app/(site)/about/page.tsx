@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, MapPin } from "lucide-react";
+import { distribution, founder, mottos } from "@/config/founder";
+import { Logo } from "@/components/brand/Logo";
 import { services } from "@/config/services";
 import { site } from "@/config/site";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -19,7 +21,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         kicker={<T sq="Rreth nesh" en="About" />}
-        title={<T sq="Inxhinierë që shesin pajisje sigurie" en="Engineers who sell safety equipment" />}
+        title={<T sq={mottos.safety.sq} en={mottos.safety.en} />}
         description={
           <T
             sq={`${site.legalName} është kompani inxhinierike në Prishtinë, Kosovë, e udhëhequr nga ${site.owner}.`}
@@ -28,6 +30,93 @@ export default function AboutPage() {
         }
         breadcrumbs={[{ label: <T sq="Ballina" en="Home" />, href: "/" }, { label: <T sq="Rreth nesh" en="About" /> }]}
       />
+
+      <section className="py-16 sm:py-20" aria-labelledby="founder-title">
+        <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <aside className="lg:col-span-4">
+            <div className="rounded-2xl bg-ink p-7 text-white lg:sticky lg:top-28">
+              <Logo tone="light" className="h-10 w-auto" />
+              <p className="mt-8 font-display text-2xl leading-tight">{founder.name}</p>
+              <p className="mt-2 font-mono text-xs uppercase tracking-[0.14em] text-brand">
+                <T sq={founder.role.sq} en={founder.role.en} />
+              </p>
+              <p className="mt-3 text-sm text-muted-dark">
+                <T sq={founder.position.sq} en={founder.position.en} />
+              </p>
+              <ul className="mt-6 space-y-3 border-t border-white/10 pt-6 text-sm">
+                {founder.credentials.map((c) => (
+                  <li key={c.title.en}>
+                    <p className="font-semibold">
+                      <T sq={c.title.sq} en={c.title.en} />
+                    </p>
+                    <p className="mt-0.5 text-muted-dark">
+                      <T sq={c.text.sq} en={c.text.en} />
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 border-t border-white/10 pt-6 font-display text-lg leading-snug text-brand">
+                <T sq={`“${mottos.main.sq}”`} en={`“${mottos.main.en}”`} />
+              </p>
+            </div>
+          </aside>
+          <div className="lg:col-span-8">
+            <p className="kicker text-brand-strong">
+              <T sq="Themeluesi" en="The founder" />
+            </p>
+            <h2 id="founder-title" className="mt-3 font-display text-3xl leading-tight sm:text-4xl">
+              {founder.name}
+            </h2>
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink/85">
+              {founder.bio.map((p, i) => (
+                <p key={i}>
+                  <T sq={p.sq} en={p.en} />
+                </p>
+              ))}
+            </div>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-line bg-mist p-5">
+                <p className="kicker text-ink">
+                  <T sq="Zipline të projektuara" en="Zip lines designed" />
+                </p>
+                <p className="mt-3 font-semibold">{founder.projects.ziplines.join(" · ")}</p>
+              </div>
+              <div className="rounded-xl border border-line bg-mist p-5">
+                <p className="kicker text-ink">
+                  <T sq="Parqe aventure" en="Adventure parks" />
+                </p>
+                <p className="mt-3 font-semibold">
+                  {founder.projects.parks.join(" · ")} <T sq="dhe të tjera" en="and more" />
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative overflow-hidden bg-ink py-16 text-white sm:py-20" aria-labelledby="dist-title">
+        <div aria-hidden className="absolute inset-0 bg-grid-dark opacity-50" />
+        <Container className="relative grid gap-10 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-6">
+            <p className="kicker text-brand">
+              <T sq="Distribucioni" en="Distribution" />
+            </p>
+            <h2 id="dist-title" className="mt-3 font-display text-3xl leading-tight">
+              <T sq="Distributor në Kosovë dhe Shqipëri" en="Distributor for Kosovo and Albania" />
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-dark">
+              <T sq={distribution.text.sq} en={distribution.text.en} />
+            </p>
+          </div>
+          <ul className="flex flex-wrap gap-x-10 gap-y-4 lg:col-span-6 lg:justify-end">
+            {distribution.brands.map((b) => (
+              <li key={b} className="font-display text-[clamp(1.5rem,3vw,2.4rem)] uppercase text-white/90">
+                {b}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
       <section className="py-16 sm:py-20" aria-labelledby="what-title">
         <Container className="grid gap-12 lg:grid-cols-12">
@@ -115,8 +204,8 @@ export default function AboutPage() {
               </p>
               <p className="mt-3 leading-relaxed text-muted-dark">
                 <T
-                  sq="Dorëzojmë në Kosovë dhe Ballkan dhe punojmë me kompani, ekipe shpëtimi, arboristë, palestra ngjitjeje dhe parqe aventure."
-                  en="We deliver across Kosovo and the Balkans, and work with companies, rescue teams, arborists, climbing gyms and adventure parks."
+                  sq="Punojmë në Kosovë, Shqipëri dhe Ballkan me kompani, ekipe shpëtimi, arboristë, palestra ngjitjeje dhe parqe aventure."
+                  en="We work across Kosovo, Albania and the Balkans with companies, rescue teams, arborists, climbing gyms and adventure parks."
                 />
               </p>
             </div>
