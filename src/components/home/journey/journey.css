@@ -1,0 +1,192 @@
+/*
+  "Every height" scroll journey (home page hero).
+  Every class is prefixed eh- so nothing here can collide with Tailwind utilities.
+  Engineering notes: scroll progress is lerped in a rAF loop that rests when converged,
+  every DOM write is delta-gated, entrances run on transform/opacity only, and the
+  hero falls back to a static composition for reduced motion, short landscape phones
+  and visitors without JavaScript.
+*/
+.eh-hero {
+  --eh-hdr: 64px;
+  --eh-line: rgba(242, 239, 234, 0.82);
+  --eh-line-dim: rgba(242, 239, 234, 0.26);
+  --eh-text: #f2efea;
+  --eh-text-2: #a8a49d;
+  --eh-red: #e5484d;
+  --eh-ink: #141414;
+  --eh-ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+  --eh-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --eh-tshadow: 0 1px 2px rgba(10, 10, 10, 0.95), 0 3px 12px rgba(10, 10, 10, 0.78), 0 10px 44px rgba(10, 10, 10, 0.8);
+  position: relative;
+  height: 100vh;
+  background: var(--eh-ink);
+  color: var(--eh-text);
+}
+@media (min-width: 1024px) {
+  .eh-hero { --eh-hdr: 72px; }
+}
+.eh-hero.eh-js { height: 1000vh; }
+.eh-stage {
+  position: relative;
+  height: calc(100vh - var(--eh-hdr));
+  height: calc(100svh - var(--eh-hdr));
+  min-height: 520px;
+  overflow: hidden;
+  background: radial-gradient(120% 70% at 50% 0%, #1a1b1e 0%, var(--eh-ink) 60%);
+}
+.eh-js .eh-stage { position: sticky; top: var(--eh-hdr); min-height: 0; }
+.eh-layer { position: absolute; inset: 0; pointer-events: none; }
+.eh-grid {
+  inset: -64px 0;
+  background:
+    linear-gradient(rgba(242, 239, 234, 0.045) 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg, rgba(242, 239, 234, 0.045) 1px, transparent 1px) 0 0 / 64px 64px;
+  will-change: transform;
+}
+.eh-ridge { position: absolute; left: -2%; width: 104%; bottom: 0; height: 42%; will-change: transform; transform: translate3d(0, 50vh, 0); }
+.eh-ridge path { vector-effect: non-scaling-stroke; }
+.eh-dust i {
+  position: absolute; width: 2px; height: 2px; border-radius: 50%; background: var(--eh-text); opacity: 0;
+  animation: eh-dust 18s linear infinite;
+}
+@keyframes eh-dust {
+  0% { transform: translate3d(0, 40px, 0); opacity: 0; }
+  15% { opacity: 0.35; }
+  85% { opacity: 0.25; }
+  100% { transform: translate3d(14px, -260px, 0); opacity: 0; }
+}
+.eh-world { position: absolute; left: 0; top: 0; width: 100%; will-change: transform; }
+.eh-station { position: absolute; }
+.eh-station svg { width: 100%; height: 100%; overflow: visible; }
+.eh-ln {
+  fill: none; stroke: var(--eh-line); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+  vector-effect: non-scaling-stroke; stroke-dasharray: 1 1;
+  stroke-dashoffset: calc(1 - clamp(0, var(--d, 0) * 1.6 - var(--o, 0), 1));
+}
+.eh-ln.eh-thin { stroke: var(--eh-line-dim); stroke-width: 1.1; }
+.eh-ln.eh-red { stroke: var(--eh-red); stroke-width: 2; }
+.eh-fill { opacity: clamp(0, var(--d, 0) * 2 - 1, 1); }
+.eh-spin { transform-box: view-box; animation: eh-spin 60s linear infinite; animation-delay: -12s; }
+@keyframes eh-spin { to { transform: rotate(360deg); } }
+.eh-chk {
+  position: absolute; transform: translate(-50%, -150%); display: flex; align-items: center; gap: 6px; white-space: nowrap;
+  padding: 5px 9px 5px 7px; border-radius: 8px; background: rgba(20, 20, 20, 0.72); border: 1px solid rgba(242, 239, 234, 0.18);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  font: 500 10.5px/1 var(--eh-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--eh-text);
+  opacity: 0; translate: 0 6px; transition: opacity 0.5s var(--eh-ease), translate 0.5s var(--eh-ease);
+}
+.eh-chk b { display: grid; place-items: center; width: 15px; height: 15px; border-radius: 50%; background: #ce2c31; color: #fff; font-size: 9px; }
+.eh-chk em { font-style: normal; color: var(--eh-red); }
+.eh-chk.eh-on { opacity: 1; translate: 0 0; }
+.eh-chk.eh-r { transform: translate(-86%, -150%); }
+.eh-chk.eh-l { transform: translate(-14%, -150%); }
+.eh-rope { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; pointer-events: none; clip-path: inset(0 0 100% 0); }
+.eh-rope.eh-done { background: var(--eh-red); box-shadow: 0 0 14px rgba(229, 72, 77, 0.45); }
+.eh-rope.eh-todo { background: repeating-linear-gradient(to bottom, rgba(242, 239, 234, 0.38) 0 7px, transparent 7px 13px); }
+.eh-marker {
+  position: absolute; left: 50%; top: var(--fy, 50%); width: 30px; height: 30px; margin: -15px 0 0 -15px;
+  border: 2px solid var(--eh-red); border-radius: 50%; background: rgba(20, 20, 20, 0.6);
+  box-shadow: 0 0 0 6px rgba(229, 72, 77, 0.12), 0 0 24px rgba(229, 72, 77, 0.4); pointer-events: none;
+}
+.eh-marker::before, .eh-marker::after { content: ""; position: absolute; background: var(--eh-red); left: 50%; top: 50%; }
+.eh-marker::before { width: 44px; height: 1.5px; margin: -0.75px 0 0 -22px; }
+.eh-marker::after { width: 6px; height: 6px; border-radius: 50%; margin: -3px 0 0 -3px; }
+.eh-marker i { position: absolute; inset: -10px; border-radius: 50%; border: 1px solid rgba(229, 72, 77, 0.32); animation: eh-ping 2.8s var(--eh-ease) infinite; animation-delay: -0.6s; }
+@keyframes eh-ping { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(1.7); opacity: 0; } }
+.eh-scrim { background: radial-gradient(ellipse 120% 90% at 50% 45%, rgba(20, 20, 20, 0) 40%, rgba(20, 20, 20, 0.55) 100%); }
+.eh-hud { position: absolute; right: clamp(14px, 2vw, 30px); bottom: clamp(16px, 3vh, 30px); display: flex; align-items: flex-end; gap: 12px; pointer-events: none; }
+.eh-alt {
+  padding: 14px 14px 12px; border-radius: 12px; background: rgba(20, 20, 20, 0.62); border: 1px solid rgba(242, 239, 234, 0.16);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); min-width: 118px;
+}
+.eh-alt-n { display: flex; align-items: baseline; gap: 4px; font: 500 1.9rem/1 var(--eh-mono); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.eh-alt-n i { font-style: normal; font-size: 0.9rem; color: var(--eh-red); }
+.eh-alt-l { margin-top: 8px; font: 500 9.5px/1.3 var(--eh-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--eh-text-2); }
+.eh-alt-s { margin-top: 4px; font: 500 9.5px/1.3 var(--eh-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+.eh-ruler { width: 14px; height: 110px; overflow: hidden; -webkit-mask: linear-gradient(transparent, #000 25%, #000 75%, transparent); mask: linear-gradient(transparent, #000 25%, #000 75%, transparent); }
+.eh-ruler i {
+  display: block; height: 600px; margin-top: -190px; will-change: transform;
+  background:
+    repeating-linear-gradient(to bottom, var(--eh-line) 0 1px, transparent 1px 30px),
+    repeating-linear-gradient(to bottom, var(--eh-line-dim) 0 1px, transparent 1px 6px);
+  background-size: 14px 30px, 7px 6px; background-repeat: repeat-y;
+}
+
+/* caption bands */
+.eh-band { --lo: clamp(56px, 7vw, 120px); position: absolute; top: 50%; transform: translateY(-50%); opacity: 0; text-shadow: var(--eh-tshadow); pointer-events: none; max-width: 600px; }
+.eh-band.eh-l { left: clamp(24px, 6vw, 96px); right: calc(50% + var(--lo)); }
+.eh-band.eh-r { left: calc(50% + var(--lo)); right: clamp(24px, 6vw, 96px); }
+.eh-band[data-i="1"] { top: 30%; }
+.eh-band.eh-live { pointer-events: auto; }
+.eh-band::before {
+  content: ""; position: absolute; inset: -22% -18%; z-index: -1; pointer-events: none; opacity: calc(0.3 + 0.7 * var(--k, 1));
+  background: radial-gradient(ellipse 60% 56% at 50% 50%, rgba(20, 20, 20, 0.86) 0%, rgba(20, 20, 20, 0.6) 48%, rgba(20, 20, 20, 0) 76%);
+}
+.eh-kick {
+  display: inline-flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--eh-text-2);
+  font: 500 0.74rem/1 var(--eh-mono); letter-spacing: 0.14em; text-transform: uppercase; opacity: clamp(0, var(--k, 0) * 3, 1);
+}
+.eh-kick::before { content: ""; width: 22px; height: 2px; background: var(--eh-red); }
+.eh-h { margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(2.1rem, 4.1vw, 4.2rem); line-height: 1.02; letter-spacing: -0.015em; text-wrap: balance; }
+.eh-w { display: inline-block; white-space: nowrap; }
+.eh-c { display: inline-block; }
+.eh-sub {
+  --ks: clamp(0, (var(--k, 0) - 0.45) * 3, 1);
+  margin: 22px 0 0; max-width: 40ch; font-size: clamp(1rem, 1.15vw, 1.14rem); line-height: 1.6; color: #dad6cf;
+  opacity: var(--ks); transform: translateY(calc((1 - var(--ks)) * 10px));
+}
+.eh-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; text-shadow: none; }
+.eh-static-only { display: none !important; }
+[data-fx="drift"] .eh-w, [data-fx="rise"] .eh-w, [data-fx="settle"] .eh-w { --kw: clamp(0, (var(--k, 0) - var(--th, 0)) * 2.8, 1); opacity: var(--kw); }
+[data-fx="drift"] .eh-w { transform: translateY(calc((1 - var(--kw)) * -26px)); }
+[data-fx="rise"] .eh-w { transform: translateY(calc((1 - var(--kw)) * 30px)); }
+[data-fx="settle"] .eh-w { transform: translateY(calc((1 - var(--kw)) * 22px)); }
+[data-fx="slide"] .eh-c, [data-fx="weave"] .eh-c, [data-fx="snap"] .eh-c {
+  --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 2.6, 1); opacity: var(--kc);
+  transform: translate(calc((1 - var(--kc)) * var(--jx, 0px)), calc((1 - var(--kc)) * var(--jy, 0px)));
+}
+[data-fx="settle"] .eh-sub { --ks: clamp(0, (var(--k, 0) - 0.55) * 3.5, 1); }
+[data-fx="settle"] .eh-row { --kb: clamp(0, (var(--k, 0) - 0.72) * 4, 1); opacity: var(--kb); transform: translateY(calc((1 - var(--kb)) * 12px)); }
+.eh-cue {
+  position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: var(--eh-text-2); pointer-events: none; font: 500 0.7rem/1 var(--eh-mono); letter-spacing: 0.14em; text-transform: uppercase;
+}
+.eh-cue i { width: 1.5px; height: 42px; background: linear-gradient(var(--eh-red), transparent); transform-origin: top; animation: eh-cue 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite; animation-delay: -0.4s; }
+@keyframes eh-cue { 0% { transform: scaleY(0); opacity: 1; } 60% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+
+@media (max-width: 720px) {
+  .eh-band, .eh-band.eh-l, .eh-band.eh-r, .eh-band[data-i="1"] { top: auto; bottom: max(26px, 4svh); left: 20px; right: 20px; transform: none; max-width: none; }
+  .eh-band::before { inset: -40% -30px -30px; background: linear-gradient(to bottom, rgba(20, 20, 20, 0), rgba(20, 20, 20, 0.93) 30%, rgba(20, 20, 20, 0.97)); }
+  .eh-rope, .eh-ridge { -webkit-mask: linear-gradient(#000 0 52%, transparent 72%); mask: linear-gradient(#000 0 52%, transparent 72%); }
+  .eh-h { font-size: clamp(1.85rem, 8.2vw, 2.5rem); font-stretch: 108%; }
+  .eh-sub { margin-top: 14px; font-size: 0.98rem; }
+  .eh-kick { margin-bottom: 12px; }
+  .eh-hud { top: 14px; bottom: auto; right: 14px; }
+  .eh-alt { padding: 9px 11px 8px; min-width: 0; }
+  .eh-alt-n { font-size: 1.25rem; }
+  .eh-alt-l, .eh-ruler, .eh-cue { display: none; }
+  .eh-chk { font-size: 9px; padding: 4px 7px 4px 5px; }
+  .eh-chk b { width: 13px; height: 13px; }
+}
+@media (max-height: 560px) and (min-width: 721px) { .eh-ruler, .eh-cue, .eh-chk { display: none; } }
+
+/* static hero: reduced motion, short landscape phones, no JavaScript */
+.eh-hero:not(.eh-js) .eh-band[data-i="0"], .eh-hero.eh-static .eh-band[data-i="0"] { opacity: 1 !important; --k: 1; }
+.eh-hero:not(.eh-js) .eh-static-only, .eh-hero.eh-static .eh-static-only { display: flex !important; }
+.eh-hero:not(.eh-js) .eh-cue, .eh-hero.eh-static .eh-cue,
+.eh-hero:not(.eh-js) .eh-marker, .eh-hero:not(.eh-js) .eh-hud, .eh-hero:not(.eh-js) .eh-rope { display: none; }
+.eh-hero:not(.eh-js) .eh-station:first-child { --d: 1; }
+.eh-hero.eh-static { height: 100vh; }
+.eh-hero.eh-static .eh-stage { position: relative; top: 0; min-height: 520px; }
+@media (max-height: 560px) {
+  .eh-hero.eh-static .eh-world, .eh-hero.eh-static .eh-rope, .eh-hero.eh-static .eh-marker { opacity: 0.28; }
+}
+body.eh-paused .eh-hero *, body.eh-paused .eh-hero *::before, body.eh-paused .eh-hero *::after { animation-play-state: paused !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .eh-hero *, .eh-hero *::before, .eh-hero *::after { animation: none !important; transition: none !important; }
+  .eh-ln { stroke-dashoffset: 0; }
+  .eh-fill { opacity: 1; }
+}
+.eh-hero:not(.eh-js) .eh-station { display: none; }
+.eh-hero:not(.eh-js) .eh-station:first-child { display: block; inset: 4% 0 auto; height: 92%; width: 100%; }
