@@ -31,7 +31,7 @@ export function ContactBand() {
   ];
 
   return (
-    <section className="border-t border-line bg-mist py-16 sm:py-20" aria-labelledby="contact-title">
+    <section id="kontakt" className="border-t border-line bg-mist py-16 sm:py-20" aria-labelledby="contact-title">
       <Container className="grid gap-10 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-4">
           <p className="kicker text-brand-strong"><T sq="Kontakt" en="Contact" /></p>

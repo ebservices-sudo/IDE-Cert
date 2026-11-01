@@ -77,7 +77,7 @@ export function IdeSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-ink py-20 text-white sm:py-28" aria-labelledby="ide-title">
+    <section id="sherbimet" className="relative overflow-hidden bg-ink py-20 text-white sm:py-28" aria-labelledby="ide-title">
       <div aria-hidden className="absolute inset-0 bg-grid-dark opacity-60" />
       <div aria-hidden className="absolute -right-40 -top-40 size-[36rem] rounded-full bg-brand/10 blur-3xl" />
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

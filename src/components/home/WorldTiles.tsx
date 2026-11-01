@@ -9,11 +9,12 @@ import { T } from "@/lib/i18n/T";
 
 export function WorldTiles() {
   return (
-    <section className="py-16 sm:py-20" aria-labelledby="worlds-title">
+    <section id="dyqani" className="py-16 sm:py-20" aria-labelledby="worlds-title">
       <Container>
         <SectionHeading
           id="worlds-title"
           kicker={<T sq="Dyqani" en="Shop" />}
+          action={{ href: "/shop", label: <T sq="Hyr në dyqan (635 produkte)" en="Enter the shop (635 products)" /> }}
           title={<T sq="Dy botë pajisjesh" en="Two worlds of equipment" />}
           description={
             <T

@@ -7,7 +7,8 @@ import { mainNav } from "@/config/site";
 import { T } from "@/lib/i18n/T";
 
 // Plain text links: the shop first (marked with the red dot), then company pages.
-const links = [{ label: "Shop", labelSq: "Dyqani", href: "/shop" }, ...mainNav];
+// All point at sections of the home page and glide there (see SmoothLink).
+const links = [{ label: "Shop", labelSq: "Dyqani", href: "/#dyqani" }, ...mainNav];
 
 export function DesktopNav() {
   const path = usePathname();
@@ -15,8 +16,8 @@ export function DesktopNav() {
     <nav aria-label="Main" className="ml-auto hidden xl:block">
       <ul className="flex items-center gap-7">
         {links.map((l) => {
-          const shop = l.href === "/shop";
-          const current = shop ? path.startsWith("/shop") || path === "/search" : !l.href.includes("#") && path.startsWith(l.href);
+          const shop = l.href === "/#dyqani";
+          const current = shop && (path.startsWith("/shop") || path === "/search");
           return (
             <li key={l.href}>
               <SmoothLink

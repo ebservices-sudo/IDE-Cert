@@ -1,5 +1,6 @@
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
+import { PendingScroll } from "./SmoothLink";
 
 /** Storefront frame: skip link, header, main and footer. */
 export function SiteChrome({ children }: { children: React.ReactNode }) {
@@ -16,6 +17,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <SiteFooter />
+      <PendingScroll />
     </>
   );
 }

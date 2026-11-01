@@ -108,7 +108,7 @@ export function CertifySection() {
   }, []);
 
   return (
-    <section id="certify" className="scroll-mt-20 py-16 sm:py-20" aria-labelledby="certify-title">
+    <section id="certify" className="py-16 sm:py-20" aria-labelledby="certify-title">
       <Container>
         <SectionHeading
           id="certify-title"

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SmoothLink } from "./SmoothLink";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { subcategoryHref, worldHref, worlds } from "@/config/catalog";
 import { legalNav, mainNav, site } from "@/config/site";
@@ -19,9 +19,9 @@ function FooterColumn({ title, links }: { title: React.ReactNode; links: { label
       <ul className="mt-4 space-y-2.5">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="text-sm hover:text-white">
+            <SmoothLink href={l.href} className="text-sm hover:text-white">
               <T sq={l.labelSq} en={l.label} />
-            </Link>
+            </SmoothLink>
           </li>
         ))}
       </ul>

@@ -1,4 +1,5 @@
-import { BadgeCheck, ShieldCheck, Truck, UserRound } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BadgeCheck, ShieldCheck, Truck, UserRound } from "lucide-react";
 import { site } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { T } from "@/lib/i18n/T";
@@ -28,7 +29,7 @@ const points = [
 
 export function TrustSection() {
   return (
-    <section className="py-16 sm:py-20" aria-labelledby="trust-title">
+    <section id="rreth-nesh" className="py-16 sm:py-20" aria-labelledby="trust-title">
       <Container className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <p className="kicker text-brand-strong"><T sq="Pse IDE Cert" en="Why IDE Cert" /></p>
@@ -41,6 +42,10 @@ export function TrustSection() {
               en="Choosing PPE is a technical decision. We sell equipment the way we inspect it: with the standard, the data and the manufacturer documents in view."
             />
           </p>
+          <Link href="/about" className="group mt-6 inline-flex items-center gap-1.5 text-sm font-semibold hover:text-brand-strong">
+            <T sq="Më shumë rreth nesh" en="More about us" />
+            <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
         <ul className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:col-span-7">
           {points.map(({ icon: Icon, title, text }, i) => (
