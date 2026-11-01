@@ -6,6 +6,7 @@ import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { IdeSection } from "@/components/home/IdeSection";
 import { CertifySection } from "@/components/home/CertifySection";
 import { LoadTest } from "@/components/home/LoadTest";
+import { ProjectsSection } from "@/components/home/ProjectsSection";
 import { FounderSection } from "@/components/home/FounderSection";
 import { ContactBand } from "@/components/home/ContactBand";
 
@@ -19,8 +20,9 @@ export default async function HomePage() {
       <FeaturedProducts products={catalog.featured(8)} />
       <IdeSection />
       <CertifySection />
-      <LoadTest />
+      <ProjectsSection />
       <FounderSection />
+      <LoadTest />
       <ContactBand />
     </>
   );
