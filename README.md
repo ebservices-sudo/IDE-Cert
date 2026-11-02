@@ -133,3 +133,4 @@ future Albanian version are concentrated in `src/config/*` and the page files.
 | `brand` | `#E5484D` | Logo red, accents, red on near-black |
 | `brand-strong` | `#CE2C31` | Buttons with white text, red text on white (WCAG AA) |
 | `ink` | `#141414` | Text, dark header / hero / footer |
+
