@@ -30,7 +30,7 @@ export default async function AdminContracts({ searchParams }: PageProps<"/admin
           </Link>
         }
       />
-      {sp.deleted && <p className="mb-4 text-sm font-medium text-emerald-700">Draft deleted.</p>}
+      {sp.deleted && <p className="mb-4 text-sm font-medium text-emerald-700">Contract deleted.</p>}
       <nav aria-label="Filter" className="mb-5 flex flex-wrap gap-1.5">
         {[undefined, ...CONTRACT_STATUSES].map((s) => (
           <Link

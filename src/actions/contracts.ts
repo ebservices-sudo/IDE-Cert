@@ -11,7 +11,7 @@ import {
   acceptanceExpired,
   CONTRACT_KINDS,
   createContract,
-  deleteDraftContract,
+  deleteContractById,
   getContract,
   getContractByToken,
   markContractSent,
@@ -171,7 +171,7 @@ export async function changeContractStatus(fd: FormData) {
 
 export async function deleteContract(fd: FormData) {
   await requireAdmin();
-  await deleteDraftContract(String(fd.get("id")));
+  await deleteContractById(String(fd.get("id")));
   redirect("/admin/contracts?deleted=1");
 }
 

@@ -20,6 +20,12 @@ export async function sendEmail(email: Email): Promise<{ ok: boolean; id?: strin
   const from = (await getSecret("MAIL_FROM")) ?? `${site.name} <shop@ide-cert.com>`;
   if (!key) {
     console.info(`\n[email:dev] To: ${[email.to].flat().join(", ")}\n[email:dev] Subject: ${email.subject}\n${email.text}\n`);
+    // On the live site a missing key is a setup problem, not a success: say so, so the
+    // admin does not believe a contract or proforma went out when it did not.
+    if (process.env.NODE_ENV === "production") {
+      console.error("[email] RESEND_API_KEY is not set on the live site: email not sent");
+      return { ok: false, error: "Email sending is not set up on the live site (the RESEND_API_KEY secret is missing or empty in Cloudflare)." };
+    }
     return { ok: true, id: "dev" };
   }
   try {
@@ -37,6 +43,7 @@ export async function sendEmail(email: Email): Promise<{ ok: boolean; id?: strin
     });
     if (!res.ok) return { ok: false, error: `Resend ${res.status}: ${await res.text()}` };
     const data = (await res.json()) as { id?: string };
+    console.info(`[email] accepted by Resend (${data.id}) · ${email.subject}`);
     return { ok: true, id: data.id };
   } catch (e) {
     return { ok: false, error: String(e) };

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FileSignature, Mail } from "lucide-react";
 import { LinkedContracts } from "@/components/admin/LinkedContracts";
+import { DeleteButton } from "@/components/admin/DeleteButton";
+import { deleteQuoteRequest } from "@/actions/admin";
 import { countryName } from "@/config/shipping";
 import { getCatalog } from "@/lib/catalog/data";
 import { productHref } from "@/lib/catalog/urls";
@@ -111,6 +113,7 @@ export default async function AdminQuote({ params }: PageProps<"/admin/quotes/[i
           <Card title="Manage">
             <QuoteEditor id={quote.id} status={quote.status} adminNotes={quote.adminNotes ?? ""} />
           </Card>
+          <DeleteButton action={deleteQuoteRequest} id={quote.id} label="Delete quote request" warning="Deletes this request for good. Contracts made from it are kept." />
         </div>
       </div>
     </>

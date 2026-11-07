@@ -19,6 +19,7 @@ export default async function AdminQuotes({ searchParams }: PageProps<"/admin/qu
   return (
     <>
       <AdminHeader title="Quote requests" description={`${quotes.length} shown`} />
+      {sp.deleted && <p className="mb-4 text-sm font-medium text-emerald-700">Quote request deleted.</p>}
       <nav aria-label="Filter by status" className="mb-5 flex flex-wrap gap-1.5">
         {[undefined, ...Object.keys(quoteStatusLabel)].map((s) => (
           <Link

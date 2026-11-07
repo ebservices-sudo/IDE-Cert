@@ -243,9 +243,10 @@ export async function acceptContract(id: string, name: string, ip: string | null
   return Boolean(row);
 }
 
-export async function deleteDraftContract(id: string) {
+/** Permanently deletes a contract, whatever its status. */
+export async function deleteContractById(id: string) {
   const db = await getDb();
-  await db.prepare("DELETE FROM contracts WHERE id = ? AND status = 'draft'").bind(id).run();
+  await db.prepare("DELETE FROM contracts WHERE id = ?").bind(id).run();
 }
 
 /** Inspection contracts whose next periodic inspection falls within `days` (or is overdue). */

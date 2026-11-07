@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FileSignature } from "lucide-react";
 import { requireAdmin } from "@/lib/auth/session";
-import { setMessageStatus } from "@/actions/admin";
+import { deleteContactMessage, setMessageStatus } from "@/actions/admin";
+import { DeleteButton } from "@/components/admin/DeleteButton";
 import { listMessages } from "@/lib/orders/queries";
 import { StatusBadge, messageStatusLabel } from "@/lib/orders/status";
 import { AdminHeader, dateTime } from "@/components/admin/ui";
@@ -39,6 +40,7 @@ export default async function AdminMessages() {
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
                   <StatusBadge status={m.status} labels={messageStatusLabel} />
+                  <DeleteButton action={deleteContactMessage} id={m.id} small warning="Delete this message for good?" />
                   <Link
                     href={`/admin/contracts/new?message=${m.id}`}
                     className="inline-flex items-center gap-1.5 rounded-md bg-brand-strong px-2.5 py-1 text-xs font-semibold text-white hover:bg-[#b5252a]"

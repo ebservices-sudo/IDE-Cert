@@ -10,6 +10,7 @@ import { StatusBadge, contractStatusLabel } from "@/lib/orders/status";
 import { requestOrigin } from "@/lib/server/origin";
 import { AdminHeader, Card, buttonCls, dateTime, eur } from "@/components/admin/ui";
 import { CopyLink, SendContractForm } from "@/components/admin/ContractActions";
+import { DeleteButton } from "@/components/admin/DeleteButton";
 
 export const metadata: Metadata = { title: "Contract" };
 
@@ -142,22 +143,27 @@ export default async function AdminContract({ params, searchParams }: PageProps<
               )}
             </dl>
           </Card>
-          {c.status !== "accepted" && c.status !== "cancelled" && (
-            <div className="flex flex-wrap gap-2">
-              {c.status === "draft" ? (
-                <form action={deleteContract}>
-                  <input type="hidden" name="id" value={c.id} />
-                  <button className="text-sm font-semibold text-muted hover:text-brand-strong">Delete draft</button>
-                </form>
-              ) : (
-                <form action={changeContractStatus}>
-                  <input type="hidden" name="id" value={c.id} />
-                  <input type="hidden" name="status" value="cancelled" />
-                  <button className="text-sm font-semibold text-muted hover:text-brand-strong">Cancel contract</button>
-                </form>
-              )}
-            </div>
-          )}
+          <div className="space-y-3">
+            {c.status === "sent" && (
+              <form action={changeContractStatus}>
+                <input type="hidden" name="id" value={c.id} />
+                <input type="hidden" name="status" value="cancelled" />
+                <button className="text-sm font-semibold text-muted hover:text-brand-strong">Cancel contract (the client can no longer accept it)</button>
+              </form>
+            )}
+            <DeleteButton
+              action={deleteContract}
+              id={c.id}
+              label="Delete contract"
+              warning={
+                c.status === "accepted"
+                  ? "The client accepted this contract. Deleting removes it and its acceptance record for good."
+                  : c.status === "sent"
+                    ? "Deleting also makes the client's link stop working. This cannot be undone."
+                    : "This cannot be undone."
+              }
+            />
+          </div>
         </div>
       </div>
     </>

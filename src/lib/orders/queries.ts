@@ -227,7 +227,19 @@ export async function updateQuote(id: string, patch: { status?: QuoteRecord["sta
     .run();
 }
 
-export type MessageRecord = { id: string; createdAt: string; topic: string; name: string; email: string; phone: string | null; company: string | null; message: string; status: string };
+/** Permanently deletes a quote request. Contracts made from it are kept. */
+export async function deleteQuote(id: string) {
+  const db = await getDb();
+  await db.prepare("DELETE FROM quotes WHERE id = ?").bind(id).run();
+}
+
+/** Permanently deletes a contact message. Contracts made from it are kept. */
+export async function deleteMessage(id: string) {
+  const db = await getDb();
+  await db.prepare("DELETE FROM messages WHERE id = ?").bind(id).run();
+}
+
+export type MessageRecord ={ id: string; createdAt: string; topic: string; name: string; email: string; phone: string | null; company: string | null; message: string; status: string };
 
 export async function listMessages(limit = 100): Promise<MessageRecord[]> {
   const db = await getDb();

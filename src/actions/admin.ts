@@ -4,7 +4,7 @@ import { refresh, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { bankDetailsComplete } from "@/config/business";
 import { requireAdmin } from "@/lib/auth/session";
-import { getOrder, updateMessageStatus, updateOrder, updateQuote } from "@/lib/orders/queries";
+import { deleteMessage, deleteQuote, getOrder, updateMessageStatus, updateOrder, updateQuote } from "@/lib/orders/queries";
 import { ORDER_STATUSES, type OrderStatus } from "@/lib/orders/store";
 import { clearOverrides, discardImport, publishImport, saveImport, type ImportRow } from "@/lib/prices/imports";
 import { sendEmail } from "@/lib/server/email";
@@ -55,6 +55,18 @@ export async function saveQuote(_prev: AdminState, fd: FormData): Promise<AdminS
   await updateQuote(String(fd.get("id")), { status: status as "new", adminNotes: String(fd.get("adminNotes") ?? "").slice(0, 4000) });
   refresh();
   return { status: "ok", message: "Quote saved." };
+}
+
+export async function deleteQuoteRequest(fd: FormData) {
+  await requireAdmin();
+  await deleteQuote(String(fd.get("id")));
+  redirect("/admin/quotes?deleted=1");
+}
+
+export async function deleteContactMessage(fd: FormData) {
+  await requireAdmin();
+  await deleteMessage(String(fd.get("id")));
+  refresh();
 }
 
 export async function setMessageStatus(fd: FormData) {
