@@ -14,15 +14,6 @@ const P = (d: string, o = 0, cls = "") =>
 const C = (cx: number, cy: number, r: number) => `M${cx - r} ${cy}a${r} ${r} 0 1 0 ${2 * r} 0a${r} ${r} 0 1 0 ${-2 * r} 0`;
 const R = (x: number, y: number, w: number, h: number) => `M${x} ${y}h${w}v${h}h${-w}Z`;
 
-function hTruss(x1: number, x2: number, yt: number, yb: number, st: number) {
-  let d = `M${x1} ${yt}H${x2}M${x1} ${yb}H${x2}M${x1} ${yb}`;
-  let up = true;
-  for (let x = x1 + st / 2; x <= x2 + 0.1; x += st / 2) {
-    d += `L${x} ${up ? yt : yb}`;
-    up = !up;
-  }
-  return d;
-}
 function vTruss(xl: number, xr: number, y1: number, y2: number, st: number) {
   let d = `M${xl} ${y1}V${y2}M${xr} ${y1}V${y2}M${xl} ${y1}`;
   let rt = true;
@@ -45,22 +36,6 @@ function seal(cx: number, cy: number, id: string) {
     <path fill="#F2EFEA" transform="translate(${cx - 34} ${cy - 22}) scale(.21)" d="${LOGO}"/>
     <text x="${cx}" y="${cy + 22}" text-anchor="middle" font-weight="800" font-size="10.5" letter-spacing="6.5" fill="#E5484D" style="font-stretch:125%">CERT</text></g>
   </g>`;
-}
-
-function crane() {
-  return (
-    P(vTruss(200, 240, 150, 700, 40), 0) +
-    P("M200 110L220 30L240 110", 0.1) +
-    P(hTruss(240, 940, 110, 150, 40) + "M940 110V150", 0.12) +
-    P(hTruss(40, 200, 118, 150, 32), 0.2) +
-    P(R(50, 150, 30, 44) + R(84, 150, 30, 44), 0.35) +
-    P("M220 30L940 110M220 30L40 118", 0.3, "eh-thin") +
-    P(R(244, 150, 58, 40) + R(254, 158, 38, 16), 0.3) +
-    P(R(478, 150, 44, 14), 0.4) +
-    P("M492 164V252M508 164V252", 0.45, "eh-thin") +
-    P(R(482, 252, 36, 30), 0.5) +
-    P("M500 282V296", 0.55)
-  );
 }
 
 function zip() {
@@ -92,23 +67,6 @@ function zip() {
   );
 }
 
-function ferrata() {
-  let rungs = "";
-  [90, 165, 240, 315, 390, 465, 540, 615].forEach((y, i) => {
-    const x = 620 + (i % 2 ? 8 : -4);
-    rungs += `M${x} ${y - 11}V${y}H${x + 42}V${y - 11}`;
-  });
-  const pts = [[690, 30], [705, 160], [692, 290], [722, 410], [706, 530], [728, 660]];
-  const bolts = pts.map((p) => C(p[0], p[1], 5)).join("");
-  return (
-    P("M560 0L540 80L575 150L548 230L590 320L560 400L600 480L570 560L610 640L590 700", 0) +
-    P("M640 40L700 120L690 200M760 90L820 160M700 300L780 340L860 330M650 520L720 580L800 560L880 620M900 200L960 260M860 420L930 470M800 640L870 690", 0.2, "eh-thin") +
-    P(rungs, 0.3) +
-    P("M" + pts.map((p) => p.join(" ")).join("L"), 0.45) +
-    P(bolts, 0.5, "eh-red")
-  );
-}
-
 function ropePark() {
   const qd = (t: number, a: number, c: number, b: number) => (1 - t) * (1 - t) * a + 2 * (1 - t) * t * c + t * t * b;
   let hang = "";
@@ -127,30 +85,6 @@ function ropePark() {
     P(hang, 0.45, "eh-thin") +
     P("M606 232H876", 0.5, "eh-red") +
     P("M380 700H1000", 0.05, "eh-thin")
-  );
-}
-
-function wall() {
-  const xl = (y: number) => 130 - ((y - 60) * 38) / 620;
-  const xr = (y: number) => (y <= 300 ? 462 - ((y - 40) * 30) / 260 : 432 + ((y - 300) * 40) / 380);
-  let joints = "";
-  [200, 360, 520].forEach((y) => (joints += `M${xl(y).toFixed(1)} ${y}L${xr(y).toFixed(1)} ${y}`));
-  const r = rng(77);
-  let holds = "";
-  for (let i = 0; i < 20; i++) {
-    const y = 90 + r() * 560, x = xl(y) + 30 + r() * (xr(y) - xl(y) - 60), s = 6 + r() * 7;
-    holds += `M${(x - s).toFixed(1)} ${y.toFixed(1)}a${s.toFixed(1)} ${(s * 0.75).toFixed(1)} 0 1 0 ${(2 * s).toFixed(1)} 0a${s.toFixed(1)} ${(s * 0.75).toFixed(1)} 0 1 0 ${(-2 * s).toFixed(1)} 0`;
-  }
-  const route = [[300, 72], [282, 170], [312, 268], [286, 366], [306, 464], [292, 562]];
-  const qds = route.slice(1).map((p) => `M${p[0]} ${p[1]}l4 16` + C(p[0] + 4, p[1] + 20, 3.5)).join("");
-  return (
-    P("M92 680L130 60L462 40L432 300L472 680Z", 0) +
-    P(joints + "M240 52L212 680M352 46L346 680", 0.15, "eh-thin") +
-    P(holds, 0.3) +
-    P(C(300, 72, 7), 0.4, "eh-red") +
-    P(qds, 0.45) +
-    P("M300 79" + route.slice(1).map((p) => `L${p[0] + 4} ${p[1] + 24}`).join("") + "L298 680", 0.5, "eh-thin") +
-    P("M60 680H520", 0.05, "eh-thin")
   );
 }
 
@@ -177,10 +111,7 @@ export type Check = { x: number; y: number; label: string; labelSq: string };
 export type Station = { name: string; nameSq: string; height: number; svg: string; checks: Check[] };
 
 export const STATIONS: Station[] = [
-  { name: "Tower crane", nameSq: "Vinç kullë", height: 60, svg: crane(), checks: [{ x: 500, y: 205, label: "Hoist rope", labelSq: "Kablloja e ngritjes" }, { x: 270, y: 150, label: "Load limiter", labelSq: "Kufizuesi i ngarkesës" }] },
   { name: "Zip line", nameSq: "Tirolezë", height: 45, svg: zip(), checks: [{ x: 150, y: 270, label: "Anchor", labelSq: "Ankorimi" }, { x: 905, y: 512, label: "Brake", labelSq: "Frenimi" }] },
-  { name: "Via ferrata", nameSq: "Via ferrata", height: 32, svg: ferrata(), checks: [{ x: 641, y: 300, label: "Rungs", labelSq: "Shufrat" }, { x: 722, y: 400, label: "Steel cable", labelSq: "Kablloja çeliku" }] },
-  { name: "Rope park", nameSq: "Park me litarë", height: 18, svg: ropePark(), checks: [{ x: 602, y: 322, label: "Platform", labelSq: "Platforma" }, { x: 742, y: 224, label: "Safety line", labelSq: "Linja e sigurisë" }] },
-  { name: "Climbing wall", nameSq: "Mur ngjitjeje", height: 9, svg: wall(), checks: [{ x: 215, y: 290, label: "Holds", labelSq: "Mbajtëset" }, { x: 300, y: 64, label: "Belay points", labelSq: "Pikat e sigurimit" }] },
+  { name: "Adventure park", nameSq: "Park aventure", height: 18, svg: ropePark(), checks: [{ x: 602, y: 322, label: "Platform", labelSq: "Platforma" }, { x: 742, y: 224, label: "Safety line", labelSq: "Linja e sigurisë" }] },
   { name: "Lift", nameSq: "Ashensor", height: 0, svg: lift(), checks: [{ x: 260, y: 466, label: "Doors", labelSq: "Dyert" }, { x: 260, y: 364, label: "Safety brake", labelSq: "Freni i sigurisë" }] },
 ];

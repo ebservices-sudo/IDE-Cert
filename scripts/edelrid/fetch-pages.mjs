@@ -31,9 +31,15 @@ try {
   await writeFile(sitemapPath, sitemap);
 }
 
-const urls = [...new Set([...sitemap.matchAll(/<loc>(https:\/\/edelrid\.com\/int-en\/[^<]+)<\/loc>/g)].map((m) => m[1]))];
-await writeFile(join(CACHE, "int-en-urls.json"), JSON.stringify(urls, null, 2));
-console.log(`${urls.length} int-en product URLs`);
+const sitemapUrls = [...new Set([...sitemap.matchAll(/<loc>(https:\/\/edelrid\.com\/int-en\/[^<]+)<\/loc>/g)].map((m) => m[1]))];
+await writeFile(join(CACHE, "int-en-urls.json"), JSON.stringify(sitemapUrls, null, 2));
+// Live product pages missing from EDELRID's sitemap (found by find-unlisted.mjs).
+let extra = [];
+try {
+  extra = JSON.parse(await readFile("data/edelrid/extra-urls.json", "utf8")).map((e) => e.url);
+} catch {}
+const urls = [...new Set([...sitemapUrls, ...extra])];
+console.log(`${sitemapUrls.length} int-en product URLs from the sitemap, ${urls.length - sitemapUrls.length} more not listed there`);
 
 const fileFor = (url) => join(HTML, url.replace("https://edelrid.com/int-en/", "").replaceAll("/", "__") + ".html");
 const todo = [];

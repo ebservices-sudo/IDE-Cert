@@ -1,6 +1,6 @@
 {
  "_comment": "EDELRID dealer net prices (excl. VAT). Admin only — never import from client code.",
- "generatedAt": "2026-10-12",
+ "generatedAt": "2026-11-07",
  "prices": {
   "713850300220": {
    "net": 176.47,

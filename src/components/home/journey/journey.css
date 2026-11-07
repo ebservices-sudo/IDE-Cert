@@ -25,7 +25,8 @@
 @media (min-width: 1024px) {
   .eh-hero { --eh-hdr: 72px; }
 }
-.eh-hero.eh-js { height: 1000vh; }
+/* Three stops over about one and a half screens of scroll. */
+.eh-hero.eh-js { height: 260vh; }
 .eh-stage {
   position: relative;
   height: calc(100vh - var(--eh-hdr));
@@ -116,7 +117,7 @@
 .eh-band { --lo: clamp(56px, 7vw, 120px); position: absolute; top: 50%; transform: translateY(-50%); opacity: 0; text-shadow: var(--eh-tshadow); pointer-events: none; max-width: 600px; }
 .eh-band.eh-l { left: clamp(24px, 6vw, 96px); right: calc(50% + var(--lo)); }
 .eh-band.eh-r { left: calc(50% + var(--lo)); right: clamp(24px, 6vw, 96px); }
-.eh-band[data-i="1"] { top: 30%; }
+.eh-band[data-i="0"] { top: 30%; }
 .eh-band.eh-live { pointer-events: auto; }
 .eh-band::before {
   content: ""; position: absolute; inset: -22% -18%; z-index: -1; pointer-events: none; opacity: calc(0.3 + 0.7 * var(--k, 1));
@@ -146,6 +147,7 @@
   transform: translate(calc((1 - var(--kc)) * var(--jx, 0px)), calc((1 - var(--kc)) * var(--jy, 0px)));
 }
 [data-fx="settle"] .eh-sub { --ks: clamp(0, (var(--k, 0) - 0.55) * 3.5, 1); }
+[data-fx="drift"] .eh-row { --kb: clamp(0, (var(--k, 0) - 0.6) * 3, 1); opacity: var(--kb); transform: translateY(calc((1 - var(--kb)) * 12px)); }
 [data-fx="settle"] .eh-row { --kb: clamp(0, (var(--k, 0) - 0.72) * 4, 1); opacity: var(--kb); transform: translateY(calc((1 - var(--kb)) * 12px)); }
 .eh-cue {
   position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px;
@@ -155,7 +157,7 @@
 @keyframes eh-cue { 0% { transform: scaleY(0); opacity: 1; } 60% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
 
 @media (max-width: 720px) {
-  .eh-band, .eh-band.eh-l, .eh-band.eh-r, .eh-band[data-i="1"] { top: auto; bottom: max(26px, 4svh); left: 20px; right: 20px; transform: none; max-width: none; }
+  .eh-band, .eh-band.eh-l, .eh-band.eh-r, .eh-band[data-i="0"] { top: auto; bottom: max(26px, 4svh); left: 20px; right: 20px; transform: none; max-width: none; }
   .eh-band::before { inset: -40% -30px -30px; background: linear-gradient(to bottom, rgba(20, 20, 20, 0), rgba(20, 20, 20, 0.93) 30%, rgba(20, 20, 20, 0.97)); }
   .eh-rope, .eh-ridge { -webkit-mask: linear-gradient(#000 0 52%, transparent 72%); mask: linear-gradient(#000 0 52%, transparent 72%); }
   .eh-h { font-size: clamp(1.85rem, 8.2vw, 2.5rem); font-stretch: 108%; }

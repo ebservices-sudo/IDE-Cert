@@ -10,8 +10,22 @@ import type { Product } from "./types";
 // price-list import (D1 table price_overrides) are applied on top. Net (dealer)
 // prices live in a separate file that is never imported here.
 
-/** Catalogue as built, without admin price overrides. Use for routing and metadata only. */
-export const baseProducts = catalog.products as unknown as Product[];
+/** Every product in the catalogue build, including ones the shop hides. For admin and price imports. */
+export const allProducts = catalog.products as unknown as Product[];
+
+/**
+ * The shop only shows products with at least one official EDELRID photo. Products without
+ * one stay in the data (admin, price imports) and reappear by themselves once a catalogue
+ * sync (`npm run edelrid:fetch && npm run catalog && npm run catalog:images`) finds photos.
+ */
+export const isShownInShop = (p: Product) => p.images.length > 0;
+
+/** Shop catalogue as built, without admin price overrides. Use for routing and metadata only. */
+export const baseProducts = allProducts.filter(isShownInShop);
+
+/** Any catalogue product by slug, including hidden ones (admin only). */
+const allBySlug = new Map(allProducts.map((p) => [p.slug, p]));
+export const getAnyProduct = (slug: string) => allBySlug.get(slug);
 export const catalogGeneratedAt = catalog.generatedAt;
 
 /** Published RRP overrides in cents, keyed by item number. Revalidated with the "prices" tag. */

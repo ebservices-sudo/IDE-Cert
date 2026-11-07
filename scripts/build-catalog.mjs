@@ -375,6 +375,23 @@ for (const pg of productGroups) {
       if (!ids.has(id)) { ids.add(id); images.push({ id, colour: galleries[0].colour }); }
     }
   }
+  // The page chosen for the text has no photos (EDELRID sometimes lists the same article
+  // under Sport and Professional and only one has a gallery): take the photos from another
+  // page that sells the same article numbers, in the colour of those articles.
+  if (!images.length) {
+    const skus = new Set(variants.map((v) => v.sku));
+    const alt = new Set();
+    for (const sku of skus) for (const i of byArticle.get(sku) ?? []) if (pages[i] !== page) alt.add(i);
+    for (const i of alt) {
+      const ap = pages[i];
+      const colIds = new Set(ap.variants.filter((v) => skus.has(v.articleNumber)).map((v) => v.colorId));
+      const col = ap.colours.find((c) => colIds.has(c.id) && c.images.length);
+      if (!col) continue;
+      const colour = colIds.size === 1 && variants.every((v) => v.options.colour) ? variants[0].options.colour : undefined;
+      for (const id of col.images.slice(0, 6)) images.push({ id, colour });
+      break;
+    }
+  }
   for (const im of images) imagePlan.set(im.id, `https://shopapi.edelrid.com/v1/media/image/edelrid/${im.id}/web-m`);
 
   const placements = [pg.main, ...pg.also];

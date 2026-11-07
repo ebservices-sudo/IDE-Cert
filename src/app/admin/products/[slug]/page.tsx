@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 import { getSubcategory } from "@/config/catalog";
 import { shop } from "@/config/site";
-import { getBaseProduct } from "@/lib/catalog/data";
+import { getAnyProduct, isShownInShop } from "@/lib/catalog/data";
 import { baseNetPrice } from "@/lib/catalog/net-prices";
 import { productHref } from "@/lib/catalog/urls";
 import { optionsText, unitLabel } from "@/lib/orders/pricing";
@@ -18,8 +18,9 @@ export const metadata: Metadata = { title: "Product" };
 export default async function AdminProduct({ params }: PageProps<"/admin/products/[slug]">) {
   // Layouts do not protect pages (segments render independently): check here.
   await requireAdmin();
-  const product = getBaseProduct((await params).slug);
+  const product = getAnyProduct((await params).slug);
   if (!product) notFound();
+  const shown = isShownInShop(product);
   const overrides = await overrideMap();
 
   return (
@@ -27,13 +28,15 @@ export default async function AdminProduct({ params }: PageProps<"/admin/product
       <AdminHeader
         back={{ href: "/admin/products", label: "Products" }}
         title={product.name}
-        description={`${getSubcategory(product.mainCategory, product.subcategory)?.name} · ${product.priceLists.join(", ")} price list`}
+        description={`${getSubcategory(product.mainCategory, product.subcategory)?.name} · ${product.priceLists.join(", ")} price list${shown ? "" : " · Hidden in the shop until EDELRID publishes a photo"}`}
         actions={
           <>
-            <Link href={productHref(product)} target="_blank" className={buttonCls.outline}>
-              View in shop
-              <ExternalLink aria-hidden className="size-4" />
-            </Link>
+            {shown && (
+              <Link href={productHref(product)} target="_blank" className={buttonCls.outline}>
+                View in shop
+                <ExternalLink aria-hidden className="size-4" />
+              </Link>
+            )}
             {product.source && (
               <a href={product.source.url} target="_blank" rel="noopener noreferrer" className={buttonCls.outline}>
                 edelrid.com

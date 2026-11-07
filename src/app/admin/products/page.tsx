@@ -3,7 +3,7 @@ import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import clsx from "clsx";
 import { getSubcategory } from "@/config/catalog";
-import { baseProducts, catalogGeneratedAt } from "@/lib/catalog/data";
+import { allProducts, catalogGeneratedAt } from "@/lib/catalog/data";
 import { buildListing } from "@/lib/catalog/listing";
 import type { Product } from "@/lib/catalog/types";
 import { overrideMap } from "@/lib/prices/imports";
@@ -15,7 +15,7 @@ export const metadata: Metadata = { title: "Products" };
 const FILTERS: Record<string, { label: string; test: (p: Product, overridden: boolean) => boolean }> = {
   all: { label: "All", test: () => true },
   "no-data": { label: "No EDELRID data", test: (p) => !p.source },
-  "no-images": { label: "No photos", test: (p) => !p.images.length },
+  "no-images": { label: "No photos (hidden in shop)", test: (p) => !p.images.length },
   "no-cert": { label: "No certification", test: (p) => Boolean(p.source) && !p.certifications.length },
   new: { label: "New 2026", test: (p) => Boolean(p.isNew) },
   overridden: { label: "Price changed in admin", test: (_p, o) => o },
@@ -29,7 +29,7 @@ export default async function AdminProducts({ searchParams }: PageProps<"/admin/
   const q = typeof sp.q === "string" ? sp.q.slice(0, 80) : "";
   const overrides = await overrideMap();
   const isOverridden = (p: Product) => p.variants.some((v) => overrides.has(v.sku));
-  const searched = q ? buildListing(baseProducts, { q, sort: "relevance", filters: {}, page: 1 }).results : baseProducts;
+  const searched = q ? buildListing(allProducts, { q, sort: "relevance", filters: {}, page: 1 }).results : allProducts;
   const rows = searched.filter((p) => FILTERS[filter].test(p, isOverridden(p)));
   const shown = rows.slice(0, 200);
 
@@ -37,7 +37,7 @@ export default async function AdminProducts({ searchParams }: PageProps<"/admin/
     <>
       <AdminHeader
         title="Products"
-        description={`${baseProducts.length} products from the EDELRID 2026 price lists · catalogue built ${catalogGeneratedAt}. Product data comes from the price lists and edelrid.com; see data/TODO.md for gaps.`}
+        description={`${allProducts.length} products from the EDELRID 2026 price lists (${allProducts.filter((p) => !p.images.length).length} hidden in the shop until EDELRID publishes a photo) · catalogue built ${catalogGeneratedAt}. Product data comes from the price lists and edelrid.com; see data/TODO.md for gaps.`}
       />
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
         <nav aria-label="Filter" className="flex flex-wrap gap-1.5">

@@ -1,5 +1,5 @@
 import "server-only";
-import { baseProducts } from "@/lib/catalog/data";
+import { allProducts } from "@/lib/catalog/data";
 import { baseNetPrice } from "@/lib/catalog/net-prices";
 import { getDb } from "@/lib/server/env";
 
@@ -27,7 +27,7 @@ export type ImportDiff = {
 type BaseItem = { name: string; cents: number; netCents: number | null };
 
 const baseBySku: Map<string, BaseItem> = new Map(
-  baseProducts.flatMap((p) =>
+  allProducts.flatMap((p) =>
     p.variants.map((v) => {
       const net = baseNetPrice(v.sku);
       const options = [v.options.config, v.options.colour, v.options.length, v.options.size].filter(Boolean).join(" · ");
