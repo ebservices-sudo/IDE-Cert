@@ -26,7 +26,9 @@
     // Public, non-secret settings. Secrets (RESEND_API_KEY, TURNSTILE_SECRET_KEY, …)
     // go in .dev.vars locally and `npx wrangler secret put NAME` in production.
     "SHOP_NOTIFY_EMAIL": "idecert.shpk@gmail.com",
-    "MAIL_FROM": "IDE Cert <shop@ide-cert.com>"
+    // Resend test sender until ide-cert.com is bought and verified in Resend. It only
+    // delivers to the Resend account's own email. Replies go to idecert.shpk@gmail.com.
+    "MAIL_FROM": "IDE Cert <onboarding@resend.dev>"
   },
   "observability": {
     "enabled": true
