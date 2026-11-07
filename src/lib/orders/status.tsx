@@ -18,6 +18,17 @@ export const orderStatusTone: Record<string, string> = {
   shipped: "bg-indigo-100 text-indigo-900",
   completed: "bg-mist text-ink",
   cancelled: "bg-mist text-muted line-through",
+  // contracts
+  draft: "bg-mist text-ink",
+  sent: "bg-amber-100 text-amber-900",
+  accepted: "bg-emerald-100 text-emerald-900",
+};
+
+export const contractStatusLabel: Record<string, string> = {
+  draft: "Draft",
+  sent: "Sent, waiting",
+  accepted: "Accepted",
+  cancelled: "Cancelled",
 };
 
 export const quoteStatusLabel: Record<string, string> = {

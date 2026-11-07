@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { isAdminEmail } from "@/config/admin";
 import { getDb, getEnv } from "@/lib/server/env";
 import { randomToken, sha256 } from "./crypto";
 
@@ -99,10 +100,13 @@ export async function requireUser(next = "/account") {
   return user;
 }
 
+/** Admin role AND an owner email from src/config/admin.ts. */
+export const isAdmin = (user: Pick<User, "role" | "email">) => user.role === "admin" && isAdminEmail(user.email);
+
 export async function requireAdmin(next = "/admin") {
   const user = await getCurrentUser();
   if (!user) redirect(`/account/login?next=${encodeURIComponent(next)}`);
-  if (user.role !== "admin") redirect("/account?denied=admin");
+  if (!isAdmin(user)) redirect("/account?denied=admin");
   return user;
 }
 

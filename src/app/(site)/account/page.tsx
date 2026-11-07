@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LogOut } from "lucide-react";
-import { requireUser } from "@/lib/auth/session";
+import { isAdmin, requireUser } from "@/lib/auth/session";
 import { listOrdersForUser } from "@/lib/orders/queries";
 import { StatusBadge } from "@/lib/orders/status";
 import { formatPrice } from "@/lib/format";
@@ -51,7 +51,7 @@ async function AccountContent({ searchParams }: Pick<PageProps<"/account">, "sea
           </p>
         </div>
         <div className="flex gap-2">
-          {user.role === "admin" && (
+          {isAdmin(user) && (
             <Link href="/admin" className="inline-flex h-10 items-center rounded-md bg-ink px-4 text-sm font-semibold text-white hover:bg-ink-3">
               Admin
             </Link>

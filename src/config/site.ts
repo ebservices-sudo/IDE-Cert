@@ -21,6 +21,8 @@ export const site = {
     countryCode: "XK",
   },
   deliveryNote: "Delivery across Kosovo and the Balkans",
+  /** Website credit in the footer. Set url to make the name a link. */
+  credit: { name: "EB Services", url: null as string | null },
 } as const;
 
 export const shop = {

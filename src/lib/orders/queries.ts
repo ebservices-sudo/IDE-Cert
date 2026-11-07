@@ -245,9 +245,63 @@ export async function listMessages(limit = 100): Promise<MessageRecord[]> {
   }));
 }
 
+export async function getMessage(id: string): Promise<MessageRecord | null> {
+  const db = await getDb();
+  const r = await db.prepare("SELECT * FROM messages WHERE id = ?").bind(id).first<Record<string, string | null>>();
+  return r
+    ? { id: r.id!, createdAt: r.created_at!, topic: r.topic!, name: r.name!, email: r.email!, phone: r.phone, company: r.company, message: r.message!, status: r.status! }
+    : null;
+}
+
 export async function updateMessageStatus(id: string, status: string) {
   const db = await getDb();
   await db.prepare("UPDATE messages SET status = ? WHERE id = ?").bind(status, id).run();
+}
+
+export type ClientSummary = {
+  email: string;
+  name: string;
+  company: string | null;
+  phone: string | null;
+  quotes: number;
+  messages: number;
+  orders: number;
+  contracts: number;
+  lastContact: string;
+};
+
+/** Everyone who sent a quote, message or order, or got a contract, grouped by email. */
+export async function listClients(q = ""): Promise<ClientSummary[]> {
+  const db = await getDb();
+  const contracts = (await db.prepare("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'contracts'").first()) != null;
+  const like = `%${q.toLowerCase().replace(/[%_]/g, "")}%`;
+  const { results } = await db
+    .prepare(
+      `SELECT email, MAX(name) AS name, MAX(company) AS company, MAX(phone) AS phone,
+        SUM(q) AS quotes, SUM(m) AS messages, SUM(o) AS orders, SUM(c) AS contracts, MAX(at) AS last_contact
+       FROM (
+        SELECT lower(email) AS email, name, company, phone, 1 AS q, 0 AS m, 0 AS o, 0 AS c, created_at AS at FROM quotes
+        UNION ALL SELECT lower(email), name, company, phone, 0, 1, 0, 0, created_at FROM messages
+        UNION ALL SELECT lower(email), name, company, phone, 0, 0, 1, 0, created_at FROM orders
+        ${contracts ? "UNION ALL SELECT lower(client_email), client_name, client_company, client_phone, 0, 0, 0, 1, created_at FROM contracts" : ""}
+       )
+       GROUP BY email
+       HAVING ? = '%%' OR email LIKE ? OR lower(MAX(name)) LIKE ? OR lower(COALESCE(MAX(company), '')) LIKE ?
+       ORDER BY last_contact DESC LIMIT 300`,
+    )
+    .bind(like, like, like, like)
+    .all<Record<string, string | number | null>>();
+  return results.map((r) => ({
+    email: String(r.email),
+    name: String(r.name ?? ""),
+    company: r.company == null ? null : String(r.company),
+    phone: r.phone == null ? null : String(r.phone),
+    quotes: Number(r.quotes),
+    messages: Number(r.messages),
+    orders: Number(r.orders),
+    contracts: Number(r.contracts),
+    lastContact: String(r.last_contact),
+  }));
 }
 
 export async function dashboardCounts() {

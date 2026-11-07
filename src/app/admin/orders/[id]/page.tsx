@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Mail, Phone, Printer } from "lucide-react";
+import { FileSignature, Mail, Phone, Printer } from "lucide-react";
+import { LinkedContracts } from "@/components/admin/LinkedContracts";
 import { bankDetailsComplete } from "@/config/business";
 import { countryName } from "@/config/shipping";
 import { getOrder } from "@/lib/orders/queries";
@@ -36,10 +37,16 @@ export default async function AdminOrder({ params }: PageProps<"/admin/orders/[i
           </span>
         }
         actions={
-          <Link href={`/admin/orders/${order.id}/proforma`} target="_blank" className={buttonCls.outline}>
-            <Printer aria-hidden className="size-4" />
-            Print proforma
-          </Link>
+          <>
+            <Link href={`/admin/orders/${order.id}/proforma`} target="_blank" className={buttonCls.outline}>
+              <Printer aria-hidden className="size-4" />
+              Print proforma
+            </Link>
+            <Link href={`/admin/contracts/new?order=${order.id}`} className={buttonCls.outline}>
+              <FileSignature aria-hidden className="size-4" />
+              Create contract
+            </Link>
+          </>
         }
       />
       <div className="grid gap-6 xl:grid-cols-[2fr_1fr]">
@@ -144,6 +151,7 @@ export default async function AdminOrder({ params }: PageProps<"/admin/orders/[i
           <Card title="Proforma invoice">
             <ProformaButton id={order.id} disabledReason={proformaBlocked} sentAt={order.proformaSentAt} />
           </Card>
+          <LinkedContracts sourceType="order" sourceId={order.id} />
           <Card title="Manage">
             <OrderEditor id={order.id} status={order.status} shippingCents={order.shippingCents} adminNotes={order.adminNotes ?? ""} />
           </Card>

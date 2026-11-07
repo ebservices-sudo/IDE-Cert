@@ -2,6 +2,7 @@
 
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { LOGIN_LOCK } from "@/config/admin";
 import { site } from "@/config/site";
 import { hashPassword, verifyPassword } from "@/lib/auth/crypto";
 import { consumeAuthToken, createAuthToken, createSession, destroySession, getCurrentUser } from "@/lib/auth/session";
@@ -70,10 +71,29 @@ export async function login(_prev: AuthState, fd: FormData): Promise<AuthState> 
   if (!(await spamCheck(fd))) return { status: "error", message: "The spam check failed. Please try again." };
   try {
     const db = await getDb();
+    // Lock an email after repeated wrong passwords (protects the admin account from guessing).
+    const since = new Date(Date.now() - LOGIN_LOCK.minutes * 60_000).toISOString();
+    const failures = await db
+      .prepare("SELECT COUNT(*) AS n FROM login_failures WHERE email = ? AND at > ?")
+      .bind(email, since)
+      .first<{ n: number }>()
+      .catch(() => null); // table missing until migration 0004 is applied
+    if ((failures?.n ?? 0) >= LOGIN_LOCK.maxFailures) {
+      return { status: "error", message: `Too many wrong passwords. Please wait ${LOGIN_LOCK.minutes} minutes, or reset your password.` };
+    }
     const row = await db.prepare("SELECT id, password_hash FROM users WHERE email = ?").bind(email).first<{ id: string; password_hash: string }>();
     // Verify against a dummy hash when the user does not exist, so timing does not reveal accounts.
     const ok = await verifyPassword(password, row?.password_hash ?? "pbkdf2$100000$AAAAAAAAAAAAAAAAAAAAAA$AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    if (!row || !ok) return { status: "error", message: "Email or password is not correct." };
+    if (!row || !ok) {
+      await db
+        .batch([
+          db.prepare("INSERT INTO login_failures (email, at) VALUES (?, ?)").bind(email, new Date().toISOString()),
+          db.prepare("DELETE FROM login_failures WHERE at < ?").bind(new Date(Date.now() - 86_400_000).toISOString()),
+        ])
+        .catch(() => {});
+      return { status: "error", message: "Email or password is not correct." };
+    }
+    await db.prepare("DELETE FROM login_failures WHERE email = ?").bind(email).run().catch(() => {});
     await createSession(row.id);
   } catch (e) {
     return unavailable(e);

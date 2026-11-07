@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { FileSpreadsheet, Inbox, LayoutDashboard, MessageSquareQuote, Package, ShoppingCart } from "lucide-react";
+import { FileSignature, FileSpreadsheet, Inbox, LayoutDashboard, MessageSquareQuote, Package, ShoppingCart, Users } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 
 const items = [
@@ -11,6 +11,8 @@ const items = [
   { href: "/admin/orders", label: "Orders", icon: ShoppingCart },
   { href: "/admin/quotes", label: "Quotes", icon: MessageSquareQuote },
   { href: "/admin/messages", label: "Messages", icon: Inbox },
+  { href: "/admin/contracts", label: "Contracts", icon: FileSignature },
+  { href: "/admin/clients", label: "Clients", icon: Users },
   { href: "/admin/products", label: "Products", icon: Package },
   { href: "/admin/prices", label: "Price lists", icon: FileSpreadsheet },
 ];

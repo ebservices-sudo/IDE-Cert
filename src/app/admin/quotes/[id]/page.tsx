@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Mail } from "lucide-react";
+import { FileSignature, Mail } from "lucide-react";
+import { LinkedContracts } from "@/components/admin/LinkedContracts";
 import { countryName } from "@/config/shipping";
 import { getCatalog } from "@/lib/catalog/data";
 import { productHref } from "@/lib/catalog/urls";
@@ -33,10 +34,16 @@ export default async function AdminQuote({ params }: PageProps<"/admin/quotes/[i
           </span>
         }
         actions={
-          <a href={reply} className={buttonCls.primary}>
-            <Mail aria-hidden className="size-4" />
-            Reply by email
-          </a>
+          <>
+            <a href={reply} className={buttonCls.outline}>
+              <Mail aria-hidden className="size-4" />
+              Reply by email
+            </a>
+            <Link href={`/admin/contracts/new?quote=${quote.id}`} className={buttonCls.primary}>
+              <FileSignature aria-hidden className="size-4" />
+              Create contract
+            </Link>
+          </>
         }
       />
       <div className="grid gap-6 xl:grid-cols-[2fr_1fr]">
@@ -100,6 +107,7 @@ export default async function AdminQuote({ params }: PageProps<"/admin/quotes/[i
             </p>
             <p className="mt-2 text-xs text-muted">Delivery to {countryName(quote.country)}</p>
           </Card>
+          <LinkedContracts sourceType="quote" sourceId={quote.id} />
           <Card title="Manage">
             <QuoteEditor id={quote.id} status={quote.status} adminNotes={quote.adminNotes ?? ""} />
           </Card>

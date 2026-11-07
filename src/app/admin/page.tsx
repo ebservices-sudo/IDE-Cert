@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { requireAdmin } from "@/lib/auth/session";
 import Link from "next/link";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, CalendarClock, FileSignature } from "lucide-react";
+import { contractCounts, upcomingInspections } from "@/lib/contracts/store";
+import { formatDate } from "@/lib/contracts/document";
 import { bankDetailsComplete } from "@/config/business";
 import { shippingZones } from "@/config/shipping";
 import { shop } from "@/config/site";
 import { dashboardCounts, listOrders, listQuotes } from "@/lib/orders/queries";
 import { StatusBadge, quoteStatusLabel } from "@/lib/orders/status";
-import { AdminHeader, Card, Stat, dateTime, eur, table } from "@/components/admin/ui";
+import { AdminHeader, Card, Stat, buttonCls, dateTime, eur, table } from "@/components/admin/ui";
 
 export const metadata: Metadata = { title: "Dashboard" };
 
@@ -15,7 +17,14 @@ export const metadata: Metadata = { title: "Dashboard" };
 export default async function AdminDashboard() {
   // Layouts do not protect pages (segments render independently): check here.
   await requireAdmin();
-  const [counts, orders, quotes] = await Promise.all([dashboardCounts(), listOrders({ limit: 8 }), listQuotes({ limit: 6 })]);
+  const [counts, orders, quotes, contracts, inspections] = await Promise.all([
+    dashboardCounts(),
+    listOrders({ limit: 8 }),
+    listQuotes({ limit: 6 }),
+    contractCounts(),
+    upcomingInspections(60).catch(() => []),
+  ]);
+  const today = new Date().toISOString().slice(0, 10);
   const setup = [
     !bankDetailsComplete && "Bank details for proforma invoices (src/config/business.ts)",
     shippingZones.some((z) => z.rateCents == null) && "Shipping rates (src/config/shipping.ts) — until then shipping is set per order",
@@ -24,7 +33,15 @@ export default async function AdminDashboard() {
 
   return (
     <>
-      <AdminHeader title="Dashboard" />
+      <AdminHeader
+        title="Dashboard"
+        actions={
+          <Link href="/admin/contracts/new" className={buttonCls.primary}>
+            <FileSignature aria-hidden className="size-4" />
+            New contract
+          </Link>
+        }
+      />
       {setup.length > 0 && (
         <div className="mb-8 flex gap-3 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
           <AlertTriangle aria-hidden className="mt-0.5 size-5 shrink-0 text-amber-600" />
@@ -45,6 +62,55 @@ export default async function AdminDashboard() {
         <Stat label="New quote requests" value={counts.new_quotes ?? 0} href="/admin/quotes" tone={counts.new_quotes ? "alert" : undefined} />
         <Stat label="Orders, last 30 days" value={eur(counts.revenue_30d ?? 0)} />
       </div>
+      <div className="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <Stat label="New messages" value={counts.new_messages ?? 0} href="/admin/messages" tone={counts.new_messages ? "alert" : undefined} />
+        <Stat label="Contract drafts" value={contracts.draft ?? 0} href="/admin/contracts?status=draft" />
+        <Stat label="Contracts awaiting client" value={contracts.sent ?? 0} href="/admin/contracts?status=sent" />
+        <Stat label="Accepted, last 30 days" value={contracts.accepted_30d ?? 0} href="/admin/contracts?status=accepted" />
+      </div>
+
+      {inspections.length > 0 && (
+        <Card
+          className="mt-8"
+          title="Periodic inspections due in the next 60 days"
+          actions={<span className="text-xs text-muted">From the “next inspection” date on contracts</span>}
+        >
+          <ul className="-my-2 divide-y divide-line">
+            {inspections.map((c) => {
+              const overdue = (c.nextInspectionDate ?? "") < today;
+              return (
+                <li key={c.id} className="flex flex-wrap items-center justify-between gap-3 py-2.5 text-sm">
+                  <span className="flex min-w-0 items-start gap-3">
+                    <CalendarClock aria-hidden className={`mt-0.5 size-4 shrink-0 ${overdue ? "text-brand-strong" : "text-muted"}`} />
+                    <span className="min-w-0">
+                      <span className="font-semibold">{c.clientCompany || c.clientName}</span>
+                      <span className="block truncate text-xs text-muted">
+                        {c.title}
+                        {c.location ? ` · ${c.location.split(/\r?\n/)[0]}` : ""}
+                      </span>
+                    </span>
+                  </span>
+                  <span className="flex items-center gap-3">
+                    <span className={`text-xs font-semibold ${overdue ? "text-brand-strong" : ""}`}>
+                      {overdue ? "Overdue since " : "Due "}
+                      {formatDate(c.nextInspectionDate)}
+                    </span>
+                    <a
+                      href={`mailto:${c.clientEmail}?subject=${encodeURIComponent(c.language === "sq" ? "Inspektimi i radhës periodik" : "Your next periodic inspection")}`}
+                      className="text-xs font-semibold text-brand-strong hover:underline"
+                    >
+                      Email
+                    </a>
+                    <Link href={`/admin/contracts/${c.id}`} className="text-xs font-semibold hover:underline">
+                      {c.number}
+                    </Link>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </Card>
+      )}
 
       <div className="mt-8 grid gap-6 xl:grid-cols-[3fr_2fr]">
         <Card title="Latest orders" actions={<Link href="/admin/orders" className="text-xs font-semibold text-brand-strong hover:underline">All orders</Link>}>

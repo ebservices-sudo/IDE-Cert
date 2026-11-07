@@ -59,8 +59,8 @@ export type QuoteRecord = {
   adminNotes?: string | null;
 };
 
-/** Next number in a yearly sequence: IDE-2026-00001, Q-2026-00001. */
-async function nextNumber(db: D1Database, prefix: string, now: Date) {
+/** Next number in a yearly sequence: IDE-2026-00001, Q-2026-00001, KON-2026-00001. */
+export async function nextNumber(db: D1Database, prefix: string, now: Date) {
   const year = now.getUTCFullYear();
   const key = `${prefix}-${year}`;
   const [, row] = await db.batch([

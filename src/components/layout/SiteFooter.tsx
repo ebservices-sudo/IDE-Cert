@@ -96,6 +96,16 @@ export function SiteFooter() {
           <p>
             <T sq="EDELRID është markë tregtare e EDELRID GmbH & Co. KG." en="EDELRID is a trademark of EDELRID GmbH & Co. KG." />
           </p>
+          <p>
+            <T sq="Mundësuar nga" en="Powered by" />{" "}
+            {site.credit.url ? (
+              <a href={site.credit.url} target="_blank" rel="noopener" className="font-semibold text-white/80 hover:text-white">
+                {site.credit.name}
+              </a>
+            ) : (
+              <span className="font-semibold text-white/80">{site.credit.name}</span>
+            )}
+          </p>
         </Container>
       </div>
     </footer>

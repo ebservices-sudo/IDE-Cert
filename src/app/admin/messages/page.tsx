@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { FileSignature } from "lucide-react";
 import { requireAdmin } from "@/lib/auth/session";
 import { setMessageStatus } from "@/actions/admin";
 import { listMessages } from "@/lib/orders/queries";
@@ -14,7 +16,7 @@ export default async function AdminMessages() {
   const messages = await listMessages(200);
   return (
     <>
-      <AdminHeader title="Messages" description="From the contact form." />
+      <AdminHeader title="Messages" description="From the contact form and the inspection request form on the Services page." />
       {messages.length ? (
         <ul className="space-y-4">
           {messages.map((m) => (
@@ -35,8 +37,15 @@ export default async function AdminMessages() {
                     {dateTime(m.createdAt)} · {m.topic}
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <StatusBadge status={m.status} labels={messageStatusLabel} />
+                  <Link
+                    href={`/admin/contracts/new?message=${m.id}`}
+                    className="inline-flex items-center gap-1.5 rounded-md bg-brand-strong px-2.5 py-1 text-xs font-semibold text-white hover:bg-[#b5252a]"
+                  >
+                    <FileSignature aria-hidden className="size-3.5" />
+                    Create contract
+                  </Link>
                   {(["answered", "archived"] as const)
                     .filter((s) => s !== m.status)
                     .map((s) => (

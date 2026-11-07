@@ -3,8 +3,9 @@
 //   npm run admin:create -- owner@example.com "Full Name"            (local D1)
 //   npm run admin:create -- owner@example.com "Full Name" --remote   (production)
 //
-// A random password is generated and printed once. The admin can change it via
-// "Forgot your password?" on the sign-in page.
+// A random password is generated and printed once, unless ADMIN_PASSWORD is set. The admin
+// can change it via "Forgot your password?" on the sign-in page. Only emails listed in
+// src/config/admin.ts can open the admin panel, whatever the role in the database.
 
 import { execFileSync } from "node:child_process";
 import { pbkdf2Sync, randomBytes, randomUUID } from "node:crypto";
@@ -21,7 +22,14 @@ if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
 }
 
 const b64url = (buf) => buf.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-const password = b64url(randomBytes(12));
+// A chosen password can be passed in the ADMIN_PASSWORD environment variable (never as an
+// argument, so it stays out of shell history); otherwise a random one is generated.
+const chosen = process.env.ADMIN_PASSWORD;
+if (chosen && chosen.length < 10) {
+  console.error("ADMIN_PASSWORD must be at least 10 characters.");
+  process.exit(1);
+}
+const password = chosen || b64url(randomBytes(12));
 const salt = randomBytes(16);
 const iterations = 100_000; // same as src/lib/auth/crypto.ts
 const hash = `pbkdf2$${iterations}$${b64url(salt)}$${b64url(pbkdf2Sync(password, salt, iterations, 32, "sha256"))}`;
@@ -47,5 +55,5 @@ try {
 
 console.log(`\nAdmin ready (${remote ? "production" : "local"} database)`);
 console.log(`  Email:    ${email.toLowerCase()}`);
-console.log(`  Password: ${password}`);
+console.log(`  Password: ${chosen ? "(the one you chose)" : password}`);
 console.log("Sign in at /account/login, then open /admin. Store the password safely or reset it via email.\n");
