@@ -1,4 +1,5 @@
 import { Logo } from "@/components/brand/Logo";
+import { AccountLink } from "./AccountLink";
 import { DesktopNav } from "./DesktopNav";
 import { LangToggle } from "./LangToggle";
 import { MobileNav } from "./MobileNav";
@@ -21,6 +22,7 @@ export function SiteHeader() {
 
         <div className="ml-auto flex items-center gap-2 xl:ml-3">
           <SearchDialog className={iconLink} />
+          <AccountLink className={iconLink} />
           <LangToggle className="hidden sm:flex" />
           <div className="ml-1">
             <RequestButton />
